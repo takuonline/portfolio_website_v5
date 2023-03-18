@@ -3,6 +3,29 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
 import FrameType from "../../common/enums/phone-frame";
 import styles from "../../styles/phone-frame.module.css";
+import iphoneStyles from "../../styles/iphone-frame.module.css";
+
+const IPhoneXFrame = (props: {
+  children: React.ReactNode;
+  showFrame?: boolean;
+}) => {
+  const showFrame = props.showFrame ?? true;
+
+  const frame = (
+    <div className={iphoneStyles.iphone_x} style={{
+
+      width:"100%",
+      height:"100%",
+
+    }}>
+      <i> </i>
+      <b> </b>
+      {props.children}
+    </div>
+  );
+
+  return <>{showFrame ? frame : props.children}</>;
+};
 
 const IPhoneFrame = (props: {
   children: React.ReactNode;
@@ -88,14 +111,22 @@ const PhoneFrame = (props: {
   const showFrame = mdUpBreakpoint ? props.showFrame : false;
 
   switch (props.frameType) {
-    case FrameType.IphoneX:
+    case FrameType.Iphone:
       return <IPhoneFrame showFrame={showFrame}>{props.children}</IPhoneFrame>;
+    case FrameType.IphoneX:
+      return (
+        <IPhoneXFrame showFrame={showFrame}>{props.children}</IPhoneXFrame>
+      );
     case FrameType.Note8:
       return <Note8Frame showFrame={showFrame}>{props.children}</Note8Frame>;
-      case FrameType.MacBook:
-        return <MacBookFrame showFrame={showFrame}>{props.children}</MacBookFrame>;
+    case FrameType.MacBook:
+      return (
+        <MacBookFrame showFrame={showFrame}>{props.children}</MacBookFrame>
+      );
     default:
-      return <IPhoneFrame showFrame={showFrame}>{props.children}</IPhoneFrame>;
+      return (
+        <IPhoneXFrame showFrame={showFrame}>{props.children}</IPhoneXFrame>
+      );
   }
 };
 

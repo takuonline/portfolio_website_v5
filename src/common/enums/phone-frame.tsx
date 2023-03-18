@@ -1,5 +1,6 @@
 enum FrameType {
   IphoneX,
+  Iphone,
   Note8,
   MacBook
 }

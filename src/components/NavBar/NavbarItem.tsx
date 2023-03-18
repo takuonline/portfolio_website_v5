@@ -53,6 +53,7 @@ const NavbarItem = (props: {
     <Button
       onClick={handleClick}
       variant="text"
+
       sx={{
         borderRadius:0,
         p: 0,
@@ -67,9 +68,9 @@ const NavbarItem = (props: {
         },
         transition: transition,
         ":hover": {
-          color: "text.primary",
-          backgroundColor: theme.palette.background.default,
-          borderColor: theme.palette.secondary.main,
+          color: "primary.main",
+          backgroundColor: "transparent",
+          borderColor: "transparent",
           transition: transition,
         },
       }}

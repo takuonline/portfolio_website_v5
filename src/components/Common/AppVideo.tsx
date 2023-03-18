@@ -1,4 +1,12 @@
-import { Box, Grid, Typography, Theme, SxProps, useTheme, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Typography,
+  Theme,
+  SxProps,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import FrameType from "../../common/enums/phone-frame";
@@ -15,7 +23,6 @@ const AppVideo = (props: {
   showFrame?: boolean;
   frameType?: FrameType;
 }) => {
-
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -32,16 +39,16 @@ const AppVideo = (props: {
           component={"span"}
           sx={{
             borderRadius: props.borderRadius ?? 0,
-
           }}
         >
           {hasWindow && (
             <ReactPlayer
               // ref={props.ref}
               // controls
+              // pip
+
               muted
               loop
-              // pip
               style={{ aspectRatio: props.aspectRatio ?? 14 / 25 }}
               height="auto"
               width="auto"

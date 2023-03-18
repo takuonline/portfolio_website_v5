@@ -12,7 +12,7 @@ const CustomDivider = (props: {
   const size = props.size ?? { xs: 12 };
 
   return (
-    <BodyWrapper>
+
       <Grid {...size} sx={{ display: "relative",
        width: "100%",
 
@@ -32,13 +32,14 @@ const CustomDivider = (props: {
             right: 0,
             // width: "9%",
             height: "1px",
+            opacity:.2,
 
-            // margin:"0 3rem",
+
             backgroundColor: theme.palette.text.primary,
           }}
         />
       </Grid>
-    </BodyWrapper>
+
   );
 };
 

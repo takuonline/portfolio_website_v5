@@ -10,6 +10,7 @@ import WorkExperience from "../components/WorkExperience/WorkExperience";
 import useNavBar from "../common/custom-hooks/useNavbar";
 import Footer from "../components/Footer/Footer";
 import MyServices from "@/components/MyServices/MyServices";
+import QuoteSection from "@/components/QuoteSection/QuoteSection";
 
 export default function Home() {
   const [isNavbarMenuOpen, _] = useNavBar();
@@ -22,19 +23,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main
+        style={{
+          overflowX: "hidden",
+        }}
+      >
         <CustomNavbar />
 
         {!isNavbarMenuOpen && (
           <>
-            <HeroArea />
-            <MyServices/>
+          <HeroArea />
+         <MyServices />
             <WorkExperience />
-            <CustomDivider />
+
             <PortfolioProjects />
+            <QuoteSection />
 
             <ContactMe />
-            <CustomDivider />
+
             <Footer />
           </>
         )}

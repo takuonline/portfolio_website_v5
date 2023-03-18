@@ -17,6 +17,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import FormResult from "../../common/enums/contact-me";
 import SocialMediaInfo from "../../common/data/social-media";
 import ContactItem from "./ContactItem";
+import HighlightTypography from "../Common/HighlightTypography";
 
 const SERVICE_ID = "service_5mqe8ro";
 const TEMPLATE_ID = "template_nqkyk6d";
@@ -70,13 +71,13 @@ const ContactMe = () => {
 
   return (
     <>
-      <CustomDivider />
       <BodyWrapper>
         <FormControl
           component="form"
           onSubmit={handleOnSubmit}
           sx={{
             width: "100%",
+            mt: 20,
           }}
         >
           <Grid
@@ -88,55 +89,72 @@ const ContactMe = () => {
             }}
             xs={12}
           >
-            <Grid item xs={4}>
-              <SectionHeader title={"contact"} />
+            <Grid item xs={12}>
+              <SectionHeader    id={"contact"}>
+                <HighlightTypography>{"Contact  "}</HighlightTypography>
+                {" me"}
+              </SectionHeader>
             </Grid>
-            <Grid item lg={4} xs={8}></Grid>
+
             <Grid
               item
-              lg={4}
-              // md={3}
+              lg={6}
               xs={6}
               gap={{ md: 0, xs: 2 }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
-
-                [theme.breakpoints.down("lg")]: {
-                  my: 4,
-                },
+                mt: 8,
                 [theme.breakpoints.down("md")]: {
                   flexWrap: "wrap",
                 },
               }}
             >
               <ContactItem
-                title={"linkedin"}
+                title={"Linkedin"}
                 href={SocialMediaInfo.linkedIn.url}
               />
               <ContactItem
-                title={"twitter"}
+                title={"Twitter"}
                 href={SocialMediaInfo.twitter.url}
               />
-              <ContactItem
-                title={"github"}
-                href={SocialMediaInfo.github.url}
-              />
+              <ContactItem title={"Github"} href={SocialMediaInfo.github.url} />
             </Grid>
           </Grid>
 
-          <Box my={{sm:10,xs:2}} />
+          <Box my={{ sm: 6, xs: 2 }} />
 
           <Box>
-            <Grid container>
-              <Grid item xs={0} lg={3}>
-                {" "}
+            <Grid container gap={5}>
+              <Grid item xs={12} sx={{}}>
+                <TextField
+                  id="from_name"
+                  placeholder="Name"
+                  type="text"
+                  name="from_name"
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                  required
+                  sx={{
+                    label: labelStyles,
+                    input: {
+                      borderRadius: 100,
+                    },
+                    fieldset: { borderRadius: 1000, px: 10 },
+                    input: {
+                      py: 3,
+                      px: 5,
+                    },
+                  }}
+                />
               </Grid>
 
               <Grid
                 item
                 xs={12}
-                lg={9}
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -148,27 +166,8 @@ const ContactMe = () => {
                 }}
               >
                 <TextField
-                  id="from_name"
-                  label="name"
-                  type="text"
-                  name="from_name"
-                  fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="standard"
-                  required
-                  sx={{
-                    label: labelStyles,
-                    div: {
-                      borderBottom: `1px solid ${theme.palette.text.primary}`,
-                    },
-                  }}
-                />
-
-                <TextField
                   id="email"
-                  label="email"
+                  placeholder="Email"
                   type="email"
                   name="email"
                   fullWidth
@@ -176,25 +175,22 @@ const ContactMe = () => {
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  variant="standard"
+                  variant="outlined"
                   sx={{
                     label: labelStyles,
-                    div: {
-                      borderBottom: `1px solid ${theme.palette.text.primary}`,
+                    fieldset: { borderRadius: 1000, px: 10 },
+                    input: {
+                      py: 3,
+                      px: 5,
                     },
                   }}
                 />
               </Grid>
-            </Grid>
 
-            <Box my={{ xs: 8, lg: 12 }} />
-
-            <Grid container>
-              <Grid item xs={0} lg={3}></Grid>
-              <Grid item xs={12} lg={9}>
+              <Grid item xs={12}>
                 <TextField
                   id="message"
-                  label="message"
+                  placeholder="Message"
                   type="text"
                   name="message"
                   required
@@ -204,13 +200,15 @@ const ContactMe = () => {
                   // helperText="helperText"
                   multiline
                   fullWidth
-                  minRows={8}
-                  maxRows={12}
-                  variant="standard"
+                  minRows={5}
+                  maxRows={8}
+                  variant="outlined"
                   sx={{
                     label: labelStyles,
-                    div: {
-                      borderBottom: `1px solid ${theme.palette.text.primary}`,
+                    fieldset: { borderRadius: 10, px: 10 },
+                    textarea: {
+                      py: 3,
+                      px: 3,
                     },
                   }}
                 />
@@ -259,15 +257,30 @@ const ContactMe = () => {
               />
             ) : (
               <PrimaryBtn
-                sx={{ mt: 7 }}
+                sx={{
+                  mt: 7,
+                  width: "100%",
+                  backgroundColor: "primary.main",
+                  color: "background.default",
+                  py: 7,
+                  // fontSize:30,
+                  ":hover": {
+                    color: "primary.main",
+                  },
+
+                  [theme.breakpoints.down("md")]: {
+                    py: 4,
+                  },
+                }}
                 type={"submit"}
-                title={"submit"}
+                title={"SUBMIT"}
                 onClick={() => {}}
+                showIndicator={false}
               />
             )}
           </Box>
 
-          <Box my={{ lg: 10, xs: 5 }} />
+          <Box my={{ lg: 4, xs: 5 }} />
         </FormControl>
       </BodyWrapper>
     </>

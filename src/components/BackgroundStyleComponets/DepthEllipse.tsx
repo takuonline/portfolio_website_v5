@@ -1,15 +1,21 @@
-import { Box } from "@mui/material";
+import { alpha, Box } from "@mui/material";
 
-const DepthEllipse = (props: { size: number | string }) => {
+const DepthEllipse = (props: {
+  size: number | string;
+  blur?: number;
+  opacity?: number;
+}) => {
+  const blur = props.blur ?? 100;
+  const opacity = props.opacity ?? 0.05;
   return (
     <Box
       sx={{
         height: props.size,
         width: props.size,
         borderRadius: "50%",
-        opacity: 0.4,
-        filter: "blur(200px)",
-        backgroundColor: "text.primary"
+
+        filter: `blur(${blur}px)`,
+        backgroundColor: (t) => alpha(t.palette.text.primary, opacity),
       }}
     />
   );

@@ -5,13 +5,15 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-
 import AddIcon from "@mui/icons-material/Add";
+
 import { WorkExperienceSchema } from "../../common/data/work-experience";
+import Grid from "@mui/material/Grid";
+import Chip from "@mui/material/Chip";
 
 const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
   const item = props.item;
@@ -26,84 +28,93 @@ const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
     setOnHover(false);
   // const expanded = isMdUpBreakpoint && onHover;
 
+  const startDateFormatted = new Date(item.startDate).toLocaleDateString(
+    "en-US",
+    { month: "long", year: "numeric" }
+  );
+  const endDateFormatted =
+    item.endDate === undefined
+      ? "Present"
+      : new Date(item.endDate).toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        });
+
   return (
     <>
-      <Accordion
-        square
+      <Grid
+        container
         sx={{
-          mt: { lg: 5, xs: 5 },
+          mb: 7,
+          border: (t) => `1px solid ${alpha(t.palette.common.black, 0.2)}`,
+          borderRadius: 20,
+          textAlign: "left",
+          px: 9,
+          py: 10,
 
+          [theme.breakpoints.down("md")]: {
+            px: 4,
+            py: 7,
+            borderRadius: 15,
+          },
+          [theme.breakpoints.down("sm")]: {},
         }}
-        // {...accordionHoverEffect}
-
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        expanded={onHover}
+        xs={12}
       >
-        <AccordionSummary
+        <Grid
+          item
           sx={{
-            px: 0,
-            backgroundColor:"background.default"
+            dispaly: "flex",
+            flexDirection: "column",
           }}
-          expandIcon={
-            <AddIcon
-              sx={{
-                color: "text.primary",
-              }}
-              fontSize="large"
-            />
-          }
-
+          xs={12}
+          md={6}
         >
           <Box
             sx={{
               display: "flex",
-              flexDirection: "column",
-              alignItems: "start",
-              textAlign: "left",
+              opacity: 0.5,
+              mb: 2,
             }}
           >
-            <Typography variant="body1" mb={1} sx={{}}>
-              {item.companyName}
-            </Typography>
-            {isMdUpBreakpoint && (
-              <Box>
-                <Typography
-                  variant="body2"
-                  sx={{ fontStyle: "italic", fontWeight: 200 }}
-                >{`${item.jobtitle} – ${item.department}`}</Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ fontStyle: "italic", fontWeight: 200 }}
-                >
-                  {item.duration}
-                </Typography>
-              </Box>
-            )}
+            <Typography
+              variant={"body2"}
+            >{` ${startDateFormatted} - ${endDateFormatted}`}</Typography>
           </Box>
-        </AccordionSummary>
-        <AccordionDetails
-          sx={{
-            fontWeight: 300,
-            backgroundColor:"background.default"
 
-          }}
-        >
-          {!isMdUpBreakpoint && (
-            <Box mb={1}>
-              <Typography
-                variant="body2"
-                sx={{ fontStyle: "italic", fontWeight: 200 }}
-              >{`${item.jobtitle} – ${item.department}`}</Typography>
+          <Typography
+            variant={"h3"}
+            sx={{
+              typography: { md: "h3", xs: "h6" },
 
-              <Typography
-                variant="body2"
-                sx={{ fontStyle: "italic", fontWeight: 200 }}
-              >
-                {item.duration}
-              </Typography>
-            </Box>
-          )}
+              mt: "auto",
+              lineHeight: "100%",
+            }}
+          >
+            {item.companyName}
+          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              mt: 2,
+            }}
+          >
+            {item.skills.map((v, idx) => (
+              <Chip
+                label={v}
+                variant="outlined"
+                key={idx}
+                sx={{
+                  color: "black",
+                  mr: 1,
+                }}
+              />
+            ))}
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} md={6} mt={{ xs: 5, md: 0 }}>
           {item.desc.map((value: string, index: number) => {
             return (
               <ListItem
@@ -114,17 +125,8 @@ const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
               </ListItem>
             );
           })}
-        </AccordionDetails>
-      </Accordion>
-
-      <hr
-        style={{
-          width: "100%",
-          height: "1px",
-          marginTop: 35,
-          backgroundColor: theme.palette.text.primary,
-        }}
-      />
+        </Grid>
+      </Grid>
     </>
   );
 };

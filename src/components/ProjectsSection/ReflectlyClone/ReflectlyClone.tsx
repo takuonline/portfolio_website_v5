@@ -1,12 +1,15 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import { useTheme } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import AppVideo from "../../Common/AppVideo";
 import BodyWrapper from "../../Common/BodyWrapper";
 import HighlightTypography from "../../Common/HighlightTypography";
+import ProjectComponent from "../ProjectComponent";
+import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
 import ProjectTextBox from "../ProjectTextBox";
 import ProjectTitleHeader from "../ProjectTitleHeader";
@@ -25,60 +28,87 @@ const ReflectlyClone = (props: { index: number }) => {
   return (
     <>
       <BodyWrapper>
-        <ProjectTitleHeader title={"Reflectly Clone  "} index={props.index} />
-        <Box my={{ lg: 15 }} />
-        <Grid
-          container
-          gap={5}
-          sx={{
-            mt: 7,
-          }}
-        >
-          <Grid
-            lg={7}
-            xs={12}
-            sx={{
-              display: "flex",
-              alignItems: "start",
-              [theme.breakpoints.up("lg")]: {
-                display: "flex",
-                justifyContent: "center",
-              },
-            }}
-            component={motion.div}
-            initial={{ opacity: 0, y: 70 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.2 * mobileAnimationFactor,
-              duration: 0.3 * mobileAnimationFactor,
-            }}
-            viewport={viewport}
-          >
-            <AppVideo
-              src={"https://youtu.be/0EfVCwQ4dFQ"}
-              alt={"Mobile Ecommerce App "}
-              size={{ xs: 120, sm: 6, lg: 6 }}
-            />
-          </Grid>
-
-          <Grid
-            lg={4}
-            xs={12}
-            component={motion.div}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              delay: 0.5 * mobileAnimationFactor,
-              duration: 0.4 * mobileAnimationFactor,
-            }}
-            viewport={viewport}
-          >
-            <Stack direction={"column"}>
-              <ProjectTextBox
-                title={"Project Description"}
-                size={TextBoxSize}
+        <ProjectComponent
+          title={"Reflectly Clone"}
+          skills={["Mobile development"]}
+          bgImage={
+            <Box
+              sx={{
+                backgroundColor: "#0093E955",
+                width: "100%",
+                height: "100%",
+                // borderRadius: 24,
+              }}
+            >
+              <AppVideo
+                src={"https://youtu.be/0EfVCwQ4dFQ"}
+                alt={"Mobile Ecommerce App "}
+                size={{
+                  lg: 3,
+                  xs: 7,
+                }}
+                borderRadius={6}
                 sx={{
-                  mt: { sm: 0, xs: 3 },
+                  position: "absolute",
+                  right: "25%",
+                  top: "1rem",
+
+                  [theme.breakpoints.down("md")]: {
+                    right: "20%",
+                    top: "9rem",
+                  },
+                  // display:"flex"
+                }}
+                showFrame={false}
+              />
+            </Box>
+          }
+        >
+          <ProjectSectionWrapper
+            firstComponent={
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "start",
+                  [theme.breakpoints.up("lg")]: {
+                    display: "flex",
+                    justifyContent: "center",
+                  },
+                }}
+                component={motion.div}
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.2 * mobileAnimationFactor,
+                  duration: 0.3 * mobileAnimationFactor,
+                }}
+                viewport={viewport}
+              >
+                <AppVideo
+                  src={"https://youtu.be/0EfVCwQ4dFQ"}
+                  alt={"Mobile Ecommerce App "}
+                  size={{
+                    lg: 9,
+                  }}
+                />
+              </Box>
+            }
+            firstComponentScale={{
+              // xs: 0,
+              // sm: 0,
+              // md: 0,
+              lg: 4,
+            }}
+            secondComponent={
+              <Typography
+                variant="body2"
+                component="div"
+                sx={{
+                  whiteSpace: "break-spaces",
+                  wordBreak: "normal",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 {`- One of the applications l build whilst developing my skills as a mobile developer
@@ -89,13 +119,16 @@ const ReflectlyClone = (props: { index: number }) => {
 
 - This is one of the toughest mobile apps out their because of its complex ui and l felt that if l could
 develop something like this l would be able to do just about everything else.`}
-              </ProjectTextBox>
-              <Box my={{ lg: 5, md: 4, xs: 0 }} />
-            </Stack>
-          </Grid>
-        </Grid>
-
-        <Box my={30} />
+              </Typography>
+            }
+            secondComponentScale={{
+              // xs: 0,
+              // sm: 0,
+              // md: 0,
+              lg: 6,
+            }}
+          />
+        </ProjectComponent>
       </BodyWrapper>
     </>
   );

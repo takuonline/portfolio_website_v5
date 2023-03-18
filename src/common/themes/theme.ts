@@ -4,6 +4,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { interFont, poppinsFont, merriWeatherFont } from "./fonts/font";
 
 const bgColor = "#14150D";
+const bgPaperColor = "#FFFFFF";
 const primaryColor = "#E7FA71";
 const secondaryColor = "#FFFFFF"; //  "#0045FF";  //  "#d88447";
 const textColor = "#FFFFFF";
@@ -33,7 +34,7 @@ let theme = createTheme({
     mode: "dark",
 
     background: {
-      paper: bgColor,
+      paper: bgPaperColor,
       default: bgColor,
     },
 
@@ -70,17 +71,21 @@ let theme = createTheme({
           letterSpacing: "-0.05em",
           // width: "465px"
         },
-        h2: {},
+        h2: {
+          fontWeight: 400,
+          fontSize: "106px",
+          fontStyle: "normal",
+          lineHeight: "95.4px",
+          fontFamily: poppinsFont.style.fontFamily,
+          letterSpacing: "-0.05em",
+        },
         h3: {
           fontFamily: poppinsFont.style.fontFamily,
           fontWeight: 400,
           fontSize: "52px",
           fontStyle: "normal",
           lineHeight: "62.4px",
-          letterSpacing:"-0.05em"
-
-
-
+          letterSpacing: "-0.05em",
         },
         h4: {
           fontFamily: poppinsFont.style.fontFamily,
@@ -88,17 +93,15 @@ let theme = createTheme({
           fontSize: "32px",
           fontStyle: "normal",
           lineHeight: "130%",
-
-
         },
 
         h5: { fontSize: 30 },
         h6: {},
         body1: {
-          lineHeight: "140%",
+          lineHeight: "150%",
 
-          fontWeight: 400,
-          fontSize: "16px",
+          fontWeight: 500,
+          fontSize: "20px",
           fontStyle: "normal",
           fontFamily: poppinsFont.style.fontFamily,
         },

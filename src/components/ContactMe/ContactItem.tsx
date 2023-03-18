@@ -1,8 +1,8 @@
-import { useTheme } from "@mui/material";
+import { alpha, useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 const ContactItem = (props: { title: string; href: string }) => {
   const theme = useTheme();
   const transition = `all ${theme.transitions.duration.standard} ease`;
@@ -17,14 +17,15 @@ const ContactItem = (props: { title: string; href: string }) => {
       sx={{
         borderRadius: "0",
         p: 0,
-        m: 0,
+
         textTransform: "none",
         transition: transition,
-        textAlign: "left",
+        posiiton: "relative",
         span: {
           display: "none",
         },
-        borderBottom: `1px solid ${theme.palette.text.primary}`,
+        pb: 1,
+        borderBottom: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
 
         ":hover": {
           transition: transition,
@@ -32,9 +33,57 @@ const ContactItem = (props: { title: string; href: string }) => {
           color: "secondary.main",
           borderColor: theme.palette.secondary.main,
         },
+
+        [theme.breakpoints.down("md")]: {
+
+        },
       }}
     >
-      <Typography variant="h5">{props.title}</Typography>
+      <Typography
+        variant="h3"
+        sx={{
+          color: theme.palette.text.primary,
+          [theme.breakpoints.down("md")]: {
+            typography: "h2",
+          },
+        }}
+      >
+        <ArrowOutwardIcon
+          sx={{
+            position: "absolute",
+            top: "0%",
+            right: "-20%",
+            color: "primary.main",
+            [theme.breakpoints.down("md")]: {
+              right: "-26%",
+              // position: "relative",
+            },
+          }}
+        />
+
+        {props.title}
+      </Typography>
+
+      {/* <ArrowOutwardIcon
+        sx={{
+          display: "none",
+
+          [theme.breakpoints.down("md")]: {
+            typography: "h1",
+            right: "-26%",
+             width:"100%",
+            display: "inline-flex",
+            color: "primary.main",
+
+
+            // position: "relative",
+          },
+        }}
+      /> */}
+
+
+
+
     </Button>
   );
 };

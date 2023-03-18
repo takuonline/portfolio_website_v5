@@ -1,31 +1,30 @@
 import Button from "@mui/material/Button";
-import { Theme, SxProps, Box, alpha } from "@mui/material";
+import { Theme, SxProps, Box, alpha, Typography } from "@mui/material";
 
-const PrimaryBtn = (props: {
+type PrimaryBtnType = {
   onClick: () => void;
   sx?: SxProps<Theme>;
   type?: "button" | "reset" | "submit" | undefined;
   title: string;
-}) => {
+  icon1?: React.ReactNode;
+  showIndicator?: boolean;
+  indicatorColor?:string
+};
+
+const PrimaryBtn = (props: PrimaryBtnType) => {
+  const showIndicator = props.showIndicator ?? false;
+
   return (
     <Button
-
       variant="outlined"
       type={props.type}
       onClick={props.onClick}
       sx={{
         borderRadius: "20rem",
-
         px: 5,
         textTransform: "unset !important",
         borderColor: (t) => alpha(t.palette.secondary.main, 0.3),
-
         ...props.sx,
-     // ":hover": {
-        //   backgroundColor: "secondary.main",
-        //   transition: "all .3s  ease",
-        //   borderColor: "secondary.main",
-        // },
       }}
     >
       <Box
@@ -34,18 +33,24 @@ const PrimaryBtn = (props: {
           alignItems: "center",
         }}
       >
-        {props.title.toLowerCase()}
+        {props.icon1}
 
-        <Box
-          sx={{
-            backgroundColor: "primary.main",
+        <Typography variant="body1" sx={{
 
-            borderRadius: "100rem",
-            width: 7,
-            height: 7,
-            ml: 1,
-          }}
-        />
+        }}>{props.title.toLowerCase()}</Typography>
+
+        {showIndicator && (
+          <Box
+            sx={{
+              backgroundColor:props.indicatorColor?? "primary.main",
+              borderRadius: "100rem",
+              width: 7,
+              height: 7,
+              ml: 1,
+
+            }}
+          />
+        )}
       </Box>
     </Button>
   );

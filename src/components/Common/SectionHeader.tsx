@@ -4,14 +4,17 @@ import replaceAll from "../../common/utils/custom-replace-all";
 import HighlightTypography from "./HighlightTypography";
 import { motion } from "framer-motion";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Theme, SxProps, } from "@mui/material";
 
-const SectionHeader = (props: { title: string }) => {
+const SectionHeader = (props: { children: React.ReactNode | string,  sx?: SxProps<Theme>;id:string
+}) => {
   const theme = useTheme();
 
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.3 : 1;
-  //TODO: .replaceAll(" ","-") not working
-  let _id = props.title.trim().toLowerCase().split(" ").join("-");
+  //TODO: .replaceAll(" ","-") not working.
+  // TODO: Fix _id
+  let _id = props.id.trim().toLowerCase().split(" ").join("-");
 
   return (
     <Typography
@@ -27,23 +30,18 @@ const SectionHeader = (props: { title: string }) => {
         pl: 0,
         textAlign: "left",
         fontSize: "7.6rem",
-        fontStyle: "italic",
+
         opacity: 0.7,
 
-        [theme.breakpoints.down("lg")]: {
-          fontSize: "5.4rem",
-        },
+        ...props.sx,
+
         [theme.breakpoints.down("md")]: {
-          fontSize: "4rem",
+           typography:"h1"
         },
-        [theme.breakpoints.down("sm")]: {
-          fontSize: "3.75rem",
-          fontWeight: 500,
-          // textShadow: "4px -4px #0000ff",
-        },
+
       }}
     >
-      {props.title.toLowerCase()}
+      {props.children }
     </Typography>
   );
 };

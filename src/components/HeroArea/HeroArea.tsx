@@ -2,7 +2,6 @@ import Image from "next/image";
 import { alpha, Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import HighlightTypography from "../Common/HighlightTypography";
 import { useTheme } from "@mui/material/styles";
-import TextDivider, { TextDividerDescription } from "../Common/TextDivider";
 import React from "react";
 
 import BodyWrapper from "../Common/BodyWrapper";
@@ -28,29 +27,32 @@ const HeroBgImage = () => {
           position: "absolute",
           top: "38%",
           left: "0%",
-          // transform: "translate(-50%, -50%)",
 
-          // [theme.breakpoints.down("lg")]: {
-          //   top: "80%",
-          //   left: "50%",
-          // },
+          [theme.breakpoints.down("md")]: {
+            top: "80%",
+            mt: 20,
+          },
         }}
       >
-        <motion.div
+        <Box
+          component={motion.div}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           style={{
             width: "60%",
+            [theme.breakpoints.down("lg")]: {
+              width: "100%",
+              position: "absolute",
+            },
           }}
         >
           <Image
             style={{
               filter: "grayscale(100%)",
-              width: "120%",
+              width: isMobileView ? "160%" : "120%",
               height: "100%",
-
               borderRadius: "1000rem",
             }}
             src="/static/images/Taku2.3.png"
@@ -59,7 +61,7 @@ const HeroBgImage = () => {
             width={892}
             height={523}
           />
-        </motion.div>
+        </Box>
       </Grid>
 
       <Typography
@@ -71,20 +73,12 @@ const HeroBgImage = () => {
           width: "45%",
           color: "primary.main",
           fontWeight: 100,
-          [theme.breakpoints.down("lg")]: {
-            top: "95%",
-            right: "0%",
-            width: "50%",
-          },
+
           [theme.breakpoints.down("md")]: {
-            right: "0%",
-            width: "50%",
-            top: "90%",
-          },
-          [theme.breakpoints.down("sm")]: {
-            mt: 3,
+            left: "0%",
             width: "100%",
-            top: "120%",
+            top: "168%",
+            right: "auto",
           },
         }}
         variant={"body2"}
@@ -95,26 +89,89 @@ const HeroBgImage = () => {
     </>
   );
 };
+const BgDecorations = () => {
+  const theme = useTheme();
 
+  return (
+    <>
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "-2rem",
+          left: "27%",
+
+          [theme.breakpoints.down("md")]: {
+            top: "30rem",
+            left: "auto",
+            right: "10%",
+          },
+        }}
+      >
+        <StarButton
+          onClick={() => {}}
+          backgroundColor={theme.palette.primary.main}
+          bgStarSize={150}
+          sx={{}}
+        />
+      </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "22%",
+          right: "0%",
+          [theme.breakpoints.down("md")]: {
+            right: "-20%",
+          },
+        }}
+      >
+        <DepthEllipse size={"556px"} />
+      </Box>
+
+      <Box
+        sx={{
+          position: "absolute",
+          top: "25%",
+          right: "-3%",
+
+          [theme.breakpoints.down("md")]: {
+            right: "-20%",
+            top: "10%",
+            zIndex: -1,
+          },
+        }}
+      >
+        <BgRings size={{ md: 350, xs: 280 }} opacity={1} />
+      </Box>
+    </>
+  );
+};
 const HeroFrontText = () => {
   const theme = useTheme();
 
   return (
     <Typography
-      variant="h1"
       sx={{
         position: "absolute",
-        bottom: "75%",
+        bottom: "72%",
         left: "0%",
+        fontSize: "8.5rem",
+
+        fontWeight: 400,
+        // fontSize: "128px",
+        fontStyle: "normal",
+        lineHeight: "90%",
+        // fontFamily: poppinsFont.style.fontFamily,
+        letterSpacing: "-0.05em",
 
         [theme.breakpoints.down("md")]: {
-          // fontSize: "4rem",
+          bottom: "10%",
+          fontSize: "6rem",
+          width: "100%",
         },
         [theme.breakpoints.down("sm")]: {
-          // fontSize: "2.5rem",
-          fontWeight: 700,
-          top: "0%",
-          width: "80%",
+          // bottom: "10%",
+
+          fontSize: "4.5rem",
         },
       }}
     >
@@ -127,11 +184,15 @@ const HeroFrontText = () => {
       </HighlightTypography>
 
       <Box
+        component={"span"}
         sx={{
           ml: 25,
+          [theme.breakpoints.down("md")]: {
+            ml: 0,
+          },
         }}
       >
-        {" business solutions "}
+        {"business solutions "}
       </Box>
     </Typography>
   );
@@ -150,6 +211,9 @@ const HeroInstructionText = () => {
         right: "5%",
 
         alignItems: "center",
+        [theme.breakpoints.down("md")]: {
+          display: "None",
+        },
       }}
     >
       <Box
@@ -192,97 +256,48 @@ const HeroArea = () => {
   const theme = useTheme();
   return (
     <>
-      <BodyWrapper>
+      <BodyWrapper
+        sx={
+          {
+            // overflowX: "hidden",
+          }
+        }
+      >
         <Grid
           container
           xs={12}
           sx={{
-            height: "50vh",
+            height: "60vh",
             display: "flex",
             position: "relative",
-            mt: 27,
+            mt: 37,
+            zIndex: 2,
 
-            [theme.breakpoints.down("lg")]: {
-              height: "70vh",
-              mb: 20,
+            [theme.breakpoints.down("md")]: {
               mt: 0,
             },
-            [theme.breakpoints.down("md")]: {
-              height: "50vh",
-              mt: 10,
-            },
-            [theme.breakpoints.down("sm")]: {
-              height: "42vh",
-              mb: 38,
-              mt: 8,
-            },
           }}
         >
-          <HeroBgImage />
           <HeroFrontText />
+
+          <HeroBgImage />
+
+          <BgDecorations />
         </Grid>
+
         <HeroInstructionText />
-        <Box mb={15} />
-
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "17%",
-            left: "27%",
-          }}
-        >
-          <StarButton
-            onClick={() => {}}
-            backgroundColor={theme.palette.primary.main}
-            bgStarSize={150}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            position: "absolute",
-            top: "32%",
-            right: "6%",
-          }}
-        >
-          <DepthEllipse size={"356px"} />
-        </Box>
-
-        <Box
-          sx={{
-            position: "absolute",
-            top: "25%",
-            right: "-3%",
-          }}
-        >
-          <BgRings size={350} />
-        </Box>
-
-        <Box>
-          <Box sx={{ position: "relative" }}>
-            <BgQuotes iconSize={120} />
-          </Box>
-        </Box>
-
-        {/* <TextDivider
-          text={`“You can’t connect the dots looking forward, you can only connect them looking backwards.
-             So you have to trust that the dots will somehow connect in your future.”`}
-          author={"Steve Jobs"}
-        >
-          {`It can be hard to trust in the process when you can’t see the bigger picture. But you never know what might be around the corner, so you have to keep moving forward.
-           And one day, you may recognize that some of the hardest things you had to go through were also the best things that ever happened to you.`}
-          <br />
-        </TextDivider>{" "} */}
-
-        <Box mb={60} />
-
-
       </BodyWrapper>
+
+      <Box sx={{ position: "relative" }}>
+        <BgQuotes iconSize={120} />
+      </Box>
+
+      <Box mb={{ lg: 60, xs: 75 }} />
       <CustomDivider
-          sx={{
-            my: 20,
-          }}
-        />
+        sx={{
+          my: 20,
+        }}
+      />
     </>
   );
 };

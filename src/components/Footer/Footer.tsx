@@ -8,13 +8,13 @@ import HighlightTypography from "../Common/HighlightTypography";
 const Footer = () => {
   const date = new Date().getFullYear();
   const theme = useTheme();
-  const text = `  Copyright ${date}  |  Project heavily inspired by `;
+  const text = `  Copyright ${date}     Takudzwa `;
   return (
     <BodyWrapper>
       <Grid
         container
         sx={{
-          my: 7,
+          my: 5,
         }}
       >
         <Grid
@@ -26,21 +26,16 @@ const Footer = () => {
             justifyContent: "center",
           }}
         ></Grid>
-        <Typography variant="body2">
+        <Typography
+          variant="body2"
+          sx={{
+            opacity: 0.4,
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
+          {" "}
           {text}
-
-          <Link
-            href={"https://caroselling.it/"}
-            style={{
-              color: theme.palette.text.primary,
-            }}
-          >
-            {" "}
-            <HighlightTypography>
-              {" "}
-              {" https://caroselling.it/"}{" "}
-            </HighlightTypography>
-          </Link>
         </Typography>
         <Grid lg={0} xs={12}></Grid>
       </Grid>

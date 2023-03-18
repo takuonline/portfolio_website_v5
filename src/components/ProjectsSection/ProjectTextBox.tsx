@@ -32,19 +32,6 @@ const ProjectTextBox = (props: {
       />
 
       <Typography
-        variant="h5"
-        sx={{
-          mb: 3,
-
-          [theme.breakpoints.down("sm")]: {
-            mt: 1,
-          },
-        }}
-      >
-        {props.title}
-      </Typography>
-
-      <Typography
         variant="body2"
         component="div"
         sx={{

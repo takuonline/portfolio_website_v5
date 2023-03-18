@@ -104,21 +104,15 @@ export default function CustomNavbar() {
           </>
         )}
         {!isMdUpBreakpoint ? (
+          // <NavbarItem
+          //   onClick={showNavbarMenu}
+          //   title={isNavbarMenuOpen ? "close" : "menu"}
+          // />
 
+          <PrimaryBtn onClick={showNavbarMenu} title={isNavbarMenuOpen ? "close" : "menu"}  showIndicator={true} />
 
-
-
-
-
-          <NavbarItem
-             onClick={showNavbarMenu}
-
-            title={isNavbarMenuOpen ? "close" : "menu"}
-          />
         ) : (
-
-<PrimaryBtn   onClick={showNavbarMenu} title={NavbarTitles.blog} />
-
+          <PrimaryBtn onClick={showNavbarMenu} title={NavbarTitles.blog}    showIndicator={true} />
 
           // <NavbarItem title={NavbarTitles.blog} pageRoute={"/blog"} />
         )}
