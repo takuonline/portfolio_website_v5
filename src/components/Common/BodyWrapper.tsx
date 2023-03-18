@@ -13,6 +13,7 @@ const BodyWrapper = (props: { children: React.ReactNode,
 
       sx={{
         mx: 9,
+
         [theme.breakpoints.down("lg")]: {
           mx: 5,
         },

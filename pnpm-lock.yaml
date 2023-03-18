@@ -8,7 +8,6 @@ specifiers:
   '@emotion/styled': ^11.10.6
   '@mui/icons-material': ^5.11.11
   '@mui/material': ^5.11.11
-  '@next/font': 13.2.3
   '@portabletext/react': ^2.0.2
   '@react-three/fiber': ^8.12.0
   '@reduxjs/toolkit': ^1.9.3
@@ -37,7 +36,6 @@ dependencies:
   '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
   '@mui/icons-material': 5.11.11_h5fh5ntwxtyr677wxvzgewjsma
   '@mui/material': 5.11.11_xqeqsl5kvjjtyxwyi3jhw3yuli
-  '@next/font': 13.2.3
   '@portabletext/react': 2.0.2_react@18.2.0
   '@react-three/fiber': 8.12.0_73epb4osyabtjyiaeamriercbi
   '@reduxjs/toolkit': 1.9.3_react@18.2.0
@@ -482,10 +480,6 @@ packages:
     resolution: {integrity: sha512-QmMPItnU7VeojI1KnuwL9SLFWEwmaNHNlnOGpoTwdLoSiP9sc8KYiAHWEc4/44L+cAdCxcZYvn7frcRNP5l84Q==}
     dependencies:
       glob: 7.1.7
-    dev: false
-
-  /@next/font/13.2.3:
-    resolution: {integrity: sha512-7EHzk0f7FVYICLUZTpyPk93IfcTUao++Xt1Sgb+Zk5dVOCYHabqLtlF5ywSoXIqyFlo0qlshEBxsrzHAGTWkDw==}
     dev: false
 
   /@next/swc-android-arm-eabi/13.2.3:

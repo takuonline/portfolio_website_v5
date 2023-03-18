@@ -83,6 +83,10 @@ const Title = () => {
   return (
     <Box
       sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        width: "100%",
+        // flexDirection: "column",
         [theme.breakpoints.down("md")]: {
           display: "flex",
           flexWrap: "wrap",
@@ -95,7 +99,7 @@ const Title = () => {
     >
       <Box />
       <SectionHeader
-      id="my-work"
+        id="my-work"
         sx={{
           display: "inline-block",
         }}
@@ -121,8 +125,8 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          left: "-14%",
-          top: "-5%",
+          left: "-14rem",
+          top: "-12rem",
           [theme.breakpoints.down("md")]: {
             top: "-20rem",
             left: "-10rem",
@@ -135,8 +139,8 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          right: "-14%",
-          bottom: "10%",
+          right: "-14rem",
+          bottom: "10rem",
           zIndex: -2,
         }}
       >
@@ -146,8 +150,8 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "65%",
-          left: "-5%",
+          top: "155rem",
+          left: "-8rem",
         }}
       >
         <BgLightStar2 size={240} color={undefined} />
@@ -156,8 +160,8 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "5%",
-          right: "-20%",
+          top: "7rem",
+          right: "-20rem",
         }}
       >
         <BgRings size={{ md: 570, xs: 300 }} />
@@ -166,12 +170,12 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "15%",
-          right: "-10%",
+          top: "33rem",
+          right: "-10rem",
           transform: "rotate(80deg)",
           [theme.breakpoints.down("md")]: {
-            top: "9%",
-            right: "-10%",
+            top: "9rem",
+            right: "-10rem",
           },
         }}
       >

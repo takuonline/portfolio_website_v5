@@ -59,7 +59,7 @@ const GoogleLensClone = (props: { index: number }) => {
                 lg: 2,
               }}
               sx={{
-                width: "80%",
+                width: "100%",
                 position: "absolute",
                 right: "30%",
                 top: "5rem",

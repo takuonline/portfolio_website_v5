@@ -45,6 +45,7 @@ const QuoteSection = () => {
           zIndex: 1,
           overflow: "clip",
           pb: 15,
+          borderRadius:0
         }}
       >
         <BodyWrapper>

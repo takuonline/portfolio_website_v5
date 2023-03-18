@@ -213,7 +213,7 @@ const WorkExperience = () => {
           pt: 10,
           pb: 3,
           color: "background.default",
-          // zIndex: 2,
+          borderRadius: 0,
         }}
       >
         <Box

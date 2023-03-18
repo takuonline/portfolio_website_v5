@@ -68,9 +68,9 @@ const HeroBgImage = () => {
         component={"span"}
         sx={{
           position: "absolute",
-          top: "85%",
-          right: "16%",
-          width: "45%",
+          top: "75%",
+          right: "19%",
+          width: "40%",
           color: "primary.main",
           fontWeight: 100,
 
@@ -130,8 +130,8 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "25%",
-          right: "-3%",
+          top: "20%",
+          right: "-7%",
 
           [theme.breakpoints.down("md")]: {
             right: "-20%",
@@ -140,7 +140,7 @@ const BgDecorations = () => {
           },
         }}
       >
-        <BgRings size={{ md: 350, xs: 280 }} opacity={1} />
+        <BgRings size={{ md: 380, xs: 280 }} opacity={1} />
       </Box>
     </>
   );
@@ -204,7 +204,7 @@ const HeroInstructionText = () => {
   const delayFactor = isMobileView ? 0.3 : 1;
   return (
     <Box
-      mt={{ lg: 10 }}
+      mt={{ lg: -8 }}
       sx={{
         display: "flex",
         position: "absolute",

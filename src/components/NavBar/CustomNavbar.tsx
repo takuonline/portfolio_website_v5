@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import useNavBar from "../../common/custom-hooks/useNavbar";
 import { usePathname } from "next/navigation";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
+import replaceAll from "@/common/utils/custom-replace-all";
 
 const NavbarTitles = {
   home: "home",
@@ -32,7 +33,14 @@ export default function CustomNavbar() {
   const theme = useTheme();
   const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
   const isHomePath = pathname == "/";
+  // const blog: voidFunc = () => {
+  // setIsNavbarMenuOpen((v) => !v);
+  // };
 
+  const handleBlogClick = (routePath: string) => {
+    const route = "/" + replaceAll(routePath.trim().toLowerCase(), " ", "-");
+    router.push(route);
+  };
   return (
     <BodyWrapper>
       <Box
@@ -104,15 +112,17 @@ export default function CustomNavbar() {
           </>
         )}
         {!isMdUpBreakpoint ? (
-          // <NavbarItem
-          //   onClick={showNavbarMenu}
-          //   title={isNavbarMenuOpen ? "close" : "menu"}
-          // />
-
-          <PrimaryBtn onClick={showNavbarMenu} title={isNavbarMenuOpen ? "close" : "menu"}  showIndicator={true} />
-
+          <PrimaryBtn
+            onClick={showNavbarMenu}
+            title={isNavbarMenuOpen ? "close" : "menu"}
+            showIndicator={true}
+          />
         ) : (
-          <PrimaryBtn onClick={showNavbarMenu} title={NavbarTitles.blog}    showIndicator={true} />
+          <PrimaryBtn
+            onClick={() => handleBlogClick(NavbarTitles.blog)}
+            title={NavbarTitles.blog}
+            showIndicator={true}
+          />
 
           // <NavbarItem title={NavbarTitles.blog} pageRoute={"/blog"} />
         )}

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { urlForImage } from "../../common/utils/sanity";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { alpha } from "@mui/material";
 
 type BlogPost = {
   title: string;
@@ -22,7 +23,6 @@ const BlogPostItem = ({ blogPost }) => {
   const router = useRouter();
   const handleOnClick = () => {
     const slug = blogPost.slug.current;
-
 
     router.push("/blog/" + slug);
   };
@@ -41,9 +41,17 @@ const BlogPostItem = ({ blogPost }) => {
         container
         rowGap={4}
         columnGap={{ lg: 2 }}
-        mb={{ md: 15, xs: 15 }}
+        mb={{ md: 15, xs: 6 }}
         sx={{
           display: "flex",
+          borderRadius: "8rem",
+
+          pb: 6,
+          border: (t) => `2px solid ${alpha(t.palette.background.paper, 0.2)}`,
+          overflow: "clip",
+          [theme.breakpoints.down("md")]: {
+            borderRadius: "2rem",
+          },
         }}
       >
         <Grid
@@ -57,7 +65,7 @@ const BlogPostItem = ({ blogPost }) => {
         >
           {blogPost?.mainImage?.asset?._ref && (
             <AppImage
-            showFrame={false}
+              showFrame={false}
               src={imageSrc}
               onClick={handleOnClick}
               // src="/static/images/savvy_shopper_image_1.png"
@@ -74,8 +82,8 @@ const BlogPostItem = ({ blogPost }) => {
                 transition: "all .7s",
 
                 ":hover": {
-                  transform: "translate(-1rem, -1rem)",
-                  transition: "all .7s",
+                  //   transform: "translate(-1rem, -1rem)",
+                  //   transition: "all .7s",
                   filter: "none",
                   cursor: "pointer",
                 },
@@ -90,6 +98,7 @@ const BlogPostItem = ({ blogPost }) => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            px: 4,
           }}
         >
           <Grid item lg={4}>
@@ -110,7 +119,7 @@ const BlogPostItem = ({ blogPost }) => {
           </Grid>
 
           {isMdUpBreakpoint && (
-            <Grid item lg={6}>
+            <Grid item lg={7}>
               <Typography variant="body2" sx={{}}>
                 {shortDescription}
               </Typography>
@@ -124,9 +133,9 @@ const BlogPostItem = ({ blogPost }) => {
               position: "relative",
             }}
           >
-            <IconButton
+            {/* <IconButton
               onClick={handleOnClick}
-              // p={0}
+
               sx={{
                 position: "absolute",
                 right: 0,
@@ -145,7 +154,7 @@ const BlogPostItem = ({ blogPost }) => {
                   },
                 }}
               />
-            </IconButton>
+            </IconButton> */}
           </Grid>
         </Grid>
       </Grid>

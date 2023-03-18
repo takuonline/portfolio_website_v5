@@ -133,6 +133,7 @@ const ContactMe = () => {
                   type="text"
                   name="from_name"
                   fullWidth
+
                   InputLabelProps={{
                     shrink: true,
                   }}
