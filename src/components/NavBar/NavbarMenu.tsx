@@ -15,7 +15,7 @@ const NavbarMenu = (props: {
   const pathname = usePathname();
 
   const navbarItemVariant = "h3";
-  const isBlogPath = pathname.includes("/blog");
+  const isBlogPath = pathname?.includes("/blog");
 
   return (
     <Paper

@@ -90,7 +90,7 @@ const ContactMe = () => {
             xs={12}
           >
             <Grid item xs={12}>
-              <SectionHeader    id={"contact"}>
+              <SectionHeader id={"contact"}>
                 <HighlightTypography>{"Contact  "}</HighlightTypography>
                 {" me"}
               </SectionHeader>
@@ -133,7 +133,6 @@ const ContactMe = () => {
                   type="text"
                   name="from_name"
                   fullWidth
-
                   InputLabelProps={{
                     shrink: true,
                   }}
@@ -143,12 +142,10 @@ const ContactMe = () => {
                     label: labelStyles,
                     input: {
                       borderRadius: 100,
-                    },
-                    fieldset: { borderRadius: 1000, px: 10 },
-                    input: {
                       py: 3,
                       px: 5,
                     },
+                    fieldset: { borderRadius: 1000, px: 10 },
                   }}
                 />
               </Grid>

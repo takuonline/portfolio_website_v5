@@ -48,8 +48,8 @@ const CustomListItem = (props: CustomListItemType) => {
     >
       <ListItem
         disablePadding
-        disableRipple
-        disableTouchRipple
+        // disableRipple
+        // disableTouchRipple
         sx={{
           ml: 2,
           ":hover": {

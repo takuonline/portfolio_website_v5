@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import { Theme, SxProps, Box, alpha, Typography } from "@mui/material";
+import { Box, alpha, Typography, SxProps, Theme } from "@mui/material";
 
 type PrimaryBtnType = {
   onClick: () => void;
@@ -8,7 +8,7 @@ type PrimaryBtnType = {
   title: string;
   icon1?: React.ReactNode;
   showIndicator?: boolean;
-  indicatorColor?:string
+  indicatorColor?: string;
 };
 
 const PrimaryBtn = (props: PrimaryBtnType) => {
@@ -20,11 +20,12 @@ const PrimaryBtn = (props: PrimaryBtnType) => {
       type={props.type}
       onClick={props.onClick}
       sx={{
+        ...props.sx,
+
         borderRadius: "20rem",
         px: 5,
-        textTransform: "unset !important",
         borderColor: (t) => alpha(t.palette.secondary.main, 0.3),
-        ...props.sx,
+        textTransform: "unset",
       }}
     >
       <Box
@@ -35,19 +36,18 @@ const PrimaryBtn = (props: PrimaryBtnType) => {
       >
         {props.icon1}
 
-        <Typography variant="body1" sx={{
-
-        }}>{props.title.toLowerCase()}</Typography>
+        <Typography variant="body1" sx={{}}>
+          {props.title.toLowerCase()}
+        </Typography>
 
         {showIndicator && (
           <Box
             sx={{
-              backgroundColor:props.indicatorColor?? "primary.main",
+              backgroundColor: props.indicatorColor ?? "primary.main",
               borderRadius: "100rem",
               width: 7,
               height: 7,
               ml: 1,
-
             }}
           />
         )}
