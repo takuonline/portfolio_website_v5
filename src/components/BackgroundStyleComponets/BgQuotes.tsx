@@ -18,7 +18,7 @@ const BgQuotes = (props: { iconSize: number }) => {
     </span>
   );
 
-  const imageFactor = .4
+  const imageFactor = 0.45;
   return (
     <>
       <Box
@@ -26,7 +26,7 @@ const BgQuotes = (props: { iconSize: number }) => {
           width: "100%",
           height: "100%",
           position: "relative",
-          mt: 25,
+          mt: 18,
           [theme.breakpoints.down("md")]: {
             mt: 25,
           },
@@ -140,21 +140,30 @@ also the best things that ever happened to you.`}
                 width: "40rem",
                 // backgroundColor: "red",
                 // opacity: 0.03,
-                position:"relative"
+                position: "relative",
+
+                [theme.breakpoints.down("md")]: {
+                  height: "27rem",
+                  width: "27rem",
+                  // position: "absolute",
+                  top: "8rem",
+                  left: "4rem",
+                },
               }}
             >
               <Image
                 src="/static/images/BlackWavy.png"
                 alt="Black wavy background decoration"
-                width={3840 *imageFactor}
-                height={2160 *imageFactor}
+                // width={3840 *imageFactor}
+                // height={2160 *imageFactor}
+
+                fill
                 style={{
-                  position:"absolute",
-                  top:"-15rem",
-                  left:"-25rem",
-                  zIndex:5,
-
-
+                  position: "absolute",
+                  top: "-8rem",
+                  left: "-4rem",
+                  zIndex: 5,
+                  objectFit: "cover",
                 }}
               />
             </Box>

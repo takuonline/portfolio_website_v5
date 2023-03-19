@@ -69,7 +69,7 @@ const HeroBgImage = () => {
         component={"span"}
         sx={{
           position: "absolute",
-          top: "75%",
+          top: "36rem",
           right: "19%",
           width: "40%",
           color: "primary.main",
@@ -98,7 +98,7 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "1rem",
+          bottom: "2rem",
           left: "27%",
 
           [theme.breakpoints.down("md")]: {
@@ -118,8 +118,7 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "22%",
-          right: "0%",
+          top: "0rem",          right: "0%",
           [theme.breakpoints.down("md")]: {
             right: "-20%",
           },
@@ -131,7 +130,7 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "20%",
+          top: "0rem",
           right: "-7%",
 
           [theme.breakpoints.down("md")]: {
@@ -204,13 +203,31 @@ const HeroInstructionText = () => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const delayFactor = isMobileView ? 0.3 : 1;
+
+
+  // const containerAnimation = {
+  //   initial:  {  opacity: 0, width: 0  },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       delayChildren: 0.3 * delayFactor,
+  //       staggerChildren: 0.2,
+  //     },
+  //   },
+  //   whileInView:{
+  //     opacity: 1,
+  //     width: 250,
+  //     border: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
+  //   }
+  // };
   return (
     <Box
       mt={{ lg: -8 }}
       sx={{
         display: "flex",
         position: "absolute",
-        right: "5%",
+        right: "5rem",
 
         alignItems: "center",
         [theme.breakpoints.down("md")]: {
@@ -220,6 +237,7 @@ const HeroInstructionText = () => {
     >
       <Box
         component={motion.div}
+        // variants={containerAnimation}
         initial={{ opacity: 0, width: 0 }}
         transition={{ delay: 1 * delayFactor, duration: 0.2 }}
         whileInView={{
@@ -228,8 +246,7 @@ const HeroInstructionText = () => {
           border: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
         }}
         viewport={{ once: true }}
-        sx={{}}
-      />
+       />
 
       <Typography
         component={motion.div}
@@ -272,7 +289,7 @@ const HeroArea = () => {
             height: "50rem",
             display: "flex",
             position: "relative",
-            mt: 37,
+            mt: 27,
             zIndex: 2,
 
             [theme.breakpoints.down("md")]: {

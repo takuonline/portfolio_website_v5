@@ -150,7 +150,6 @@ const MyServices = () => {
                 zIndex: -1,
                 [theme.breakpoints.down("md")]: {
                   left: "160%",
-
                   top: "-40%",
                 },
               }}
