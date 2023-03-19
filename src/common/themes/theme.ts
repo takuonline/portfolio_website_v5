@@ -11,6 +11,21 @@ const textColor = "#FFFFFF";
 const errorColor = "#FE2F46";
 const successColor = "#90ee90";
 
+
+// rgb
+// const bgColor = "#040D15";
+// const bgPaperColor = "#FFFFFF";
+// const primaryColor = "#00FFFF";
+// const secondaryColor = "#FFFFFF"; //  "#0045FF";  //  "#d88447";
+// const textColor = "#FFFFFF";
+// const errorColor = "#FE2F46";
+// const successColor = "#90ee90";
+
+
+
+
+
+
 // Create a theme instance.
 let theme = createTheme({
   transitions: {

@@ -1,16 +1,14 @@
 // @ts-nocheck
 
 import AppImage from "../Common/AppImage";
-import AddIcon from "@mui/icons-material/Add";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import { useRouter } from "next/navigation";
 import { urlForImage } from "../../common/utils/sanity";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { alpha } from "@mui/material";
-
+import React from "react";
 type BlogPost = {
   title: string;
   desc: string;
@@ -33,7 +31,17 @@ const BlogPostItem = ({ blogPost }) => {
     .url();
 
   const theme = useTheme();
-  const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
+  // TODO: This is a hack to fix an issue with the use MediaQuery hook. If no solution is found move this code to a custom hook
+  const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+    // noSsr: true,
+  });
+  const [isMdUpBreakpoint, setIsMdUpBreakpoint] = React.useState(true);
+
+  React.useEffect(() => {
+    setIsMdUpBreakpoint(initValue);
+  },[useMediaQuery(theme.breakpoints.up("md"))]);
+
+
 
   return (
     <>
@@ -133,28 +141,7 @@ const BlogPostItem = ({ blogPost }) => {
               position: "relative",
             }}
           >
-            {/* <IconButton
-              onClick={handleOnClick}
 
-              sx={{
-                position: "absolute",
-                right: 0,
-                top: "50%",
-                transform: "translate(0, -50%)",
-              }}
-            >
-              <AddIcon
-                sx={{
-                  color: "text.primary",
-                  fontSize: { md: "4rem" },
-                  transition: "all .7s",
-                  ":hover": {
-                    color: "secondary.main",
-                    transition: "all .7s",
-                  },
-                }}
-              />
-            </IconButton> */}
           </Grid>
         </Grid>
       </Grid>

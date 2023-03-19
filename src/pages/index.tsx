@@ -28,19 +28,18 @@ export default function Home() {
           overflowX: "hidden",
         }}
       >
-        <CustomNavbar />
+  <CustomNavbar />
 
         {!isNavbarMenuOpen && (
           <>
           <HeroArea />
-         <MyServices />
-            <WorkExperience />
+           <MyServices />
+       <WorkExperience />
 
             <PortfolioProjects />
             <QuoteSection />
 
-            <ContactMe />
-
+           <ContactMe />
             <Footer />
           </>
         )}

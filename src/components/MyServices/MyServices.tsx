@@ -1,26 +1,42 @@
-import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
+
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
+
 import Typography from "@mui/material/Typography";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import BodyWrapper from "../Common/BodyWrapper";
 import HighlightTypography from "../Common/HighlightTypography";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import Box from "@mui/material/Box";
 import DepthEllipse from "../BackgroundStyleComponets/DepthEllipse";
 import BgRings from "../BackgroundStyleComponets/BgRings";
-import React from "react";
+
 import { useMediaQuery, useTheme } from "@mui/material";
 import { CustomListItem } from "../Common/CustomListItem";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 const MyServices = () => {
   const theme = useTheme();
-  const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
-  const router = useRouter();
+
+
+  // TODO: This isa hack to fix an issue with the use MediaQuery hook
+  const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+    // noSsr: true,
+  });
+  const [isMdUpBreakpoint, setIsMdUpBreakpoint] = React.useState(true);
+
+  React.useEffect(() => {
+    setIsMdUpBreakpoint(initValue);
+  },[useMediaQuery(theme.breakpoints.up("md"))]);
+
+
+
+
+
+
+
+   const router = useRouter();
   const handleClick = () => {
     router.push("/#contact");
   };
@@ -46,39 +62,6 @@ const MyServices = () => {
 
   const contactBtnOnClick = handleClick;
 
-  const contactBtn = (
-    <PrimaryBtn
-      onClick={handleClick}
-      title={"CONTACT ME"}
-      sx={{
-        backgroundColor: "primary.main",
-        color: "background.default",
-        py: 2,
-        my: 8,
-        mr: 5,
-      }}
-    />
-  );
-
-  const mobileContactBtn = (
-    <PrimaryBtn
-      onClick={contactBtnOnClick}
-      title={"CONTACT ME"}
-      sx={{
-        backgroundColor: "primary.main",
-        color: "background.default",
-        py: 3,
-        my: 8,
-
-        width: "100%",
-        ":hover": {
-          color: "primary.main",
-        },
-      }}
-      showIndicator={true}
-      indicatorColor={"background.default"}
-    />
-  );
   return (
     <>
       <BodyWrapper>
@@ -134,7 +117,18 @@ const MyServices = () => {
                 </HighlightTypography>
               </Typography>
 
-              {isMdUpBreakpoint && contactBtn}
+              <PrimaryBtn
+                onClick={handleClick}
+                title={"CONTACT ME"}
+                sx={{
+                  backgroundColor: "primary.main",
+                  color: "background.default",
+                  py: 2,
+                  my: 8,
+                  mr: 5,
+                  display: isMdUpBreakpoint ? "inherit" : "None",
+                }}
+              />
             </Box>
 
             <Box
@@ -200,7 +194,25 @@ const MyServices = () => {
             </List>
           </Grid>
 
-          {!isMdUpBreakpoint && mobileContactBtn}
+          <PrimaryBtn
+            onClick={contactBtnOnClick}
+            title={"CONTACT ME"}
+            sx={{
+              backgroundColor: "primary.main",
+              color: "background.default",
+              py: 3,
+              my: 8,
+
+              width: "100%",
+              display: isMdUpBreakpoint ? "None" : "flex",
+
+              ":hover": {
+                color: "primary.main",
+              },
+            }}
+            showIndicator={true}
+            indicatorColor={"background.default"}
+          />
         </Grid>
       </BodyWrapper>
     </>

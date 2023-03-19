@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import React from "react";
+import React, { useState } from "react";
 import BodyWrapper from "../Common/BodyWrapper";
 import NavbarMenu from "./NavbarMenu";
 
@@ -28,15 +28,26 @@ export type voidFunc = () => void;
 
 export default function CustomNavbar() {
   const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
+  const theme = useTheme();
+
+
+  // TODO: This is a hack to fix an issue with the use MediaQuery hook
+  const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+    // noSsr: true,
+  });
+  const [isMdUpBreakpoint, setIsMdUpBreakpoint] = useState(true);
+
+  React.useEffect(() => {
+    setIsMdUpBreakpoint(initValue);
+  },[useMediaQuery(theme.breakpoints.up("md"))]);
+
+
+
+
   const router = useRouter();
   const pathname = usePathname();
 
-  const theme = useTheme();
-  const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
   const isHomePath = pathname == "/";
-  // const blog: voidFunc = () => {
-  // setIsNavbarMenuOpen((v) => !v);
-  // };
 
   const handleBlogClick = (routePath: string) => {
     const route = "/" + replaceAll(routePath.trim().toLowerCase(), " ", "-");
@@ -69,7 +80,7 @@ export default function CustomNavbar() {
             color: "text.primary",
             ":hover": {
               color: theme.palette.primary.main,
-              backgroundColor: "transparent"
+              backgroundColor: "transparent",
             },
             textAlign: "left",
             span: {
@@ -142,7 +153,7 @@ export default function CustomNavbar() {
 
           backgroundColor: "background.default",
           // position:"fixed",
-          px: 7,
+          px: 3,
 
           zIndex: 99_999,
         }}

@@ -29,7 +29,7 @@ const HeroBgImage = () => {
           left: "0%",
 
           [theme.breakpoints.down("md")]: {
-            top: "80%",
+            top: "25rem",
             mt: 20,
           },
         }}
@@ -42,6 +42,7 @@ const HeroBgImage = () => {
           viewport={{ once: true }}
           style={{
             width: "60%",
+
             [theme.breakpoints.down("lg")]: {
               width: "100%",
               position: "absolute",
@@ -75,9 +76,9 @@ const HeroBgImage = () => {
           fontWeight: 100,
 
           [theme.breakpoints.down("md")]: {
-            left: "0%",
+            left: "0rem",
             width: "100%",
-            top: "168%",
+            top: "51rem",
             right: "auto",
           },
         }}
@@ -97,7 +98,7 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "-2rem",
+          bottom: "1rem",
           left: "27%",
 
           [theme.breakpoints.down("md")]: {
@@ -158,13 +159,14 @@ const HeroFrontText = () => {
 
         fontWeight: 400,
         // fontSize: "128px",
+        // fontFamily: poppinsFont.style.fontFamily,
+
         fontStyle: "normal",
         lineHeight: "90%",
-        // fontFamily: poppinsFont.style.fontFamily,
         letterSpacing: "-0.05em",
 
         [theme.breakpoints.down("md")]: {
-          bottom: "10%",
+          top: "12rem",
           fontSize: "6rem",
           width: "100%",
         },
@@ -267,7 +269,7 @@ const HeroArea = () => {
           container
           xs={12}
           sx={{
-            height: "60vh",
+            height: "50rem",
             display: "flex",
             position: "relative",
             mt: 37,
@@ -292,7 +294,7 @@ const HeroArea = () => {
         <BgQuotes iconSize={120} />
       </Box>
 
-      <Box mb={{ lg: 60, xs: 75 }} />
+      <Box mb={{ lg: 15, xs: 25 }} />
       <CustomDivider
         sx={{
           my: 20,

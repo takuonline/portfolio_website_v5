@@ -106,7 +106,7 @@ const theme = useTheme();
       }}
     >
       <CustomNavbar />
-      <BodyWrapper>
+       <BodyWrapper>
         <Grid
           container
           mt={15}
@@ -160,7 +160,7 @@ const theme = useTheme();
             </Box>
           </Grid>
 
-          <Grid
+        <Grid
             item
             lg={6}
             mr={{ md: 9, xs: 0 }}

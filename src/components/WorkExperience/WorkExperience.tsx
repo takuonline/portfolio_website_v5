@@ -7,8 +7,6 @@ import { alpha, useTheme } from "@mui/material/styles";
 
 import SectionHeader from "../Common/SectionHeader";
 import Image from "next/image";
-
-import TextDivider from "../Common/TextDivider";
 import { motion } from "framer-motion";
 import CustomDivider from "../Common/CustomDivider";
 import ExperienceItem from "./ExperienceItem";

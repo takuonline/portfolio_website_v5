@@ -41,7 +41,7 @@ type CustomListItemType = {
           },
         }}
       >
-        <ListItem
+       <ListItem
           disablePadding
           // disableRipple
           // disableTouchRipple
@@ -51,6 +51,7 @@ type CustomListItemType = {
               color: "black",
               backgroundColor: "background.paper",
             },
+
 
             [theme.breakpoints.down("md")]: {
               ml: 0,
@@ -83,6 +84,7 @@ type CustomListItemType = {
           >
             <Typography
               variant="h3"
+              component={"span"}
               sx={{
                 [theme.breakpoints.down("md")]: {
                   typography: "h2",
@@ -93,6 +95,8 @@ type CustomListItemType = {
               {props.title}
             </Typography>
             <Typography
+                          component={"span"}
+
               sx={{
                 verticalAlign: "super",
 
@@ -126,6 +130,7 @@ type CustomListItemType = {
                   textAlign: "right",
 
                   color: isHover ? "black" : "None",
+
                 }}
                 color={"primary"}
                 fontSize={"large"}

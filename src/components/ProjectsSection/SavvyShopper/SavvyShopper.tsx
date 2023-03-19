@@ -3,20 +3,12 @@ import ProjectTextBox from "../ProjectTextBox";
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppImage from "../../Common/AppImage";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
-import TextDivider from "../../Common/TextDivider";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
-import { alpha, Divider, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import ProjectComponent from "../ProjectComponent";
-
-import CustomDivider from "@/components/Common/CustomDivider";
-import FrameType from "../../../common/enums/phone-frame";
-import IPhoneFrame from "../../Common/PhoneFrame";
-import { useEffect, useRef, useState } from "react";
-import ProjectTitleHeader from "../ProjectTitleHeader";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
 const SavvyShopper = (props: { index: number }) => {

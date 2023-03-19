@@ -4,9 +4,6 @@ import Typography from "@mui/material/Typography";
 import { SxProps, Theme, useTheme } from "@mui/material/styles";
 import { NavbarTitles, voidFunc } from "./CustomNavbar";
 
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
-import { CustomListItem } from "../Common/CustomListItem";
 import { MenuNavItem, NavbarItem } from "./NavbarItem";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 
@@ -69,7 +66,6 @@ const NavbarMenu = (props: {
           lg={3}
           xs={12}
           sx={{
-            height: "100vh",
             display: "flex",
             flexDirection: "column",
             alignItems: "start",
@@ -106,35 +102,7 @@ const NavbarMenu = (props: {
             />
           ))}
 
-          {/* <MenuNavItem
-            showNavbarMenu={props.showNavbarMenu}
-            title={NavbarTitles.home}
-            pageRoute={"/"}
-            idx={1}
-          />
 
-          <MenuNavItem
-            showNavbarMenu={props.showNavbarMenu}
-            title={NavbarTitles.experience}
-            idx={2}
-          />
-          <MenuNavItem
-            showNavbarMenu={props.showNavbarMenu}
-            title={NavbarTitles.myWork}
-          />
-
-          <MenuNavItem
-            showNavbarMenu={props.showNavbarMenu}
-            title={NavbarTitles.contact}
-            pageRoute={"/#contact"}
-          />
-
-          <MenuNavItem
-            showNavbarMenu={props.showNavbarMenu}
-            title={NavbarTitles.blog}
-            pageRoute={"/blog"}
-            isLast={true}
-          /> */}
         </Grid>
         <Grid
           item

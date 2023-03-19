@@ -13,7 +13,6 @@ import GoogleLensClone from "./GoogleLensClone/GoogleLensClone";
 import MobileEcommerceApp from "./MobileEcommerceApp/MobileEcommerceApp";
 import ReflectlyClone from "./ReflectlyClone/ReflectlyClone";
 import SavvyShopper from "./SavvyShopper/SavvyShopper";
-import TextDivider from "../Common/TextDivider";
 import HighlightTypography from "../Common/HighlightTypography";
 import { motion } from "framer-motion";
 import DepthEllipse from "../BackgroundStyleComponets/DepthEllipse";
