@@ -29,20 +29,26 @@ const ContactItem = (props: { title: string; href: string }) => {
 
         ":hover": {
           transition: transition,
-          backgroundColor: theme.palette.background.default,
-          color: "secondary.main",
+          // backgroundColor: theme.palette.background.default,
+          color: "primary.main",
           borderColor: theme.palette.secondary.main,
+          backgroundColor: "transparent",
         },
 
-        [theme.breakpoints.down("md")]: {
-
-        },
+        [theme.breakpoints.down("md")]: {},
       }}
     >
       <Typography
         variant="h3"
         sx={{
           color: theme.palette.text.primary,
+
+          ":hover": {
+            transition: transition,
+            backgroundColor: "transparent",
+            color: "primary.main",
+          },
+
           [theme.breakpoints.down("md")]: {
             typography: "h2",
           },
@@ -80,10 +86,6 @@ const ContactItem = (props: { title: string; href: string }) => {
           },
         }}
       /> */}
-
-
-
-
     </Button>
   );
 };

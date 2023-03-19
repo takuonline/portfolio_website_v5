@@ -47,6 +47,7 @@ const ReflectlyClone = (props: { index: number }) => {
                   lg: 3,
                   xs: 7,
                 }}
+
                 borderRadius={6}
                 sx={{
                   position: "absolute",
@@ -90,6 +91,7 @@ const ReflectlyClone = (props: { index: number }) => {
                   size={{
                     lg: 9,
                   }}
+                  frameHeight={"42.9rem"}
                 />
               </Box>
             }
@@ -127,6 +129,8 @@ develop something like this l would be able to do just about everything else.`}
               // md: 0,
               lg: 6,
             }}
+            showDivider={false}
+
           />
         </ProjectComponent>
       </BodyWrapper>

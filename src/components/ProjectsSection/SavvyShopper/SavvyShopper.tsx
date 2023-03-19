@@ -119,11 +119,12 @@ const SavvyShopper = (props: { index: number }) => {
                 src={"https://youtu.be/Z1sugeKre8I"}
                 alt={"Savvy shopper demo"}
                 size={AppVideoSize}
-                borderRadius={"1rem"}
+                // borderRadius={"1rem"}
                 sx={{
                   whiteSpace: "break-spaces",
                   wordBreak: "normal",
                 }}
+                frameHeight={"47.5rem"}
               />
             </motion.div>
           }
@@ -165,7 +166,7 @@ const SavvyShopper = (props: { index: number }) => {
             // xs: 0,
             // sm: 0,
             // md: 0,
-            lg: 4,
+            lg: 6,
           }}
         />
 
@@ -196,10 +197,8 @@ price of the products was cheaper/more expensive.
             </ProjectTextBox>
           }
           firstComponentScale={{
-            xs: 12,
-            md: 6,
-
             lg: 6,
+            xs: 12,
           }}
           secondComponent={
             <AppImage
@@ -208,10 +207,11 @@ price of the products was cheaper/more expensive.
               width={860}
               height={1656}
               size={AppImageSize}
+              frameHeight={"47.6rem"}
             />
           }
           secondComponentScale={{
-            // xs: 0,
+            xs: 12,
             // sm: 0,
             // md: 0,
             lg: 5,
@@ -242,7 +242,7 @@ price of the products was cheaper/more expensive.
             xs: 12,
             md: 6,
 
-            lg: 5,
+            lg: 4,
           }}
           secondComponent={
             <ProjectTextBox title={"Tech Stack"} size={TextBoxSize}>
@@ -262,7 +262,8 @@ price of the products was cheaper/more expensive.
             // xs: 0,
             // sm: 0,
             // md: 0,
-            lg: 6,
+            xs: 12,
+            lg: 7,
           }}
         />
 
@@ -330,11 +331,13 @@ price of the products was cheaper/more expensive.
                 sx={{
                   whiteSpace: "break-spaces",
                   wordBreak: "normal",
-                  width: { lg: "85%" },
+                  width: { lg: "65%" },
+                  mt:{lg:3}
                 }}
               >
                 {`
 - After the success of the savvy shopper mobile app l went on further to develop a chrome extension based on the same data from the mobile application.
+
 - This was mostly meant for people who preferred to do their shopping on a computer.
 `}
               </ProjectTextBox>
@@ -346,6 +349,7 @@ price of the products was cheaper/more expensive.
             // md: 0,
             lg: 12,
           }}
+          showDivider={false}
         />
       </ProjectComponent>
     </BodyWrapper>

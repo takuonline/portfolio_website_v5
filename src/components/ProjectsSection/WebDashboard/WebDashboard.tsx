@@ -321,6 +321,7 @@ like they have given customers a huge discounts  `}
                   alt=" Responsive React Dashboard "
                   size={{ xs: 12 }}
                   aspectRatio={1920 / 1202}
+                  borderRadius={5}
                 />
               </Box>
             }
@@ -392,6 +393,8 @@ like they have given customers a huge discounts  `}
               // md: 0,
               lg: 4,
             }}
+            showDivider={false}
+
           />
         </ProjectComponent>
       </BodyWrapper>

@@ -44,7 +44,7 @@ const GoogleLensClone = (props: { index: number }) => {
         bgImage={
           <Box
             sx={{
-              backgroundColor: "#000000aa",
+              backgroundColor: "#0B0B4555",
               width: "100%",
               height: "100%",
               borderRadius: 24,
@@ -54,6 +54,8 @@ const GoogleLensClone = (props: { index: number }) => {
               src={"https://youtube.com/shorts/d4Py46Wakw8"}
               alt={"Google lens clone "}
               aspectRatio={15 / 32}
+              // frameHeight={"35rem"}
+
               size={{
                 xs: 6,
                 lg: 2,
@@ -92,6 +94,7 @@ const GoogleLensClone = (props: { index: number }) => {
                 alt={"Google lens clone "}
                 aspectRatio={15 / 32}
                 size={AppVideoSize}
+                frameHeight={"51rem"}
               />
             </motion.div>
           }
@@ -218,6 +221,8 @@ Tech Stack:
             // md: 0,
             lg: 10,
           }}
+          showDivider={false}
+
         />
       </ProjectComponent>
     </BodyWrapper>

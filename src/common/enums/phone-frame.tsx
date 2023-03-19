@@ -1,4 +1,5 @@
 enum FrameType {
+  IphoneXLocal,
   IphoneX,
   Iphone,
   Note8,

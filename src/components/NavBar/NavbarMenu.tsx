@@ -3,19 +3,55 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { SxProps, Theme, useTheme } from "@mui/material/styles";
 import { NavbarTitles, voidFunc } from "./CustomNavbar";
-import NavbarItem from "./NavbarItem";
+
 import { useRouter } from "next/navigation";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
+import { CustomListItem } from "../Common/CustomListItem";
+import { MenuNavItem, NavbarItem } from "./NavbarItem";
+import { merriWeatherFont } from "@/common/themes/fonts/font";
+
+type NavbarMenuItemsType = {
+  title: string;
+
+  sx?: SxProps<Theme>;
+  onClick?: voidFunc;
+  showNavbarMenu?: voidFunc;
+  pageRoute?: string;
+  isLast?: boolean;
+  idx?: number;
+};
 
 const NavbarMenu = (props: {
   sx?: SxProps<Theme>;
   showNavbarMenu: voidFunc;
 }) => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const navbarMenuItems: NavbarMenuItemsType[] = [
+    {
+      showNavbarMenu: props.showNavbarMenu,
+      title: NavbarTitles.home,
+      pageRoute: "/",
+    },
+    {
+      showNavbarMenu: props.showNavbarMenu,
+      title: NavbarTitles.experience,
+    },
+    {
+      showNavbarMenu: props.showNavbarMenu,
+      title: NavbarTitles.myWork,
+    },
 
-  const navbarItemVariant = "h3";
-  const isBlogPath = pathname?.includes("/blog");
+    {
+      title: NavbarTitles.contact,
+      pageRoute: "/#contact",
+    },
+
+    {
+      showNavbarMenu: props.showNavbarMenu,
+      title: NavbarTitles.blog,
+      pageRoute: "/blog",
+      isLast: true,
+    },
+  ];
 
   return (
     <Paper
@@ -44,49 +80,61 @@ const NavbarMenu = (props: {
           }}
         >
           <Typography
-            variant={"body2"}
             sx={{
-              fontColor: "secondary.main",
+              typography: "h1",
+              color: "primary.main",
+              // fontStyle: "italic",
+              fontWeight: 500,
+              fontFamily:merriWeatherFont.style.fontFamily,
               p: 0,
               m: 0,
-              mb: 2,
+              mb: 5,
+              zIndex: 2,
             }}
           >
-            {"navigate"}
+            {"Menu"}
           </Typography>
 
-          <NavbarItem
+          {navbarMenuItems.map((v, idx) => (
+            <MenuNavItem
+              showNavbarMenu={v.showNavbarMenu}
+              title={v.title}
+              pageRoute={v.pageRoute}
+              idx={idx}
+              key={v.title}
+              isLast={ idx == (navbarMenuItems.length-1)}
+            />
+          ))}
+
+          {/* <MenuNavItem
             showNavbarMenu={props.showNavbarMenu}
             title={NavbarTitles.home}
-            variant={navbarItemVariant}
             pageRoute={"/"}
+            idx={1}
           />
 
-
-          <NavbarItem
+          <MenuNavItem
             showNavbarMenu={props.showNavbarMenu}
             title={NavbarTitles.experience}
-            variant={navbarItemVariant}
+            idx={2}
           />
-          <NavbarItem
+          <MenuNavItem
             showNavbarMenu={props.showNavbarMenu}
             title={NavbarTitles.myWork}
-            variant={navbarItemVariant}
           />
 
-          <NavbarItem
+          <MenuNavItem
             showNavbarMenu={props.showNavbarMenu}
             title={NavbarTitles.contact}
-            variant={navbarItemVariant}
             pageRoute={"/#contact"}
           />
 
-          <NavbarItem
+          <MenuNavItem
             showNavbarMenu={props.showNavbarMenu}
             title={NavbarTitles.blog}
-            variant={navbarItemVariant}
             pageRoute={"/blog"}
-          />
+            isLast={true}
+          /> */}
         </Grid>
         <Grid
           item

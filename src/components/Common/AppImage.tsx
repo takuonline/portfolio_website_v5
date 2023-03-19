@@ -3,13 +3,14 @@ import Image from "next/image";
 import { CSSProperties } from "react";
 import FrameType from "../../common/enums/phone-frame";
 import PhoneFrame from "./PhoneFrame";
+import iphoneStyles from "../../styles/iphone-frame.module.css";
 
 const AppImage = (props: {
   src: string;
   alt: string;
   borderRadius?: number | string;
   width?: number;
-  height?: number;
+  frameHeight?: number | string;
   maxHeight?: string;
   size?: { xs?: number; sm?: number; md?: number; lg?: number; xl?: number };
   sx?: SxProps<Theme>;
@@ -17,11 +18,13 @@ const AppImage = (props: {
   onClick?: () => void;
   showFrame?: boolean;
   frameType?: FrameType;
+  height?: number;
   // imageProps:ImageProps
 }) => {
   const size = props.size ?? { xs: 12 };
   return (
     <Grid
+      // className={iphoneStyles.iphone_x}
       container
       {...size}
       onClick={props.onClick}
@@ -29,21 +32,29 @@ const AppImage = (props: {
         ...props.sx,
       }}
     >
-      <PhoneFrame frameType={props.frameType} showFrame={props.showFrame}>
-        <Image
-          style={{
-            width: "100%",
-            height: "auto",
-            maxHeight: props.maxHeight ?? "none",
-            borderRadius: props.borderRadius ?? 10,
-            ...props.style,
-          }}
-          src={props.src}
-          alt={props.alt}
-          width={props.width ?? 500}
-          height={props.height ?? 800}
-          // {...imageProps}
-        />
+      <PhoneFrame
+        height={props.frameHeight}
+        frameType={props.frameType}
+        showFrame={props.showFrame}
+      >
+      <i></i>
+      <b></b>
+      <Image
+        style={{
+          width: "100%",
+          height: "auto",
+          maxHeight: props.maxHeight ?? "none",
+          borderRadius: props.borderRadius ?? 40,
+          ...props.style,
+
+          // margin:10,
+        }}
+        src={props.src}
+        alt={props.alt}
+        width={props.width ?? 500}
+        height={props.height ?? 800}
+        // {...imageProps}
+      />
       </PhoneFrame>
     </Grid>
   );

@@ -13,25 +13,26 @@ type ProjectWrapperType = {
   firstComponentScale: GridComponentSize;
   secondComponent: React.ReactNode;
   secondComponentScale: GridComponentSize;
-  showDivider?:boolean
+  showDivider?: boolean;
 };
 
 const ProjectSectionWrapper = (props: ProjectWrapperType) => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
-const showDivider = props.showDivider ?? true;
+  const showDivider = props.showDivider ?? true;
   return (
     <>
       <Grid
         container
         sx={{
-          mt: 10,
-          mx: {lg:15,xs:2},
-          width:  {lg:"100%",xs:"90%"},
-          mb: 10,
+          mx: { lg: 15, xs: 2 },
+          width: { lg: "100%", xs: "90%" },
+          my: 7,
         }}
-        columnGap={3}
+        columnGap={5}
+        // rowGap={20}
+        rowGap={{ xs: 4 }}
         xs={12}
       >
         <Grid
@@ -51,7 +52,7 @@ const showDivider = props.showDivider ?? true;
         </Grid>
 
         <Grid
-             xs={12}
+          xs={12}
           {...props.secondComponentScale}
           item
           columnGap={{ xs: 5, md: 0 }}
@@ -67,14 +68,14 @@ const showDivider = props.showDivider ?? true;
           {props.secondComponent}
         </Grid>
       </Grid>
-    { showDivider &&   <Divider
-      sx={{
-        width: "88%",
-        mx: "auto",
-
-      }}
-    />
-    }
+      {showDivider && (
+        <Divider
+          sx={{
+            width: "88%",
+            mx: "auto",
+          }}
+        />
+      )}
     </>
   );
 };

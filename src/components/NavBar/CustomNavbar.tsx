@@ -5,13 +5,14 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
 import BodyWrapper from "../Common/BodyWrapper";
 import NavbarMenu from "./NavbarMenu";
-import NavbarItem from "./NavbarItem";
+
 import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
 import useNavBar from "../../common/custom-hooks/useNavbar";
 import { usePathname } from "next/navigation";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import replaceAll from "@/common/utils/custom-replace-all";
+import { NavbarItem } from "./NavbarItem";
 
 const NavbarTitles = {
   home: "home",
@@ -57,15 +58,18 @@ export default function CustomNavbar() {
         <Button
           variant="text"
           onClick={() => router.push("/")}
+          disableElevation
+          disableRipple
           sx={{
-            borderRadius: "0",
-            p: 0,
+            borderRadius: 2,
+            // px: 1.5,
+            // py:0.5,
             m: 0,
             textTransform: "none",
             color: "text.primary",
             ":hover": {
-              color: theme.palette.secondary.main,
-              backgroundColor: theme.palette.background.default,
+              color: theme.palette.primary.main,
+              backgroundColor: "transparent"
             },
             textAlign: "left",
             span: {
@@ -135,6 +139,12 @@ export default function CustomNavbar() {
           opacity: isNavbarMenuOpen ? "1" : "0",
           visibility: isNavbarMenuOpen ? "visible" : "hidden",
           height: isNavbarMenuOpen ? "100%" : "0rem",
+
+          backgroundColor: "background.default",
+          // position:"fixed",
+          px: 7,
+
+          zIndex: 99_999,
         }}
       />
     </BodyWrapper>

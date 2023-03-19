@@ -151,6 +151,7 @@ const ProjectComponent = (props: ProjectComponentType) => {
           flexWrap: "wrap",
           width: "88%",
           justifyContent: "space-between",
+
           [theme.breakpoints.down("md")]: {
             width: "100%",
             mr: 0,

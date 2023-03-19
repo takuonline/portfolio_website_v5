@@ -8,16 +8,22 @@ import iphoneStyles from "../../styles/iphone-frame.module.css";
 const IPhoneXFrame = (props: {
   children: React.ReactNode;
   showFrame?: boolean;
+  height?:number|string;
 }) => {
   const showFrame = props.showFrame ?? true;
 
   const frame = (
-    <div className={iphoneStyles.iphone_x} style={{
-
-      width:"100%",
-      height:"100%",
-
-    }}>
+    <div
+      className={iphoneStyles.iphone_x}
+      style={{
+        width: "100%",
+        height:props.height ?? "100%",
+        // height: "49rem",
+        // border:"2rem solid red",
+        boxShadow: "0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111",
+        position: "relative",
+      }}
+    >
       <i> </i>
       <b> </b>
       {props.children}
@@ -105,6 +111,7 @@ const PhoneFrame = (props: {
   children: React.ReactNode;
   frameType?: FrameType;
   showFrame?: boolean;
+  height?:number|string;
 }) => {
   const theme = useTheme();
   const mdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
@@ -115,7 +122,7 @@ const PhoneFrame = (props: {
       return <IPhoneFrame showFrame={showFrame}>{props.children}</IPhoneFrame>;
     case FrameType.IphoneX:
       return (
-        <IPhoneXFrame showFrame={showFrame}>{props.children}</IPhoneXFrame>
+        <IPhoneXFrame height={props.height} showFrame={showFrame}>{props.children}</IPhoneXFrame>
       );
     case FrameType.Note8:
       return <Note8Frame showFrame={showFrame}>{props.children}</Note8Frame>;
@@ -125,7 +132,7 @@ const PhoneFrame = (props: {
       );
     default:
       return (
-        <IPhoneXFrame showFrame={showFrame}>{props.children}</IPhoneXFrame>
+        <IPhoneXFrame  height={props.height} showFrame={showFrame}>{props.children}</IPhoneXFrame>
       );
   }
 };

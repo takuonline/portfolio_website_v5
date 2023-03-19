@@ -10,7 +10,6 @@ const BgQuotes = (props: { iconSize: number }) => {
     <>
       <Box
         sx={{
-
           width: "100%",
           height: "100%",
           position: "relative",
@@ -57,8 +56,8 @@ looking backwards. `}
             variant="body2"
             sx={{
               position: "absolute",
-              top: "195%",
-              left: "35%",
+              top: "200%",
+              left: "40%",
               opacity: 0.5,
 
               [theme.breakpoints.down("md")]: {
@@ -80,7 +79,7 @@ looking backwards. `}
               opacity: 0.5,
               // width: "35%",
               whiteSpace: "break-spaces",
-              ml: 17,
+              ml: 35,
               mt: 2,
 
               [theme.breakpoints.down("md")]: {

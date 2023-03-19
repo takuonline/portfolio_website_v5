@@ -23,13 +23,13 @@ const ProjectTextBox = (props: {
         ...props.sx,
       }}
     >
-      <hr
+      {/* <hr
         style={{
           width: "100%",
           height: "1px",
           backgroundColor: theme.palette.text.primary,
         }}
-      />
+      /> */}
 
       <Typography
         variant="body2"

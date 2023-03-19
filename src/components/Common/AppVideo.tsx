@@ -12,8 +12,9 @@ import ReactPlayer from "react-player";
 import FrameType from "../../common/enums/phone-frame";
 import styles from "./../../styles/youtube-video.module.css";
 import PhoneFrame from "./PhoneFrame";
+import iphoneStyles from "../../styles/iphone-frame.module.css";
 
-const AppVideo = (props: {
+type AppVideoType = {
   src: string;
   alt: string;
   aspectRatio?: number;
@@ -22,7 +23,14 @@ const AppVideo = (props: {
   sx?: SxProps<Theme>;
   showFrame?: boolean;
   frameType?: FrameType;
-}) => {
+  height?: number | string;
+  frameHeight?: number | string;
+};
+const defaultProps = {
+  frameType: FrameType.IphoneXLocal,
+  showFrame: true,
+};
+const AppVideo = (props: AppVideoType) => {
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -30,15 +38,31 @@ const AppVideo = (props: {
     }
   }, []);
 
+  props = { ...defaultProps, ...props };
+
   const size = props.size ?? { xs: 12 };
+
+  const isLocalframeType = props.frameType == FrameType.IphoneXLocal;
+  const theme = useTheme();
+  const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Grid container {...size} sx={{ ...props.sx }}>
-      <PhoneFrame frameType={props.frameType} showFrame={props.showFrame}>
+      <PhoneFrame
+        height={props.frameHeight}
+        frameType={props.frameType}
+        showFrame={!isLocalframeType && props.showFrame}
+      >
         <Box
-          className={styles.youtubeContainer}
+          className={` ${styles.youtubeContainer}    ${
+            !isMobileView &&
+            isLocalframeType &&
+            props.showFrame &&
+            iphoneStyles.iphone_x
+          }   `}
           component={"span"}
           sx={{
-            borderRadius: props.borderRadius ?? 0,
+            borderRadius: props.borderRadius ?? 10,
           }}
         >
           {hasWindow && (

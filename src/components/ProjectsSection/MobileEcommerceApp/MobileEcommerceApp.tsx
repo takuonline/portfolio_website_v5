@@ -87,15 +87,16 @@ const MobileEcommerceApp = (props: { index: number }) => {
                 <AppVideo
                   src={"https://youtu.be/53kCtub7uek"}
                   alt={"Mobile Ecommerce App "}
-                  borderRadius={3}
+                  // borderRadius={3}
+                  frameHeight={"57rem"}
                 />
               </motion.div>
             }
             firstComponentScale={{
-              // xs: 0,
+              xs: 12,
               // sm: 0,
               // md: 0,
-              lg: 4,
+              lg: 3,
             }}
             secondComponent={
               <Typography
@@ -108,6 +109,7 @@ const MobileEcommerceApp = (props: { index: number }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   mt: 10,
+                  ml: { lg: 5, xs: 1 },
                 }}
               >
                 {`- This is the first application that l have ever build for mobile.
@@ -137,6 +139,7 @@ Features:
               // md: 0,
               lg: 6,
             }}
+            showDivider={false}
           />
         </ProjectComponent>
       </BodyWrapper>
