@@ -53,6 +53,7 @@ const GoogleLensClone = (props: { index: number }) => {
               src={"https://youtube.com/shorts/d4Py46Wakw8"}
               alt={"Google lens clone "}
               aspectRatio={15 / 32}
+              borderRadius={5}
               // frameHeight={"35rem"}
 
               size={{
@@ -62,10 +63,8 @@ const GoogleLensClone = (props: { index: number }) => {
               sx={{
                 width: "100%",
                 position: "absolute",
-                right: "23rem",
-
+                right: "22rem",
                 top: "5rem",
-
                 [theme.breakpoints.down("md")]: {
                   right: "25%",
                   top: "8rem",
@@ -165,7 +164,7 @@ This was one of my favourite "full stack machine learning" projects, in which I 
               </Typography>
               <iframe
                 style={{
-                  minHeight: "50vh",
+                  minHeight: isMobileView?"23rem": "40rem",
                   height: "auto",
                   width: "100%",
                   borderRadius: 15,

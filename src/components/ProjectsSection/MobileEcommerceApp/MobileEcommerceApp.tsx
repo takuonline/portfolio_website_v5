@@ -60,7 +60,7 @@ const MobileEcommerceApp = (props: { index: number }) => {
                 }}
                 sx={{
                   position: "absolute",
-                  right: "23rem",
+                  right: "22rem",
                   top: "23rem",
                   transform: "translate(0,-50%)",
                   [theme.breakpoints.down("md")]: {

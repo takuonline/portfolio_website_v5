@@ -82,7 +82,7 @@ const BlackFridayPlotlyDashboard = (props: { index: number }) => {
                   border: "5px solid white",
                   borderRadius: 1 * 3,
                   position: "absolute",
-                  right: "23rem",
+                  right: "22rem",
                   top: "6rem",
 
                   [theme.breakpoints.down("md")]: {

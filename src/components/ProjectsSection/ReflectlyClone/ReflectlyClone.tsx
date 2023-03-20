@@ -35,11 +35,11 @@ const ReflectlyClone = (props: { index: number }) => {
             <Box
               sx={{
                 // backgroundColor: " #0093E955",
-                backgroundImage:"linear-gradient(to bottom right,  #0093E9ff, #0093E977) ",
+                backgroundImage:
+                  "linear-gradient(to bottom right,  #0093E9ff, #0093E977) ",
+                boxShadow: "inset 0px 0px 0 2000px rgba(0,0,0,0.7)",
                 width: "100%",
                 height: "100%",
-                boxShadow: "inset 0px 0px 0 2000px rgba(0,0,0,0.7)"
-                // borderRadius: 24,
               }}
             >
               <AppVideo
@@ -49,11 +49,10 @@ const ReflectlyClone = (props: { index: number }) => {
                   lg: 2,
                   xs: 7,
                 }}
-
                 borderRadius={6}
                 sx={{
                   position: "absolute",
-                  right: "23rem",
+                  right: "22rem",
                   top: "6rem",
 
                   [theme.breakpoints.down("md")]: {
@@ -132,7 +131,6 @@ develop something like this l would be able to do just about everything else.`}
               lg: 6,
             }}
             showDivider={false}
-
           />
         </ProjectComponent>
       </BodyWrapper>

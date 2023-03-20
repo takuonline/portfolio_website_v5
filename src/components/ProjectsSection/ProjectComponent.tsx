@@ -113,7 +113,7 @@ const ProjectComponent = (props: ProjectComponentType) => {
         zIndex: 2,
         border: isExpanded
           ? (t) => `2px solid ${alpha(t.palette.common.white, 0.2)}`
-          :  `2px solid transparent`,
+          : `2px solid transparent`,
         borderRadius: borderRadius,
         mt: 10,
         [theme.breakpoints.down("md")]: {
@@ -130,6 +130,7 @@ const ProjectComponent = (props: ProjectComponentType) => {
           borderRadius: borderRadius,
 
           backgroundColor: "black",
+
 
           [theme.breakpoints.down("md")]: {
             borderRadius: borderRadiusMdDown,
@@ -183,9 +184,7 @@ const ProjectComponent = (props: ProjectComponentType) => {
               label={v}
               sx={{
                 borderColor: "text.primary",
-                m: {lg:1,xs:.5}
-
-
+                m: { lg: 1, xs: 0.5 },
               }}
             />
           ))}

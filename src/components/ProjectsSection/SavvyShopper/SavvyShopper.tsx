@@ -89,9 +89,7 @@ const SavvyShopper = (props: { index: number }) => {
             height={2812}
             width={5000}
             maxHeight={"90vh"}
-            // style={{
 
-            // }}
           />
         }
       >
@@ -199,7 +197,7 @@ price of the products was cheaper/more expensive.
               width={860}
               height={1656}
               size={AppImageSize}
-              frameHeight={"47.6rem"}
+
             />
           }
           secondComponentScale={{
@@ -324,7 +322,7 @@ price of the products was cheaper/more expensive.
                   whiteSpace: "break-spaces",
                   wordBreak: "normal",
                   width: { lg: "65%" },
-                  mt:{lg:3}
+                  mt: { lg: 3 },
                 }}
               >
                 {`
