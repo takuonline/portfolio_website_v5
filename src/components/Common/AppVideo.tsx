@@ -65,6 +65,8 @@ const AppVideo = (props: AppVideoType) => {
             borderRadius: props.borderRadius ?? 10,
           }}
         >
+          <i></i>
+          <b></b>
           {hasWindow && (
             <ReactPlayer
               // ref={props.ref}
