@@ -35,7 +35,9 @@ const TextSVGBackground = (props: {
 const QuoteSection = () => {
   const theme = useTheme();
   const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
-  const imageFactor = isMdUpBreakpoint ? 1 : 0.6;
+  const bgImageFactor = isMdUpBreakpoint ? 1 : 0.6;
+  const blobImageFactor = isMdUpBreakpoint ? 0.4 : 0.2;
+
   const router = useRouter();
   return (
     <>
@@ -53,25 +55,28 @@ const QuoteSection = () => {
         <BodyWrapper>
           <Box
             sx={{
+              position: "absolute",
+              top: "25rem",
+              left: "10rem",
+              zIndex: -1,
+
               [theme.breakpoints.down("md")]: {
                 position: "absolute",
-                left: "-2rem",
-                top: "20rem",
+                left: "-7rem",
+                top: "26rem",
               },
             }}
           >
             <Image
               src="/static/images/clay.png"
               alt="black blob complex "
-              width={1337 * imageFactor}
-              height={1104 * imageFactor}
+              width={1337 * bgImageFactor}
+              height={1104 * bgImageFactor}
               // width={3840 * 0.4}
               // height={2160 * 0.4}
               style={{
-                position: "absolute",
-                zIndex: -1,
-                top: "15%",
-                left: "10%",
+
+
               }}
             />
           </Box>
@@ -108,14 +113,45 @@ in the world.`}
             container
             sx={{
               position: "relative",
+              height: "45rem",
             }}
           >
-            <Grid item xs={12} md={7}></Grid>
+            <Grid
+              item
+              xs={12}
+              md={7}
+              sx={{
+                // width:"20rem",
+                // aspectRatio:2/4,
+                // bgColor: "red",
+
+                [theme.breakpoints.down("md")]: {
+                  position: "absolute",
+
+                  top: 430,
+                  // left: -320,
+                },
+              }}
+            >
+              <Image
+                src="/static/images/complex_blob.png"
+                alt="complex blob background decoration"
+                height={2160 * blobImageFactor}
+                width={3840 * blobImageFactor}
+                // fill
+                style={{
+                  position: "absolute",
+                  top: -190,
+                  left: -320,
+                }}
+              />
+            </Grid>
             <Grid item xs={12} md={5}>
               <Typography
                 variant={"body2"}
                 sx={{
                   color: "black",
+                  mt: 2,
                 }}
               >
                 {`Building innovative solutions can be a challenging and rewarding process.
@@ -133,6 +169,10 @@ in the world.`}
                   justifyContent: "center",
                   my: 12,
                   ml: { lg: "0", xs: "50%" },
+
+                  [theme.breakpoints.down("md")]: {
+                    mt: 44,
+                  },
                 }}
               >
                 <TextSVGBackground

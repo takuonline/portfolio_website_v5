@@ -36,11 +36,6 @@ const MyServices = () => {
   };
   const services = [
     {
-      title: "Data science",
-      onClick: handleClick,
-    },
-
-    {
       title: "Machine learning",
       onClick: handleClick,
     },
@@ -50,6 +45,10 @@ const MyServices = () => {
     },
     {
       title: "Backend development",
+      onClick: handleClick,
+    },
+    {
+      title: "Mobile development",
       onClick: handleClick,
     },
   ];
@@ -84,7 +83,7 @@ const MyServices = () => {
 
                 [theme.breakpoints.down("md")]: {
                   ml: -6,
-                  mb:3
+                  mb: 3,
                 },
               }}
             >
