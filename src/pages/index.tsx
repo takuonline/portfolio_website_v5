@@ -11,9 +11,10 @@ import useNavBar from "../common/custom-hooks/useNavbar";
 import Footer from "../components/Footer/Footer";
 import MyServices from "@/components/MyServices/MyServices";
 import QuoteSection from "@/components/QuoteSection/QuoteSection";
+import NavbarMenu from "@/components/NavBar/NavbarMenu";
 
 export default function Home() {
-  const [isNavbarMenuOpen, _] = useNavBar();
+  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
 
   return (
     <>
@@ -28,18 +29,21 @@ export default function Home() {
           overflowX: "hidden",
         }}
       >
-  <CustomNavbar />
+        <CustomNavbar
+          isNavbarMenuOpen={isNavbarMenuOpen}
+          showNavbarMenu={showNavbarMenu}
+        />
 
         {!isNavbarMenuOpen && (
           <>
-          <HeroArea />
-           <MyServices />
-       <WorkExperience />
+            <HeroArea />
+            <MyServices />
+            <WorkExperience />
 
             <PortfolioProjects />
             <QuoteSection />
 
-           <ContactMe />
+            <ContactMe />
             <Footer />
           </>
         )}

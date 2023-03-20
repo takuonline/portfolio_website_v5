@@ -108,7 +108,7 @@ const Title = () => {
       </SectionHeader>
 
       <InstructionText
-        title="20+ projects"
+        title="12+ projects"
         color={theme.palette.common.white}
         opacity={0.5}
       />

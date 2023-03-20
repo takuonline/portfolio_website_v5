@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin } from "react-icons/io5";
 import Box from "@mui/material/Box";
+import useNavBar from "@/common/custom-hooks/useNavbar";
 
 const ProjectBlogPage = ({ post: data }: Props) => {
   const [formattedDate, setFormattedDate] = useState<string>("");
@@ -68,6 +69,8 @@ const ProjectBlogPage = ({ post: data }: Props) => {
     },
   };
 
+  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
+
   if (!router.isFallback && !data?.mainImage) {
     return <ErrorPage statusCode={404} />;
   }
@@ -83,7 +86,10 @@ const ProjectBlogPage = ({ post: data }: Props) => {
             position: "relative",
           }}
         >
-          <CustomNavbar />{" "}
+     <CustomNavbar
+            isNavbarMenuOpen={isNavbarMenuOpen}
+            showNavbarMenu={showNavbarMenu}
+          />
           <BodyWrapper>
             <article>
               <Grid

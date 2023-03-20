@@ -19,6 +19,7 @@ import React, {
 } from "react";
 import * as postQueries from "../../common/utils/sanity-queries";
 import useNavBar from "../../common/custom-hooks/useNavbar";
+import NavbarMenu from "@/components/NavBar/NavbarMenu";
 
 type BlogPost = {
   title: string;
@@ -97,16 +98,41 @@ export default function Blog({ posts, processedCategories }: Props) {
 
     return catFilterResults;
   }, [searchInput, posts, categories]);
-const theme = useTheme();
+
+  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
+
+  const theme = useTheme();
   return (
+    <>
+    {/* {!isNavbarMenuOpen && (
+
+        )}
+      {isNavbarMenuOpen && (
+        <NavbarMenu
+          showNavbarMenu={showNavbarMenu}
+          isNavbarMenuOpen={isNavbarMenuOpen}
+          sx={{
+            transition: "visibility 0s, opacity 0.3s linear",
+            opacity: isNavbarMenuOpen ? "1" : "0",
+            visibility: isNavbarMenuOpen ? "visible" : "hidden",
+            height: isNavbarMenuOpen ? "100%" : "0rem",
+
+            backgroundColor: "background.default",
+            // position:"fixed",
+          }}
+        />
+      )} */}
     <Box
       sx={{
         zIndex: 2,
         position: "relative",
       }}
     >
-      <CustomNavbar />
-       <BodyWrapper>
+ <CustomNavbar
+            isNavbarMenuOpen={isNavbarMenuOpen}
+            showNavbarMenu={showNavbarMenu}
+          />
+      <BodyWrapper>
         <Grid
           container
           mt={15}
@@ -140,10 +166,9 @@ const theme = useTheme();
                 columnGap: 3,
                 rowGap: 2,
                 [theme.breakpoints.down("md")]: {
-                  rowGap:1,
+                  rowGap: 1,
                   columnGap: 1,
                 },
-
               }}
             >
               {categories &&
@@ -160,11 +185,11 @@ const theme = useTheme();
             </Box>
           </Grid>
 
-        <Grid
+          <Grid
             item
-            lg={6}
-            mr={{ md: 9, xs: 0 }}
-            mt={{ xs: 10, md: 0 }}
+            lg={7}
+            mr={{ md: 0, xs: 0 }}
+            mt={{ xs: 7, md: 0 }}
             xs={12}
           >
             {blogPosts &&
@@ -173,6 +198,8 @@ const theme = useTheme();
         </Grid>
       </BodyWrapper>
     </Box>
+    </>
+
   );
 }
 

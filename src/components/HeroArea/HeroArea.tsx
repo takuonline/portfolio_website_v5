@@ -11,6 +11,7 @@ import StarButton from "../Buttons/StarBtn";
 import BgRings from "../BackgroundStyleComponets/BgRings";
 import BgQuotes from "../BackgroundStyleComponets/BgQuotes";
 import CustomDivider from "../Common/CustomDivider";
+import { useRouter } from "next/navigation";
 
 // Only loads the YouTube player
 const HeroBgImage = () => {
@@ -92,6 +93,10 @@ const HeroBgImage = () => {
 };
 const BgDecorations = () => {
   const theme = useTheme();
+ const router = useRouter();
+  const handleClick = ()=>{
+    router.push("/#my-services");
+  }
 
   return (
     <>
@@ -109,7 +114,7 @@ const BgDecorations = () => {
         }}
       >
         <StarButton
-          onClick={() => {}}
+          onClick={handleClick}
           backgroundColor={theme.palette.primary.main}
           bgStarSize={150}
           sx={{}}
@@ -118,9 +123,10 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "0rem",          right: "0%",
+          top: "0rem",
+          right: "0%",
           [theme.breakpoints.down("md")]: {
-            right: "-20%",
+            right: "-10rem",
           },
         }}
       >
@@ -132,11 +138,10 @@ const BgDecorations = () => {
           position: "absolute",
           top: "0rem",
           right: "-7%",
-
+          zIndex: -1,
           [theme.breakpoints.down("md")]: {
             right: "-20%",
             top: "10%",
-            zIndex: -1,
           },
         }}
       >
@@ -157,8 +162,6 @@ const HeroFrontText = () => {
         fontSize: "8.5rem",
 
         fontWeight: 400,
-        // fontSize: "128px",
-        // fontFamily: poppinsFont.style.fontFamily,
 
         fontStyle: "normal",
         lineHeight: "90%",
@@ -204,7 +207,6 @@ const HeroInstructionText = () => {
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const delayFactor = isMobileView ? 0.3 : 1;
 
-
   // const containerAnimation = {
   //   initial:  {  opacity: 0, width: 0  },
   //   visible: {
@@ -246,7 +248,7 @@ const HeroInstructionText = () => {
           border: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
         }}
         viewport={{ once: true }}
-       />
+      />
 
       <Typography
         component={motion.div}
@@ -314,7 +316,7 @@ const HeroArea = () => {
       <Box mb={{ lg: 15, xs: 25 }} />
       <CustomDivider
         sx={{
-          my: 20,
+          my: 15,
         }}
       />
     </>

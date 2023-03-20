@@ -7,6 +7,7 @@ import BodyWrapper from "../Common/BodyWrapper";
 import Image from "next/image";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Theme, SxProps, useMediaQuery } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const TextSVGBackground = (props: {
   color: string | undefined;
@@ -35,6 +36,7 @@ const QuoteSection = () => {
   const theme = useTheme();
   const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
   const imageFactor = isMdUpBreakpoint ? 1 : 0.6;
+  const router = useRouter();
   return (
     <>
       <Paper
@@ -45,7 +47,7 @@ const QuoteSection = () => {
           zIndex: 1,
           overflow: "clip",
           pb: 15,
-          borderRadius:0
+          borderRadius: 0,
         }}
       >
         <BodyWrapper>
@@ -54,25 +56,25 @@ const QuoteSection = () => {
               [theme.breakpoints.down("md")]: {
                 position: "absolute",
                 left: "-2rem",
-                top:"20rem"
+                top: "20rem",
               },
             }}
           >
-          <Image
-            src="/static/images/clay.png"
-            alt="black blob complex "
-            width={1337 * imageFactor}
-            height={1104 * imageFactor}
-            // width={3840 * 0.4}
-            // height={2160 * 0.4}
-            style={{
-              position: "absolute",
-              zIndex: -1,
-              top: "15%",
-              left: "10%",
-            }}
-          />
-</Box>
+            <Image
+              src="/static/images/clay.png"
+              alt="black blob complex "
+              width={1337 * imageFactor}
+              height={1104 * imageFactor}
+              // width={3840 * 0.4}
+              // height={2160 * 0.4}
+              style={{
+                position: "absolute",
+                zIndex: -1,
+                top: "15%",
+                left: "10%",
+              }}
+            />
+          </Box>
           <Typography
             variant={"h1"}
             sx={{
@@ -139,6 +141,7 @@ in the world.`}
                 />
 
                 <IconButton
+                  onClick={() => router.push("/#contact")}
                   sx={{
                     position: "absolute",
                     backgroundColor: "background.default",
@@ -146,18 +149,16 @@ in the world.`}
                     px: 4,
                     py: 1,
                     top: "33%",
+                    color: "primary.main",
+
                     ":hover": {
-                      // color:   "background.default",
-                      // backgroundColor: "red",
+                      color: "background.default",
+                      border: "1px solid black",
+                      borderColor: "background.default",
                     },
                   }}
                 >
-                  <ArrowDownwardIcon
-                    fontSize="large"
-                    sx={{
-                      color: "primary.main",
-                    }}
-                  />
+                  <ArrowDownwardIcon fontSize="large" sx={{}} />
                 </IconButton>
               </Box>
             </Grid>

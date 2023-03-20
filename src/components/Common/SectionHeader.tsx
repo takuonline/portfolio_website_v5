@@ -29,7 +29,7 @@ const SectionHeader = (props: { children: React.ReactNode | string,  sx?: SxProp
         ml: 0,
         pl: 0,
         textAlign: "left",
-        fontSize: "7.6rem",
+
 
         opacity: 0.7,
 

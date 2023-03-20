@@ -47,7 +47,6 @@ const GoogleLensClone = (props: { index: number }) => {
               backgroundColor: "#0B0B4555",
               width: "100%",
               height: "100%",
-              borderRadius: 24,
             }}
           >
             <AppVideo
@@ -63,7 +62,8 @@ const GoogleLensClone = (props: { index: number }) => {
               sx={{
                 width: "100%",
                 position: "absolute",
-                right: "30%",
+                right: "23rem",
+
                 top: "5rem",
 
                 [theme.breakpoints.down("md")]: {
@@ -73,7 +73,6 @@ const GoogleLensClone = (props: { index: number }) => {
               }}
               showFrame={false}
             />
-            )
           </Box>
         }
       >
@@ -222,7 +221,6 @@ Tech Stack:
             lg: 10,
           }}
           showDivider={false}
-
         />
       </ProjectComponent>
     </BodyWrapper>

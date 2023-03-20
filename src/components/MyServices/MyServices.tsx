@@ -15,10 +15,10 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { CustomListItem } from "../Common/CustomListItem";
 import { useRouter } from "next/navigation";
 import React from "react";
+import SectionHeader from "../Common/SectionHeader";
 
 const MyServices = () => {
   const theme = useTheme();
-
 
   // TODO: This isa hack to fix an issue with the use MediaQuery hook
   const initValue = useMediaQuery(theme.breakpoints.up("md"), {
@@ -28,15 +28,9 @@ const MyServices = () => {
 
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
-  },[useMediaQuery(theme.breakpoints.up("md"))]);
+  }, [useMediaQuery(theme.breakpoints.up("md"))]);
 
-
-
-
-
-
-
-   const router = useRouter();
+  const router = useRouter();
   const handleClick = () => {
     router.push("/#contact");
   };
@@ -74,32 +68,30 @@ const MyServices = () => {
         >
           <Grid
             item
-            xs={5}
+            xs={12}
+            md={4}
             sx={{
               position: "relative",
               zIndex: 2,
             }}
           >
             <Box
-              width={"65%"}
+              width={"70%"}
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                // alignItems: "s",
+
+                [theme.breakpoints.down("md")]: {
+                  ml: -6,
+                  mb:3
+                },
               }}
             >
-              <Typography
-                variant={"h1"}
-                // typography={{ xs:"h1"}}
+              <SectionHeader
+                id="my-services"
                 sx={{
-                  ml: 7,
-                  [theme.breakpoints.down("md")]: {
-                    typography: "h1",
-
-                    ml: 0,
-                    mb: 3,
-                  },
+                  ml: 6,
                 }}
               >
                 {`My `}
@@ -107,7 +99,7 @@ const MyServices = () => {
 
                 <HighlightTypography
                   sx={{
-                    textIndent: "-4rem",
+                    textIndent: "-3rem",
                     [theme.breakpoints.down("md")]: {
                       textIndent: "0rem",
                     },
@@ -115,7 +107,7 @@ const MyServices = () => {
                 >
                   {"services"}
                 </HighlightTypography>
-              </Typography>
+              </SectionHeader>
 
               <PrimaryBtn
                 onClick={handleClick}
@@ -125,7 +117,7 @@ const MyServices = () => {
                   color: "background.default",
                   py: 2,
                   my: 8,
-                  mr: 5,
+
                   display: isMdUpBreakpoint ? "inherit" : "None",
                 }}
               />
@@ -136,6 +128,10 @@ const MyServices = () => {
                 position: "absolute",
                 top: "15%",
                 right: "10%",
+                [theme.breakpoints.down("md")]: {
+                  left: "-50%",
+                  top: "-90%",
+                },
               }}
             >
               <DepthEllipse size={"556px"} />
@@ -149,8 +145,8 @@ const MyServices = () => {
                 transform: "rotate(40deg)",
                 zIndex: -1,
                 [theme.breakpoints.down("md")]: {
-                  left: "160%",
-                  top: "-40%",
+                  left: "60%",
+                  top: "20%",
                 },
               }}
             >
@@ -165,8 +161,8 @@ const MyServices = () => {
                 transform: "rotate(80deg)",
                 zIndex: -1,
                 [theme.breakpoints.down("md")]: {
-                  left: "200%",
-                  top: "50%",
+                  left: "60%",
+                  top: "120%",
                 },
               }}
             >
@@ -174,7 +170,7 @@ const MyServices = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={8}>
             <List
               sx={{
                 width: "100%",

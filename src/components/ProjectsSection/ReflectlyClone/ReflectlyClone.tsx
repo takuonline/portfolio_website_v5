@@ -34,9 +34,11 @@ const ReflectlyClone = (props: { index: number }) => {
           bgImage={
             <Box
               sx={{
-                backgroundColor: "#0093E955",
+                // backgroundColor: " #0093E955",
+                backgroundImage:"linear-gradient(to bottom right,  #0093E9ff, #0093E977) ",
                 width: "100%",
                 height: "100%",
+                boxShadow: "inset 0px 0px 0 2000px rgba(0,0,0,0.7)"
                 // borderRadius: 24,
               }}
             >
@@ -44,15 +46,15 @@ const ReflectlyClone = (props: { index: number }) => {
                 src={"https://youtu.be/0EfVCwQ4dFQ"}
                 alt={"Mobile Ecommerce App "}
                 size={{
-                  lg: 3,
+                  lg: 2,
                   xs: 7,
                 }}
 
                 borderRadius={6}
                 sx={{
                   position: "absolute",
-                  right: "25%",
-                  top: "1rem",
+                  right: "23rem",
+                  top: "6rem",
 
                   [theme.breakpoints.down("md")]: {
                     right: "20%",

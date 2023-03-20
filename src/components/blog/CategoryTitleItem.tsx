@@ -43,6 +43,7 @@ const CategoryTitleItem = (props: {
           mx: 1,
           borderRadius: "50%",
           opacity: props.isSelected ? 1 : 0,
+          display: props.isSelected ? "flex" : "none",
           [theme.breakpoints.down("md")]: {
             borderRadius: "4rem",
             display: props.isSelected ? "auto" : "none"

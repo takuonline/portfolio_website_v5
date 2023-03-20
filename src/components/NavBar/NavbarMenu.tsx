@@ -2,10 +2,13 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { SxProps, Theme, useTheme } from "@mui/material/styles";
-import { NavbarTitles, voidFunc } from "./CustomNavbar";
+import CustomNavbar, { NavbarTitles, voidFunc } from "./CustomNavbar";
 
 import { MenuNavItem, NavbarItem } from "./NavbarItem";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
+import NoiseAnimation from "@/common/animations/NoiseAnimation";
+import { Box } from "@mui/material";
+import PrimaryBtn from "../Buttons/PrimaryBtn";
 
 type NavbarMenuItemsType = {
   title: string;
@@ -21,7 +24,10 @@ type NavbarMenuItemsType = {
 const NavbarMenu = (props: {
   sx?: SxProps<Theme>;
   showNavbarMenu: voidFunc;
+  isNavbarMenuOpen: boolean;
 }) => {
+  const { showNavbarMenu, isNavbarMenuOpen } = props;
+
   const navbarMenuItems: NavbarMenuItemsType[] = [
     {
       showNavbarMenu: props.showNavbarMenu,
@@ -38,6 +44,8 @@ const NavbarMenu = (props: {
     },
 
     {
+      showNavbarMenu: props.showNavbarMenu,
+
       title: NavbarTitles.contact,
       pageRoute: "/#contact",
     },
@@ -51,69 +59,86 @@ const NavbarMenu = (props: {
   ];
 
   return (
-    <Paper
-      sx={{
-        width: "100%",
-        height: "100%",
-        p: 0,
-        m: 0,
-        ...props.sx,
-      }}
-    >
-      <Grid container>
-        <Grid
-          item
-          lg={3}
-          xs={12}
+    <>
+      <Paper
+        sx={{
+          width: "100%",
+          height: "100%",
+          py: 15,
+          m: 0,
+          // borderRadius: 20,
+          position: "fixed",
+          backgroundColor: "background.default",
+           px: 3,
+          overflowY: "scroll",
+
+          zIndex:99,
+          ...props.sx,
+        }}
+      >
+        <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-            rowGap: { lg: 2, xs: 1 },
-            p: 0,
-            m: 0,
-            my: 20,
+            zIndex: 100,
+            // backgroundColor:"red",
+            position: "absolute",
+            width: "100%",
+
+            top: 0,
+            left: 0,
           }}
         >
-          <Typography
+          {/* <CustomNavbar
+            isNavbarMenuOpen={props.isNavbarMenuOpen}
+            showNavbarMenu={props.showNavbarMenu}
+          /> */}
+        </Box>
+        <NoiseAnimation />
+
+        <Grid container>
+          <Grid
+            item
+            lg={3}
+            xs={12}
             sx={{
-              typography: "h1",
-              color: "primary.main",
-              // fontStyle: "italic",
-              fontWeight: 500,
-              fontFamily:merriWeatherFont.style.fontFamily,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "start",
+              rowGap: { lg: 2, xs: 1 },
               p: 0,
               m: 0,
-              mb: 5,
-              zIndex: 2,
             }}
           >
-            {"Menu"}
-          </Typography>
+            <Typography
+              sx={{
+                typography: "h1",
+                color: "primary.main",
+                // fontStyle: "italic",
+                fontWeight: 500,
+                fontFamily: merriWeatherFont.style.fontFamily,
+                p: 0,
+                m: 0,
+                mb: 5,
+                zIndex: 2,
+              }}
+            >
+              {"Menu"}
+            </Typography>
 
-          {navbarMenuItems.map((v, idx) => (
-            <MenuNavItem
-              showNavbarMenu={v.showNavbarMenu}
-              title={v.title}
-              pageRoute={v.pageRoute}
-              idx={idx}
-              key={v.title}
-              isLast={ idx == (navbarMenuItems.length-1)}
-            />
-          ))}
-
-
+            {navbarMenuItems.map((v, idx) => (
+              <MenuNavItem
+                showNavbarMenu={v.showNavbarMenu}
+                title={v.title}
+                pageRoute={v.pageRoute}
+                idx={idx}
+                key={v.title}
+                isLast={idx == navbarMenuItems.length - 1}
+              />
+            ))}
+          </Grid>
+          <Grid item lg={9} xs={0} sx={{}}></Grid>
         </Grid>
-        <Grid
-          item
-          lg={9}
-          xs={0}
-          sx={{
-            height: "100vh",
-          }}
-        ></Grid>
-      </Grid>
-    </Paper>
+      </Paper>
+    </>
   );
 };
 

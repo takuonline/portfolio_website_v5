@@ -52,7 +52,7 @@ const MobileEcommerceApp = (props: { index: number }) => {
             >
               <AppVideo
                 src={"https://youtu.be/53kCtub7uek"}
-                alt={"Mobile Ecommerce App "}
+                alt={"Mobile Ecommerce video showcase "}
                 borderRadius={3}
                 size={{
                   xs: 7,
@@ -60,7 +60,7 @@ const MobileEcommerceApp = (props: { index: number }) => {
                 }}
                 sx={{
                   position: "absolute",
-                  right: "25%",
+                  right: "23rem",
                   top: "23rem",
                   transform: "translate(0,-50%)",
                   [theme.breakpoints.down("md")]: {

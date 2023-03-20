@@ -49,7 +49,7 @@ const BlogPostItem = ({ blogPost }) => {
         container
         rowGap={4}
         columnGap={{ lg: 2 }}
-        mb={{ md: 15, xs: 6 }}
+        mb={{ md: 10, xs: 6 }}
         sx={{
           display: "flex",
           borderRadius: "8rem",
