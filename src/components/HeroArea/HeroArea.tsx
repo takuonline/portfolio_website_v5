@@ -229,7 +229,7 @@ const HeroInstructionText = () => {
       sx={{
         display: "flex",
         position: "absolute",
-        right: "-5rem",
+        right: "1rem",
         bottom: "6.5rem",
 
         alignItems: "center",
