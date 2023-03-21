@@ -69,10 +69,10 @@ const NavbarMenu = (props: {
           // borderRadius: 20,
           position: "fixed",
           backgroundColor: "background.default",
-           px: 3,
+          px: 3,
           overflowY: "scroll",
 
-          zIndex:99,
+          zIndex: 99,
           ...props.sx,
         }}
       >
@@ -86,12 +86,7 @@ const NavbarMenu = (props: {
             top: 0,
             left: 0,
           }}
-        >
-          {/* <CustomNavbar
-            isNavbarMenuOpen={props.isNavbarMenuOpen}
-            showNavbarMenu={props.showNavbarMenu}
-          /> */}
-        </Box>
+        ></Box>
         <NoiseAnimation />
 
         <Grid container>

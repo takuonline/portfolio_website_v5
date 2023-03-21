@@ -21,7 +21,7 @@ const SocialMediaInfo = {
     number:"0676522180"
   },
   github:{
-    url: "https://twitter.com/takuonline",
+    url: "https://github.com/takuonline",
   }
 };
 
