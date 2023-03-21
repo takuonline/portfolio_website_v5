@@ -93,10 +93,10 @@ const HeroBgImage = () => {
 };
 const BgDecorations = () => {
   const theme = useTheme();
- const router = useRouter();
-  const handleClick = ()=>{
+  const router = useRouter();
+  const handleClick = () => {
     router.push("/#my-services");
-  }
+  };
 
   return (
     <>
@@ -229,7 +229,8 @@ const HeroInstructionText = () => {
       sx={{
         display: "flex",
         position: "absolute",
-        right: "5rem",
+        right: "-5rem",
+        bottom: "6.5rem",
 
         alignItems: "center",
         [theme.breakpoints.down("md")]: {
@@ -278,11 +279,7 @@ const HeroArea = () => {
   return (
     <>
       <BodyWrapper
-        sx={
-          {
-            // overflowX: "hidden",
-          }
-        }
+
       >
         <Grid
           container
@@ -304,9 +301,9 @@ const HeroArea = () => {
           <HeroBgImage />
 
           <BgDecorations />
-        </Grid>
 
-        <HeroInstructionText />
+          <HeroInstructionText />
+        </Grid>
       </BodyWrapper>
 
       <Box sx={{ position: "relative" }}>

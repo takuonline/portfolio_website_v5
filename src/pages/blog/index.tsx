@@ -20,6 +20,7 @@ import React, {
 import * as postQueries from "../../common/utils/sanity-queries";
 import useNavBar from "../../common/custom-hooks/useNavbar";
 import NavbarMenu from "@/components/NavBar/NavbarMenu";
+import Container from "@mui/material/Container";
 
 type BlogPost = {
   title: string;
@@ -99,12 +100,10 @@ export default function Blog({ posts, processedCategories }: Props) {
     return catFilterResults;
   }, [searchInput, posts, categories]);
 
-  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
-
   const theme = useTheme();
   return (
     <>
-    {/* {!isNavbarMenuOpen && (
+      {/* {!isNavbarMenuOpen && (
 
         )}
       {isNavbarMenuOpen && (
@@ -122,84 +121,88 @@ export default function Blog({ posts, processedCategories }: Props) {
           }}
         />
       )} */}
-    <Box
-      sx={{
-        zIndex: 2,
-        position: "relative",
-      }}
-    >
- <CustomNavbar
-            isNavbarMenuOpen={isNavbarMenuOpen}
-            showNavbarMenu={showNavbarMenu}
-          />
-      <BodyWrapper>
-        <Grid
-          container
-          mt={15}
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <Grid item lg={4} xs={12}>
-            <Typography variant="h1" mb={{ xs: 5 }}>
-              <HighlightTypography
-                backgroundSize="auto 25%"
-                backgroundPosition="10% 100%"
-              >
-                {"Blog"}
-              </HighlightTypography>
-            </Typography>
-
-            <Typography variant={"body2"} sx={{}}>
-              {`Here l aim to document my thoughts, failures, and journey as I continue to grow and develop as a human being.`}
-              <br />
-              {`Through my writing, I hope to share my experiences and insights with others, in the hopes of fostering personal growth and self-improvement.`}
-            </Typography>
-
-            <BlogSearchBar value={searchInput} handleOnChange={handleSearch} />
-
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                columnGap: 3,
-                rowGap: 2,
-                [theme.breakpoints.down("md")]: {
-                  rowGap: 1,
-                  columnGap: 1,
-                },
-              }}
-            >
-              {categories &&
-                categories.map((v) => {
-                  return (
-                    <CategoryTitleItem
-                      key={v.title}
-                      title={v.title}
-                      isSelected={v.isSelected}
-                      onSelect={handleFilterCategories}
-                    />
-                  );
-                })}
-            </Box>
-          </Grid>
-
+      <Box
+        sx={{
+          zIndex: 2,
+          position: "relative",
+        }}
+      >
+        {/* <CustomNavbar
+          isNavbarMenuOpen={isNavbarMenuOpen}
+          showNavbarMenu={showNavbarMenu}
+        /> */}
+        <BodyWrapper>
           <Grid
-            item
-            lg={7}
-            mr={{ md: 0, xs: 0 }}
-            mt={{ xs: 7, md: 0 }}
-            xs={12}
+            container
+            mt={15}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
           >
-            {blogPosts &&
-              blogPosts.map((v) => <BlogPostItem key={v.title} blogPost={v} />)}
-          </Grid>
-        </Grid>
-      </BodyWrapper>
-    </Box>
-    </>
+            <Grid item lg={4} xs={12}>
+              <Typography variant="h1" mb={{ xs: 5 }}>
+                <HighlightTypography
+                  backgroundSize="auto 25%"
+                  backgroundPosition="10% 100%"
+                >
+                  {"Blog"}
+                </HighlightTypography>
+              </Typography>
 
+              <Typography variant={"body2"} sx={{}}>
+                {`Here l aim to document my thoughts, failures, and journey as I continue to grow and develop as a human being.`}
+                <br />
+                {`Through my writing, I hope to share my experiences and insights with others, in the hopes of fostering personal growth and self-improvement.`}
+              </Typography>
+
+              <BlogSearchBar
+                value={searchInput}
+                handleOnChange={handleSearch}
+              />
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  columnGap: 3,
+                  rowGap: 2,
+                  [theme.breakpoints.down("md")]: {
+                    rowGap: 1,
+                    columnGap: 1,
+                  },
+                }}
+              >
+                {categories &&
+                  categories.map((v) => {
+                    return (
+                      <CategoryTitleItem
+                        key={v.title}
+                        title={v.title}
+                        isSelected={v.isSelected}
+                        onSelect={handleFilterCategories}
+                      />
+                    );
+                  })}
+              </Box>
+            </Grid>
+
+            <Grid
+              item
+              lg={7}
+              mr={{ md: 0, xs: 0 }}
+              mt={{ xs: 7, md: 0 }}
+              xs={12}
+            >
+              {blogPosts &&
+                blogPosts.map((v) => (
+                  <BlogPostItem key={v.title} blogPost={v} />
+                ))}
+            </Grid>
+          </Grid>
+        </BodyWrapper>
+      </Box>
+    </>
   );
 }
 

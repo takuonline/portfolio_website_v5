@@ -12,9 +12,10 @@ import Footer from "../components/Footer/Footer";
 import MyServices from "@/components/MyServices/MyServices";
 import QuoteSection from "@/components/QuoteSection/QuoteSection";
 import NavbarMenu from "@/components/NavBar/NavbarMenu";
+import Container from "@mui/material/Container";
 
-export default function Home() {
-  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
+export default function Home(props: { isNavbarMenuOpen: boolean }) {
+  // const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
 
   return (
     <>
@@ -29,12 +30,12 @@ export default function Home() {
           overflowX: "hidden",
         }}
       >
-        <CustomNavbar
-          isNavbarMenuOpen={isNavbarMenuOpen}
-          showNavbarMenu={showNavbarMenu}
-        />
+        {/* <CustomNavbar
+            isNavbarMenuOpen={isNavbarMenuOpen}
+            showNavbarMenu={showNavbarMenu}
+          /> */}
 
-        {!isNavbarMenuOpen && (
+        {!props.isNavbarMenuOpen && (
           <>
             <HeroArea />
             <MyServices />

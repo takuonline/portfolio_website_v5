@@ -18,6 +18,7 @@ import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin } from "react-icons/io5";
 import Box from "@mui/material/Box";
 import useNavBar from "@/common/custom-hooks/useNavbar";
+import Container from "@mui/material/Container";
 
 const ProjectBlogPage = ({ post: data }: Props) => {
   const [formattedDate, setFormattedDate] = useState<string>("");
@@ -69,14 +70,13 @@ const ProjectBlogPage = ({ post: data }: Props) => {
     },
   };
 
-  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
 
   if (!router.isFallback && !data?.mainImage) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <>
+    < >
       {router.isFallback && fallBackItem}
 
       {!router.isFallback && (
@@ -86,10 +86,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
             position: "relative",
           }}
         >
-     <CustomNavbar
-            isNavbarMenuOpen={isNavbarMenuOpen}
-            showNavbarMenu={showNavbarMenu}
-          />
+
           <BodyWrapper>
             <article>
               <Grid
@@ -104,7 +101,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                 rowGap={{ md: 20 }}
               >
                 <Grid item md={4}>
-                  <Typography variant={"h3"}>{data.title}</Typography>
+                  <Typography variant={"h3"} >{data.title}</Typography>
 
                   <Typography
                     variant={"body2"}
@@ -203,7 +200,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                     // textAlign: "right",
                   }}
                 >
-                  <Typography variant="body2">{formattedDate}</Typography>
+                  <Typography variant="body2" >{formattedDate}</Typography>
                 </Grid>
 
                 <Grid
