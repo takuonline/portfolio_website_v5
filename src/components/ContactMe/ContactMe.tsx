@@ -105,6 +105,7 @@ const ContactMe = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 mt: 8,
+
                 [theme.breakpoints.down("md")]: {
                   flexWrap: "wrap",
                 },
@@ -119,6 +120,8 @@ const ContactMe = () => {
                 href={SocialMediaInfo.twitter.url}
               />
               <ContactItem title={"Github"} href={SocialMediaInfo.github.url} />
+
+
             </Grid>
           </Grid>
 

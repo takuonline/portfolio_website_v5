@@ -8,8 +8,8 @@ import BodyWrapper from "../Common/BodyWrapper";
 import HighlightTypography from "../Common/HighlightTypography";
 
 import Box from "@mui/material/Box";
-import DepthEllipse from "../BackgroundStyleComponets/DepthEllipse";
-import BgRings from "../BackgroundStyleComponets/BgRings";
+import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
+import BgRings from "../BackgroundStyleComponents/BgRings";
 
 import { useMediaQuery, useTheme } from "@mui/material";
 import { CustomListItem } from "../Common/CustomListItem";

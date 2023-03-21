@@ -85,7 +85,9 @@ type CustomListItemType = {
             <Typography
               variant="h3"
               component={"span"}
+
               sx={{
+
                 [theme.breakpoints.down("md")]: {
                   typography: "h2",
                   fontWeight: 500,

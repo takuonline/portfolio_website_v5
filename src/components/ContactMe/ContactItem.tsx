@@ -1,4 +1,4 @@
-import { alpha, useTheme } from "@mui/material";
+import { alpha, Box, useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
@@ -8,6 +8,15 @@ const ContactItem = (props: { title: string; href: string }) => {
   const transition = `all ${theme.transitions.duration.standard} ease`;
 
   return (
+
+    <Box sx={{
+
+      [theme.breakpoints.down("lg")]: {
+        mr:10
+
+      },
+    }}>
+
     <Button
       variant="text"
       href={props.href}
@@ -17,10 +26,10 @@ const ContactItem = (props: { title: string; href: string }) => {
       sx={{
         borderRadius: "0",
         p: 0,
-
         textTransform: "none",
         transition: transition,
         posiiton: "relative",
+
         span: {
           display: "none",
         },
@@ -35,7 +44,9 @@ const ContactItem = (props: { title: string; href: string }) => {
           backgroundColor: "transparent",
         },
 
-        [theme.breakpoints.down("md")]: {},
+        [theme.breakpoints.down("lg")]: {
+          // mr: 10,
+        },
       }}
     >
       <Typography
@@ -51,6 +62,7 @@ const ContactItem = (props: { title: string; href: string }) => {
 
           [theme.breakpoints.down("md")]: {
             typography: "h2",
+
           },
         }}
       >
@@ -63,6 +75,8 @@ const ContactItem = (props: { title: string; href: string }) => {
             [theme.breakpoints.down("md")]: {
               right: "-26%",
               // position: "relative",
+
+
             },
           }}
         />
@@ -87,6 +101,8 @@ const ContactItem = (props: { title: string; href: string }) => {
         }}
       /> */}
     </Button>
+    </Box>
+
   );
 };
 export default ContactItem;

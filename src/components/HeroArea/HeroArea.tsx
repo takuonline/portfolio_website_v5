@@ -6,10 +6,10 @@ import React from "react";
 
 import BodyWrapper from "../Common/BodyWrapper";
 import { motion } from "framer-motion";
-import DepthEllipse from "../BackgroundStyleComponets/DepthEllipse";
+import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
 import StarButton from "../Buttons/StarBtn";
-import BgRings from "../BackgroundStyleComponets/BgRings";
-import BgQuotes from "../BackgroundStyleComponets/BgQuotes";
+import BgRings from "../BackgroundStyleComponents/BgRings";
+import HeroAreaQuote from "../BackgroundStyleComponents/HeroAreaQuote";
 import CustomDivider from "../Common/CustomDivider";
 import { useRouter } from "next/navigation";
 
@@ -26,12 +26,18 @@ const HeroBgImage = () => {
         xs={12}
         sx={{
           position: "absolute",
-          top: "38%",
+          top: "18rem",
           left: "0%",
-
+          [theme.breakpoints.down("lg")]: {
+            top: "15rem",
+          },
           [theme.breakpoints.down("md")]: {
-            top: "25rem",
-            mt: 20,
+            top: "40rem",
+
+          },
+          [theme.breakpoints.down("sm")]: {
+            top: "35rem",
+
           },
         }}
       >
@@ -68,22 +74,31 @@ const HeroBgImage = () => {
 
       <Typography
         component={"span"}
+        variant={"body2"}
         sx={{
           position: "absolute",
-          top: "36rem",
-          right: "19%",
+          top: "31.5rem",
+          right: "15rem",
           width: "40%",
           color: "primary.main",
           fontWeight: 100,
-
+          [theme.breakpoints.down("lg")]: {
+            left: "33rem",
+            width: "45%",
+          },
           [theme.breakpoints.down("md")]: {
+            left: "0rem",
+            width: "100%",
+            top: "60rem",
+            right: "auto",
+          },
+          [theme.breakpoints.down("sm")]: {
             left: "0rem",
             width: "100%",
             top: "51rem",
             right: "auto",
           },
         }}
-        variant={"body2"}
       >
         {`A Data scientist and Software engineer bridging the Gap Between Data and Technology.
            Using AI and Code to create innovative solutions that solve real world problems`}
@@ -103,13 +118,19 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "2rem",
-          left: "27%",
-
+          bottom: "6rem",
+          left: "20rem",
+          [theme.breakpoints.down("lg")]: {
+            bottom: "7rem",
+          },
           [theme.breakpoints.down("md")]: {
-            top: "30rem",
-            left: "auto",
-            right: "10%",
+            top: "35rem",
+            left: "20rem",
+          },
+
+          [theme.breakpoints.down("sm")]: {
+            top: "31rem",
+            left: "15rem",
           },
         }}
       >
@@ -155,20 +176,25 @@ const HeroFrontText = () => {
 
   return (
     <Typography
+      // variant="h1"
       sx={{
         position: "absolute",
-        bottom: "72%",
-        left: "0%",
-        fontSize: "8.5rem",
-
+        top: "0rem",
+        left: "0rem",
+        fontSize: "7.2rem",
+        width: "100%",
         fontWeight: 400,
 
         fontStyle: "normal",
         lineHeight: "90%",
         letterSpacing: "-0.05em",
 
+        [theme.breakpoints.down("lg")]: {
+          // top: "12rem",
+          fontSize: "5.5rem",
+        },
         [theme.breakpoints.down("md")]: {
-          top: "12rem",
+          top: "10rem",
           fontSize: "6rem",
           width: "100%",
         },
@@ -278,9 +304,7 @@ const HeroArea = () => {
   const theme = useTheme();
   return (
     <>
-      <BodyWrapper
-
-      >
+      <BodyWrapper>
         <Grid
           container
           xs={12}
@@ -288,7 +312,7 @@ const HeroArea = () => {
             height: "50rem",
             display: "flex",
             position: "relative",
-            mt: 27,
+            mt: 22,
             zIndex: 2,
 
             [theme.breakpoints.down("md")]: {
@@ -307,7 +331,7 @@ const HeroArea = () => {
       </BodyWrapper>
 
       <Box sx={{ position: "relative" }}>
-        <BgQuotes iconSize={120} />
+        <HeroAreaQuote iconSize={120} />
       </Box>
 
       <Box mb={{ lg: 15, xs: 25 }} />

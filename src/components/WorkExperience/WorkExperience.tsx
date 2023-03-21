@@ -19,7 +19,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 import Divider from "@mui/material/Divider";
-import { DarkStar } from "../BackgroundStyleComponets/BgStars";
+import { DarkStar } from "../BackgroundStyleComponents/BgStars";
 
 const InstructionText = (props: { title: string }) => {
   const theme = useTheme();

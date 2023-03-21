@@ -15,9 +15,9 @@ import ReflectlyClone from "./ReflectlyClone/ReflectlyClone";
 import SavvyShopper from "./SavvyShopper/SavvyShopper";
 import HighlightTypography from "../Common/HighlightTypography";
 import { motion } from "framer-motion";
-import DepthEllipse from "../BackgroundStyleComponets/DepthEllipse";
-import BgRings from "../BackgroundStyleComponets/BgRings";
-import { BgLightStar2 } from "../BackgroundStyleComponets/BgStars";
+import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
+import BgRings from "../BackgroundStyleComponents/BgRings";
+import { BgLightStar2 } from "../BackgroundStyleComponents/BgStars";
 
 const InstructionText = (props: {
   title: string;

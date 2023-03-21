@@ -1,10 +1,11 @@
-import { Box, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
+import React from "react";
 import BodyWrapper from "../Common/BodyWrapper";
 import HighlightTypography from "../Common/HighlightTypography";
 import DepthEllipse from "./DepthEllipse";
 
-const BgQuotes = (props: { iconSize: number }) => {
+const HeroAreaQuote = (props: { iconSize: number }) => {
   const theme = useTheme();
 
   const tabChar = (
@@ -18,6 +19,17 @@ const BgQuotes = (props: { iconSize: number }) => {
     </span>
   );
 
+   // TODO: This is a hack to fix an issue with the use MediaQuery hook
+   const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+    // noSsr: true,
+  });
+  const [isMdUpBreakpoint, setIsMdUpBreakpoint] = React.useState(true);
+
+  React.useEffect(() => {
+    setIsMdUpBreakpoint(initValue);
+  }, [useMediaQuery(theme.breakpoints.up("md"))]);
+
+
   const imageFactor = 0.45;
   return (
     <>
@@ -27,7 +39,14 @@ const BgQuotes = (props: { iconSize: number }) => {
           height: "100%",
           position: "relative",
           mt: 18,
+
+          [theme.breakpoints.down("lg")]: {
+            mt:-10,
+          },
           [theme.breakpoints.down("md")]: {
+            mt: 35,
+          },
+          [theme.breakpoints.down("sm")]: {
             mt: 25,
           },
         }}
@@ -38,7 +57,7 @@ const BgQuotes = (props: { iconSize: number }) => {
           sx={{
             display: "flex",
 
-            [theme.breakpoints.down("md")]: {
+            [theme.breakpoints.down("lg")]: {
               flexDirection: "column-reverse",
             },
           }}
@@ -46,7 +65,7 @@ const BgQuotes = (props: { iconSize: number }) => {
           <Grid
             item
             xs={12}
-            md={5}
+            lg={5}
             sx={{
               height: "40rem",
               position: "relative",
@@ -73,6 +92,12 @@ const BgQuotes = (props: { iconSize: number }) => {
                 ml: 4,
                 // textIndent: "1em",
 
+
+                [theme.breakpoints.down("lg")]: {
+                  width: "100%",
+                  ml: 0,
+
+                },
                 [theme.breakpoints.down("md")]: {
                   width: "100%",
                   ml: 0,
@@ -93,7 +118,19 @@ const BgQuotes = (props: { iconSize: number }) => {
                 right: "0rem",
                 opacity: 0.5,
 
+                [theme.breakpoints.down("lg")]: {
+                  top: "13rem",
+                  right: "1rem",
+                  left: "auto",
+                },
+
                 [theme.breakpoints.down("md")]: {
+                  top: "13rem",
+                  right: "1rem",
+                  left: "auto",
+                },
+
+                [theme.breakpoints.down("sm")]: {
                   top: "23rem",
                   right: "1rem",
                   left: "auto",
@@ -110,14 +147,30 @@ const BgQuotes = (props: { iconSize: number }) => {
                 // top: "29rem",
                 // left: "40%",
                 opacity: 0.5,
-                width: "100%",
+                width: "70%",
                 height: "100%",
-                whiteSpace: "break-spaces",
-                ml: 27,
+                // whiteSpace: "break-spaces",
+                ml: 18,
                 mt: 27,
+
+                [theme.breakpoints.down("lg")]: {
+                  // top: "360%",
+                      width: "100%",
+                  whiteSpace: "normal",
+                  ml: 0,
+                  mt: 17,
+                },
 
                 [theme.breakpoints.down("md")]: {
                   // top: "360%",
+                      width: "100%",
+                  whiteSpace: "normal",
+                  ml: 0,
+                  mt: 18,
+                },
+                [theme.breakpoints.down("sm")]: {
+                  // top: "360%",
+                      width: "100%",
                   whiteSpace: "normal",
                   ml: 0,
                   mt: 38,
@@ -133,7 +186,7 @@ also the best things that ever happened to you.`}
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} lg={5}    >
             <Box
               sx={{
                 height: "40rem",
@@ -142,7 +195,13 @@ also the best things that ever happened to you.`}
                 // opacity: 0.03,
                 position: "relative",
 
-                [theme.breakpoints.down("md")]: {
+                [theme.breakpoints.down("lg")]: {
+
+                  // position: "absolute",
+                  top: "8rem",
+                  left: "4rem",
+                },
+                [theme.breakpoints.down("sm")]: {
                   height: "27rem",
                   width: "27rem",
                   // position: "absolute",
@@ -187,4 +246,4 @@ also the best things that ever happened to you.`}
   );
 };
 
-export default BgQuotes;
+export default HeroAreaQuote;
