@@ -7,12 +7,13 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { useState, useEffect } from "react";
+
 import ReactPlayer from "react-player";
 import FrameType from "../../common/enums/phone-frame";
 import styles from "./../../styles/youtube-video.module.css";
 import PhoneFrame from "./PhoneFrame";
 import iphoneStyles from "../../styles/iphone-frame.module.css";
+import React, { useEffect, useRef, useState } from "react";
 
 type AppVideoType = {
   src: string;
@@ -46,6 +47,35 @@ const AppVideo = (props: AppVideoType) => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // const videoRef = useRef();
+
+  // useEffect(() => {
+  //   let options = {
+  //     rootMargin: "0px",
+  //     threshold: [0.25, 0.75],
+  //   };
+
+  //   let handlePlay: IntersectionObserverCallback = (entries, observer) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting && videoRef.current !== null) {
+  //         videoRef.current.play();
+  //       } else {
+  //         videoRef.current.pause();
+  //       }
+  //     });
+  //   };
+
+  //   let observer = new IntersectionObserver(handlePlay, options);
+  //   const isReady =
+  //     videoRef.current !== null && videoRef.current  !== undefined && videoRef.current.player?.isReady;
+  //   if (isReady ) {
+  //     console.log(videoRef.current);
+  //     console.log(typeof videoRef.current);
+
+  //     observer.observe(videoRef.current);
+  //   }
+  // });
+
   return (
     <Grid container {...size} sx={{ ...props.sx }}>
       <PhoneFrame
@@ -66,13 +96,13 @@ const AppVideo = (props: AppVideoType) => {
           }}
         >
           <i></i>
-          <b></b>
+          {/* <b></b>  */}
           {hasWindow && (
             <ReactPlayer
-              // ref={props.ref}
               // controls
               // pip
-
+              // playing={true}
+              // ref={videoRef}
               muted
               loop
               style={{ aspectRatio: props.aspectRatio ?? 14 / 25 }}

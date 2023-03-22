@@ -75,8 +75,11 @@ const BlackFridayPlotlyDashboard = (props: { index: number }) => {
                 width={1703}
                 height={1280}
                 size={{
-                  lg: 5,
                   xs: 10,
+                  sm: 8,
+                  // md: 3,
+                  lg: 5,
+
                 }}
                 sx={{
                   border: "5px solid white",
@@ -85,10 +88,23 @@ const BlackFridayPlotlyDashboard = (props: { index: number }) => {
                   right: "22rem",
                   top: "6rem",
 
+
+
+                  [theme.breakpoints.down("lg")]: {
+                    right: "9rem",
+                    top: "8rem",
+                  },
+
+
                   [theme.breakpoints.down("md")]: {
                     right: "9%",
                     top: "15rem",
                   },
+
+
+
+
+
                 }}
               />
             </Box>

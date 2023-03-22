@@ -38,7 +38,7 @@ const AppImage = (props: {
         showFrame={props.showFrame}
       >
       <i></i>
-      <b></b>
+      {/* <b></b> */}
       <Image
         style={{
           width: "100%",

@@ -58,6 +58,8 @@ const GoogleLensClone = (props: { index: number }) => {
 
               size={{
                 xs: 6,
+                sm: 4,
+                md: 3,
                 lg: 2,
               }}
               sx={{

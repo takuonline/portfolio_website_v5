@@ -25,7 +25,7 @@ const IPhoneXFrame = (props: {
       }}
     >
       <i> </i>
-      <b> </b>
+      {/* <b> </b> */}
       {props.children}
     </div>
   );

@@ -56,6 +56,8 @@ const MobileEcommerceApp = (props: { index: number }) => {
                 borderRadius={3}
                 size={{
                   xs: 7,
+                  sm: 4,
+                  md: 4,
                   lg: 2,
                 }}
                 sx={{
