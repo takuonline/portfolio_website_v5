@@ -38,7 +38,7 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
           width: "100%",
           height: "100%",
           position: "relative",
-          mt: 18,
+          mt: 16,
 
           [theme.breakpoints.down("lg")]: {
             mt:-10,
@@ -147,7 +147,7 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
                 // top: "29rem",
                 // left: "40%",
                 opacity: 0.5,
-                width: "70%",
+                width: "80.0%",
                 height: "100%",
                 // whiteSpace: "break-spaces",
                 ml: 18,
@@ -232,14 +232,14 @@ also the best things that ever happened to you.`}
         <Box
           sx={{
             position: "absolute",
-            top: "12rem",
-            right: "15rem",
+            top: "0rem",
+            right: "0rem",
             [theme.breakpoints.down("md")]: {
               top: "-220%",
             },
           }}
         >
-          <DepthEllipse size={"356px"} />
+          <DepthEllipse size={{lg:"756px",xs:"356px"}} />
         </Box>
       </Box>
     </>

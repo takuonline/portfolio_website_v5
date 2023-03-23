@@ -1,7 +1,7 @@
 import { alpha, Box } from "@mui/material";
 
 const DepthEllipse = (props: {
-  size: number | string;
+  size: number | string | {lg?: number | string,md?: number | string,sm?: number | string,xs?: number | string};
   blur?: number;
   opacity?: number;
 }) => {

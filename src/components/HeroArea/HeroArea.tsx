@@ -144,14 +144,19 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "0rem",
-          right: "0%",
+          top: "-7rem",
+          right: "-5rem",
           [theme.breakpoints.down("md")]: {
             right: "-10rem",
           },
+          [theme.breakpoints.down("sm")]: {
+            right: "-8rem",
+            top: "0rem",
+          },
+
         }}
       >
-        <DepthEllipse size={"556px"} />
+        <DepthEllipse size={{lg:"756px",xs:"400px"}}  opacity={0.1} blur={120}/>
       </Box>
 
       <Box
@@ -166,7 +171,7 @@ const BgDecorations = () => {
           },
         }}
       >
-        <BgRings size={{ md: 380, xs: 280 }} opacity={1} />
+        <BgRings size={{ md: 380, xs: 180 }} opacity={1} />
       </Box>
     </>
   );
@@ -179,7 +184,7 @@ const HeroFrontText = () => {
       // variant="h1"
       sx={{
         position: "absolute",
-        top: "0rem",
+        top: "-1.2rem",
         left: "0rem",
         fontSize: "7.2rem",
         width: "100%",
@@ -201,7 +206,7 @@ const HeroFrontText = () => {
         [theme.breakpoints.down("sm")]: {
           // bottom: "10%",
 
-          fontSize: "4.5rem",
+          fontSize: "5rem",
         },
       }}
     >
@@ -327,6 +332,7 @@ const HeroArea = () => {
           <BgDecorations />
 
           <HeroInstructionText />
+
         </Grid>
       </BodyWrapper>
 

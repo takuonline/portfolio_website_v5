@@ -139,11 +139,11 @@ const BgStyling = () => {
         sx={{
           position: "absolute",
           right: "-14rem",
-          bottom: "10rem",
+          bottom: "-2rem",
           zIndex: -2,
         }}
       >
-        <DepthEllipse size={"556px"} />
+        <DepthEllipse size={"756px"} />
       </Box>
 
       <Box

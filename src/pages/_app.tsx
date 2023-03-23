@@ -7,7 +7,6 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../common/themes/theme";
 import createEmotionCache from "../common/themes/createEmotionCache";
 import NoiseAnimation from "../common/animations/NoiseAnimation";
-import BGImage from "../common/animations/NoiseAnimation";
 import Container from "@mui/material/Container";
 import CustomNavbar from "@/components/NavBar/CustomNavbar";
 import useNavBar from "@/common/custom-hooks/useNavbar";
@@ -35,7 +34,7 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
 
-        {/* <BGImage/> */}
+
 
         <Container disableGutters maxWidth={false} sx={{ maxWidth: "100rem" }}>
         <CustomNavbar
