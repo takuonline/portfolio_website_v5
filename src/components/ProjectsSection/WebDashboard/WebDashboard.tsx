@@ -9,15 +9,14 @@ import Typography from "@mui/material/Typography";
 import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
 import AppVideo from "../../Common/AppVideo";
-import FrameType from "../../../common/enums/phone-frame";
 import { motion } from "framer-motion";
-import { alpha, Container, useMediaQuery, useTheme } from "@mui/material";
+import {useMediaQuery, useTheme } from "@mui/material";
 import { IoLink, IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const BlackFridayPlotlyDashboard = (props: { index: number }) => {
+const BlackFridayPlotlyDashboard = (props: {  }) => {
   const TextBoxSize = {
     xs: 12,
     sm: 8,

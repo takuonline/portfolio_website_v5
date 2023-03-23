@@ -1,20 +1,14 @@
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
 import { alpha, useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import AppVideo from "../../Common/AppVideo";
 import BodyWrapper from "../../Common/BodyWrapper";
-import HighlightTypography from "../../Common/HighlightTypography";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-import ProjectTextBox from "../ProjectTextBox";
-import ProjectTitleHeader from "../ProjectTitleHeader";
-
-const ReflectlyClone = (props: { index: number }) => {
+const ReflectlyClone = (props: {}) => {
   const TextBoxSize = {
     xs: 12,
     sm: 10,

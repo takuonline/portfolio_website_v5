@@ -8,11 +8,9 @@ import AppVideo from "../../Common/AppVideo";
 import BodyWrapper from "../../Common/BodyWrapper";
 import ProjectComponent from "../ProjectComponent";
 
-import ProjectTextBox from "../ProjectTextBox";
-import ProjectTitleHeader from "../ProjectTitleHeader";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const MobileEcommerceApp = (props: { index: number }) => {
+const MobileEcommerceApp = (props: {   }) => {
   const TextBoxSize = {
     xs: 12,
     sm: 10,

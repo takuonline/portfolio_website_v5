@@ -232,14 +232,14 @@ also the best things that ever happened to you.`}
         <Box
           sx={{
             position: "absolute",
-            top: "0rem",
-            right: "0rem",
+            top: "-2rem",
+            right: "-7rem",
             [theme.breakpoints.down("md")]: {
               top: "-220%",
             },
           }}
         >
-          <DepthEllipse size={{lg:"756px",xs:"356px"}} />
+          <DepthEllipse size={{lg:"856px",xs:"356px"}} opacity={0.09} />
         </Box>
       </Box>
     </>

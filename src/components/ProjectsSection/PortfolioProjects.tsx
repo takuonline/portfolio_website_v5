@@ -125,14 +125,14 @@ const BgStyling = () => {
         sx={{
           position: "absolute",
           left: "-14rem",
-          top: "-12rem",
+          top: "-20rem",
           [theme.breakpoints.down("md")]: {
             top: "-20rem",
             left: "-10rem",
           },
         }}
       >
-        <DepthEllipse size={"556px"} />
+        <DepthEllipse size={{lg:"656px",xs:"556px"}} opacity={0.09}/>
       </Box>
 
       <Box
@@ -161,6 +161,7 @@ const BgStyling = () => {
           position: "absolute",
           top: "7rem",
           right: "-20rem",
+
         }}
       >
         <BgRings size={{ md: 570, xs: 300 }} />
@@ -172,6 +173,8 @@ const BgStyling = () => {
           top: "33rem",
           right: "-10rem",
           transform: "rotate(80deg)",
+          zIndex:5,
+
           [theme.breakpoints.down("md")]: {
             top: "9rem",
             right: "-10rem",
@@ -211,17 +214,17 @@ const PortfolioProjects = () => {
       <Box
         sx={{
           position: "relative",
-          zIndex: 3,
+          zIndex: 6,
         }}
       >
         <BgStyling />
 
-        <SavvyShopper index={1} />
+        <SavvyShopper  />
 
-        <GoogleLensClone index={2} />
-        <MobileEcommerceApp index={3} />
-        <BlackFridayPlotlyDashboard index={4} />
-        <ReflectlyClone index={5} />
+        <GoogleLensClone  />
+        <MobileEcommerceApp  />
+        <BlackFridayPlotlyDashboard  />
+        <ReflectlyClone   />
 
         {/* <BodyWrapper>
   <TextDivider

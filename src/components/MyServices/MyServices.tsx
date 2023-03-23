@@ -125,15 +125,15 @@ const MyServices = () => {
             <Box
               sx={{
                 position: "absolute",
-                top: "15%",
-                right: "10%",
+                top: "-7rem",
+                right: "-15rem",
                 [theme.breakpoints.down("md")]: {
                   left: "-50%",
                   top: "-90%",
                 },
               }}
             >
-              <DepthEllipse size={"556px"} />
+              <DepthEllipse size={{lg:"956px",xs:"556px"}} opacity={0.08} />
             </Box>
 
             <Box

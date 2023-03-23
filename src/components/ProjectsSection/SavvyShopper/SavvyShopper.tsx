@@ -11,7 +11,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const SavvyShopper = (props: { index: number }) => {
+const SavvyShopper = (props: {}) => {
   const TextBoxSize = {
     xs: 12,
     md: 8,

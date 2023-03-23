@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const GoogleLensClone = (props: { index: number }) => {
+const GoogleLensClone = (props: {   }) => {
   const TextBoxSize = {
     xs: 12,
     lg: 9,
