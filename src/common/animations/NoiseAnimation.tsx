@@ -1,8 +1,5 @@
 import Box from "@mui/material/Box";
-import bgImg from "./../../../public/static/images/noise-fx.png";
 import bgImg2 from "./../../../public/static/images/background_noise_image.png";
-
-import Image from "next/image";
 
 const NoiseAnimation = () => {
   return (

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { CSSProperties } from "react";
 import FrameType from "../../common/enums/phone-frame";
 import PhoneFrame from "./PhoneFrame";
-import iphoneStyles from "../../styles/iphone-frame.module.css";
 
 const AppImage = (props: {
   src: string;

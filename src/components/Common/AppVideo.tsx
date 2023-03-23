@@ -1,7 +1,6 @@
 import {
   Box,
   Grid,
-  Typography,
   Theme,
   SxProps,
   useTheme,

@@ -8,12 +8,10 @@ import NavbarMenu from "./NavbarMenu";
 
 import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
-import useNavBar from "../../common/custom-hooks/useNavbar";
 import { usePathname } from "next/navigation";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import replaceAll from "@/common/utils/custom-replace-all";
 import { NavbarItem } from "./NavbarItem";
-import { makeClipAdditive } from "three/src/animation/AnimationUtils";
 
 const NavbarTitles = {
   home: "home",

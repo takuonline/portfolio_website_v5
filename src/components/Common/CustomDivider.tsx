@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
-import BodyWrapper from "./BodyWrapper";
 import { Theme, SxProps } from "@mui/material";
 import { motion } from "framer-motion";
 
