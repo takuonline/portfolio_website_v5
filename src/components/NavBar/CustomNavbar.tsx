@@ -72,7 +72,7 @@ export default function CustomNavbar(props: {
           alignItems: "center",
 
           pt: 2,
-          position: isNavbarMenuOpen ? "sticky" : "relative",
+          // position: isNavbarMenuOpen ? "sticky" : "relative",
 
           zIndex: 100,
           position: "absolute",
@@ -83,7 +83,7 @@ export default function CustomNavbar(props: {
         <Button
           variant="text"
           onClick={() => {
-            isNavbarMenuOpen &&  props.showNavbarMenu?.();
+            isNavbarMenuOpen &&  props.showNavbarMenu?.(); // close nav menu if open
             router.push("/")
           }}
           disableElevation
