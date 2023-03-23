@@ -10,6 +10,7 @@ import NoiseAnimation from "../common/animations/NoiseAnimation";
 import Container from "@mui/material/Container";
 import CustomNavbar from "@/components/NavBar/CustomNavbar";
 import useNavBar from "@/common/custom-hooks/useNavbar";
+import Box from "@mui/material/Box";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -37,12 +38,16 @@ export default function MyApp(props: MyAppProps) {
 
 
         <Container disableGutters maxWidth={false} sx={{ maxWidth: "100rem" }}>
-        <CustomNavbar
+
+          <CustomNavbar
             isNavbarMenuOpen={isNavbarMenuOpen}
             showNavbarMenu={showNavbarMenu}
           />
+          <Box></Box>
 
           <Component {...pageProps  }  isNavbarMenuOpen={isNavbarMenuOpen} />
+
+
         </Container>
       </ThemeProvider>
     </CacheProvider>

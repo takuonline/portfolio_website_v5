@@ -94,7 +94,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
-                  mt: 30,
+                  pt: 30,
                   mb: 25,
                 }}
                 columnGap={{ md: 5 }}

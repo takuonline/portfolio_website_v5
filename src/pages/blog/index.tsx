@@ -126,15 +126,13 @@ export default function Blog({ posts, processedCategories }: Props) {
           zIndex: 2,
           position: "relative",
         }}
+        pt={20}
       >
-        {/* <CustomNavbar
-          isNavbarMenuOpen={isNavbarMenuOpen}
-          showNavbarMenu={showNavbarMenu}
-        /> */}
+
         <BodyWrapper>
           <Grid
             container
-            mt={15}
+
             sx={{
               display: "flex",
               justifyContent: "space-between",

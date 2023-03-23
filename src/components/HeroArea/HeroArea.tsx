@@ -156,7 +156,7 @@ const BgDecorations = () => {
 
         }}
       >
-        <DepthEllipse size={{lg:"756px",xs:"400px"}}  opacity={0.1} blur={120}/>
+        <DepthEllipse size={{lg:"756px",xs:"400px"}}  opacity={0.09} blur={120}/>
       </Box>
 
       <Box
@@ -256,7 +256,7 @@ const HeroInstructionText = () => {
   // };
   return (
     <Box
-      mt={{ lg: -8 }}
+
       sx={{
         display: "flex",
         position: "absolute",
@@ -317,11 +317,11 @@ const HeroArea = () => {
             height: "50rem",
             display: "flex",
             position: "relative",
-            mt: 22,
+            mt: 30,
             zIndex: 2,
 
             [theme.breakpoints.down("md")]: {
-              mt: 0,
+              mt: 4,
             },
           }}
         >

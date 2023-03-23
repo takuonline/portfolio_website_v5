@@ -54,98 +54,110 @@ export default function CustomNavbar(props: {
     const route = "/" + replaceAll(routePath.trim().toLowerCase(), " ", "-");
     router.push(route);
   };
+
   return (
-    <>
-      <BodyWrapper>
+    <nav>
+     <BodyWrapper
+      sx={{
+        position: "relative",
+        // mx:isNavbarMenuOpen? 0:undefined
+        // mx:0
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "space-between",
+          alignItems: "center",
+
+          pt: 2,
+          position: isNavbarMenuOpen ? "sticky" : "relative",
+
+          zIndex: 100,
+          position: "absolute",
+
+
+        }}
+      >
+        <Button
+          variant="text"
+          onClick={() => {
+            isNavbarMenuOpen &&  props.showNavbarMenu?.();
+            router.push("/")
+          }}
+          disableElevation
+          disableRipple
+          sx={{
+            borderRadius: 2,
+            // px: 1.5,
+            // py:0.5,
+            m: 0,
+            textTransform: "none",
+            color: "text.primary",
+            ":hover": {
+              color: theme.palette.primary.main,
+              backgroundColor: "transparent",
+            },
+            textAlign: "left",
+            span: {
+              display: "none",
+            },
+          }}
+        >
+          <Typography variant="h4">{"Taku"}</Typography>
+        </Button>
+
         <Box
           sx={{
             display: "flex",
-            width: "100%",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            pt: 2,
-            position: isNavbarMenuOpen ? "sticky" : "relative",
-            top: "0px",
-            zIndex: 100,
+            // mx: "auto",
+            flex: "7 1 auto",
           }}
-        >
-          <Button
-            variant="text"
-            onClick={() => router.push("/")}
-            disableElevation
-            disableRipple
-            sx={{
-              borderRadius: 2,
-              // px: 1.5,
-              // py:0.5,
-              m: 0,
-              textTransform: "none",
-              color: "text.primary",
-              ":hover": {
-                color: theme.palette.primary.main,
-                backgroundColor: "transparent",
-              },
-              textAlign: "left",
-              span: {
-                display: "none",
-              },
-            }}
-          >
-            <Typography variant="h4">{"Taku"}</Typography>
-          </Button>
+        />
+        {isHomePath && (
+          <>
+            {!isNavbarMenuOpen && isMdUpBreakpoint && (
+              <Box
+                sx={{
+                  display: "flex",
+                  columnGap: { md: "3rem", xs: "2.9rem" },
+                  justifyContent: "space-between",
+                }}
+              >
+                <NavbarItem title={NavbarTitles.experience} />
+                <NavbarItem title={NavbarTitles.myWork} />
+                <NavbarItem title={NavbarTitles.contact} />
+              </Box>
+            )}
 
-          <Box
-            sx={{
-              display: "flex",
-              mx: "auto",
-              flex: "4 1 auto",
-            }}
+            {isMdUpBreakpoint && (
+              <Box
+                sx={{
+                  display: "flex",
+                  // mx: "auto",
+                  flex: "6 1 auto",
+                }}
+              />
+            )}
+          </>
+        )}
+        {!isMdUpBreakpoint ? (
+          <PrimaryBtn
+            onClick={showNavbarMenu}
+            title={isNavbarMenuOpen ? "close" : "menu"}
+            showIndicator={true}
           />
+        ) : (
+          <PrimaryBtn
+            onClick={() => handleBlogClick(NavbarTitles.blog)}
+            title={NavbarTitles.blog}
+            showIndicator={true}
+          />
+        )}
+      </Box>
 
-          {isHomePath && (
-            <>
-              {!isNavbarMenuOpen && isMdUpBreakpoint && (
-                <Box
-                  sx={{
-                    display: "flex",
-                    columnGap: { md: "3rem", xs: "2.9rem" },
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <NavbarItem title={NavbarTitles.experience} />
-                  <NavbarItem title={NavbarTitles.myWork} />
-                  <NavbarItem title={NavbarTitles.contact} />
-                </Box>
-              )}
-
-              {isMdUpBreakpoint && (
-                <Box
-                  sx={{
-                    display: "flex",
-                    flex: "4 1 auto",
-                    mx: "auto",
-                  }}
-                />
-              )}
-            </>
-          )}
-          {!isMdUpBreakpoint ? (
-            <PrimaryBtn
-              onClick={showNavbarMenu}
-              title={isNavbarMenuOpen ? "close" : "menu"}
-              showIndicator={true}
-            />
-          ) : (
-            <PrimaryBtn
-              onClick={() => handleBlogClick(NavbarTitles.blog)}
-              title={NavbarTitles.blog}
-              showIndicator={true}
-            />
-          )}
-        </Box>
-      </BodyWrapper>
-
+    </BodyWrapper>
       <NavbarMenu
         showNavbarMenu={showNavbarMenu}
         isNavbarMenuOpen={isNavbarMenuOpen}
@@ -156,6 +168,7 @@ export default function CustomNavbar(props: {
           height: isNavbarMenuOpen ? "100%" : "0rem",
         }}
       />
-    </>
+
+      </nav>
   );
 }

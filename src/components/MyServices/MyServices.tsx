@@ -133,7 +133,7 @@ const MyServices = () => {
                 },
               }}
             >
-              <DepthEllipse size={{lg:"956px",xs:"556px"}} opacity={0.08} />
+              <DepthEllipse size={{lg:"856px",xs:"556px"}} opacity={0.08} />
             </Box>
 
             <Box
