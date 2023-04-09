@@ -26,18 +26,16 @@ const HeroBgImage = () => {
         xs={12}
         sx={{
           position: "absolute",
-          top: "18rem",
+          top: "16rem",
           left: "0%",
           [theme.breakpoints.down("lg")]: {
             top: "15rem",
           },
           [theme.breakpoints.down("md")]: {
             top: "40rem",
-
           },
           [theme.breakpoints.down("sm")]: {
             top: "35rem",
-
           },
         }}
       >
@@ -77,8 +75,8 @@ const HeroBgImage = () => {
         variant={"body2"}
         sx={{
           position: "absolute",
-          top: "31.5rem",
-          right: "15rem",
+          top: "29rem",
+          right: "18rem",
           width: "40%",
           color: "primary.main",
           fontWeight: 100,
@@ -118,8 +116,8 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "6rem",
-          left: "20rem",
+          bottom: "8rem",
+          left: "18rem",
           [theme.breakpoints.down("lg")]: {
             bottom: "7rem",
           },
@@ -153,10 +151,13 @@ const BgDecorations = () => {
             right: "-8rem",
             top: "0rem",
           },
-
         }}
       >
-        <DepthEllipse size={{lg:"756px",xs:"400px"}}  opacity={0.09} blur={120}/>
+        <DepthEllipse
+          size={{ lg: "756px", xs: "400px" }}
+          opacity={0.09}
+          blur={120}
+        />
       </Box>
 
       <Box
@@ -256,12 +257,11 @@ const HeroInstructionText = () => {
   // };
   return (
     <Box
-
       sx={{
         display: "flex",
         position: "absolute",
         right: "1rem",
-        bottom: "6.5rem",
+        bottom: "13.5rem",
 
         alignItems: "center",
         [theme.breakpoints.down("md")]: {
@@ -317,7 +317,7 @@ const HeroArea = () => {
             height: "50rem",
             display: "flex",
             position: "relative",
-            mt: 30,
+            mt: 24,
             zIndex: 2,
 
             [theme.breakpoints.down("md")]: {
@@ -332,7 +332,6 @@ const HeroArea = () => {
           <BgDecorations />
 
           <HeroInstructionText />
-
         </Grid>
       </BodyWrapper>
 

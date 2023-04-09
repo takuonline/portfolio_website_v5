@@ -19,8 +19,8 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
     </span>
   );
 
-   // TODO: This is a hack to fix an issue with the use MediaQuery hook
-   const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+  // TODO: This is a hack to fix an issue with the use MediaQuery hook
+  const initValue = useMediaQuery(theme.breakpoints.up("md"), {
     // noSsr: true,
   });
   const [isMdUpBreakpoint, setIsMdUpBreakpoint] = React.useState(true);
@@ -28,7 +28,6 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
   }, [useMediaQuery(theme.breakpoints.up("md"))]);
-
 
   const imageFactor = 0.45;
   return (
@@ -38,10 +37,10 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
           width: "100%",
           height: "100%",
           position: "relative",
-          mt: 16,
+          mt: 5,
 
           [theme.breakpoints.down("lg")]: {
-            mt:-10,
+            mt: -10,
           },
           [theme.breakpoints.down("md")]: {
             mt: 35,
@@ -92,11 +91,9 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
                 ml: 4,
                 // textIndent: "1em",
 
-
                 [theme.breakpoints.down("lg")]: {
                   width: "100%",
                   ml: 0,
-
                 },
                 [theme.breakpoints.down("md")]: {
                   width: "100%",
@@ -155,7 +152,7 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
 
                 [theme.breakpoints.down("lg")]: {
                   // top: "360%",
-                      width: "100%",
+                  width: "100%",
                   whiteSpace: "normal",
                   ml: 0,
                   mt: 17,
@@ -163,14 +160,14 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
 
                 [theme.breakpoints.down("md")]: {
                   // top: "360%",
-                      width: "100%",
+                  width: "100%",
                   whiteSpace: "normal",
                   ml: 0,
                   mt: 18,
                 },
                 [theme.breakpoints.down("sm")]: {
                   // top: "360%",
-                      width: "100%",
+                  width: "100%",
                   whiteSpace: "normal",
                   ml: 0,
                   mt: 38,
@@ -186,26 +183,25 @@ also the best things that ever happened to you.`}
             </Typography>
           </Grid>
 
-          <Grid item xs={12} lg={5}    >
+          <Grid item xs={12} lg={5}>
             <Box
               sx={{
-                height: "40rem",
-                width: "40rem",
+                height: "38rem",
+                width: "38rem",
                 // backgroundColor: "red",
                 // opacity: 0.03,
                 position: "relative",
 
                 [theme.breakpoints.down("lg")]: {
-
                   // position: "absolute",
-                  top: "8rem",
+                  top: "2rem",
                   left: "4rem",
                 },
                 [theme.breakpoints.down("sm")]: {
                   height: "27rem",
                   width: "27rem",
                   // position: "absolute",
-                  top: "8rem",
+                  top: "2rem",
                   left: "4rem",
                 },
               }}
@@ -219,7 +215,7 @@ also the best things that ever happened to you.`}
                 fill
                 style={{
                   position: "absolute",
-                  top: "-8rem",
+                  top: "-1rem",
                   left: "-4rem",
                   zIndex: 5,
                   objectFit: "cover",
@@ -239,7 +235,7 @@ also the best things that ever happened to you.`}
             },
           }}
         >
-          <DepthEllipse size={{lg:"856px",xs:"356px"}} opacity={0.08} />
+          <DepthEllipse size={{ lg: "856px", xs: "356px" }} opacity={0.08} />
         </Box>
       </Box>
     </>
