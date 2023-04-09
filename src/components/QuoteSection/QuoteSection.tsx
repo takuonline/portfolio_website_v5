@@ -8,6 +8,7 @@ import Image from "next/image";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Theme, SxProps, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 const TextSVGBackground = (props: {
   color: string | undefined;
@@ -34,9 +35,18 @@ const TextSVGBackground = (props: {
 };
 const QuoteSection = () => {
   const theme = useTheme();
-  const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
+  // TODO: This is a hack to fix an issue with the use MediaQuery hook
+  const initValue = useMediaQuery(theme.breakpoints.up("md"), {
+    // noSsr: true,
+  });
+  const [isMdUpBreakpoint, setIsMdUpBreakpoint] = React.useState(true);
+
+  React.useEffect(() => {
+    setIsMdUpBreakpoint(initValue);
+  }, [useMediaQuery(theme.breakpoints.up("md"))]);
+
   const bgImageFactor = isMdUpBreakpoint ? 1 : 0.6;
-  const blobImageFactor = isMdUpBreakpoint ? 0.4 : 0.2;
+  const blobImageFactor = isMdUpBreakpoint ? 0.35 : 0.2;
 
   const router = useRouter();
   return (
@@ -74,10 +84,7 @@ const QuoteSection = () => {
               height={1104 * bgImageFactor}
               // width={3840 * 0.4}
               // height={2160 * 0.4}
-              style={{
-
-
-              }}
+              style={{}}
             />
           </Box>
           <Typography
@@ -113,7 +120,7 @@ in the world.`}
             container
             sx={{
               position: "relative",
-              height: "45rem",
+              height: "40rem",
             }}
           >
             <Grid
@@ -141,7 +148,7 @@ in the world.`}
                 // fill
                 style={{
                   position: "absolute",
-                  top: -190,
+                  top: isMdUpBreakpoint ? -150 : -190,
                   left: -320,
                 }}
               />

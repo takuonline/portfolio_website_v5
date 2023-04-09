@@ -14,6 +14,7 @@ const DepthEllipse = (props: {
         width: props.size,
         borderRadius: "50%",
 
+
         filter: `blur(${blur}px)`,
         backgroundColor: (t) => alpha(t.palette.text.primary, opacity),
       }}

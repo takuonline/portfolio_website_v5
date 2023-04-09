@@ -1,7 +1,6 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import BodyWrapper from "../Common/BodyWrapper";
 import HighlightTypography from "../Common/HighlightTypography";
 import DepthEllipse from "./DepthEllipse";
 
@@ -37,7 +36,7 @@ const HeroAreaQuote = (props: { iconSize: number }) => {
           width: "100%",
           height: "100%",
           position: "relative",
-          mt: 5,
+          mt: -7,
 
           [theme.breakpoints.down("lg")]: {
             mt: -10,

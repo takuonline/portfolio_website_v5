@@ -2,7 +2,6 @@ import Grid from "@mui/material/Grid";
 
 import List from "@mui/material/List";
 
-import Typography from "@mui/material/Typography";
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import BodyWrapper from "../Common/BodyWrapper";
 import HighlightTypography from "../Common/HighlightTypography";
@@ -31,9 +30,8 @@ const MyServices = () => {
   }, [useMediaQuery(theme.breakpoints.up("md"))]);
 
   const router = useRouter();
-  const handleClick = () => {
-    router.push("/#contact");
-  };
+  const handleClick = () => router.push("/#contact");
+
   const services = [
     {
       title: "Machine learning",
@@ -109,7 +107,7 @@ const MyServices = () => {
               </SectionHeader>
 
               <PrimaryBtn
-                onClick={handleClick}
+                onClick={contactBtnOnClick}
                 title={"CONTACT ME"}
                 sx={{
                   backgroundColor: "primary.main",
@@ -118,6 +116,9 @@ const MyServices = () => {
                   my: 8,
 
                   display: isMdUpBreakpoint ? "inherit" : "None",
+                  ":hover": {
+                    color: "primary.main",
+                  },
                 }}
               />
             </Box>
@@ -127,13 +128,17 @@ const MyServices = () => {
                 position: "absolute",
                 top: "-7rem",
                 right: "-15rem",
+                zIndex: -1,
                 [theme.breakpoints.down("md")]: {
                   left: "-50%",
                   top: "-90%",
                 },
               }}
             >
-              <DepthEllipse size={{lg:"856px",xs:"556px"}} opacity={0.08} />
+              <DepthEllipse
+                size={{ lg: "856px", xs: "556px" }}
+                opacity={0.08}
+              />
             </Box>
 
             <Box
@@ -173,6 +178,7 @@ const MyServices = () => {
             <List
               sx={{
                 width: "100%",
+                zIndex: 2,
               }}
             >
               {services.map((v, idx) => (

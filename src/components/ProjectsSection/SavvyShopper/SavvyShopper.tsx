@@ -106,15 +106,18 @@ const SavvyShopper = (props: {}) => {
               viewport={{ once: true }}
             >
               <AppVideo
-                src={"https://youtu.be/Z1sugeKre8I"}
+                src={"https://youtu.be/gdaONGEOrPc"}
                 alt={"Savvy shopper demo"}
                 size={AppVideoSize}
+                aspectRatio={
+                  168/360
+                }
                 // borderRadius={"1rem"}
                 sx={{
                   whiteSpace: "break-spaces",
                   wordBreak: "normal",
                 }}
-                frameHeight={"47.5rem"}
+                frameHeight={"40.5rem"}
               />
             </motion.div>
           }
