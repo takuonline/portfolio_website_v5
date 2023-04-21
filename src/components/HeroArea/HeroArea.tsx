@@ -26,7 +26,7 @@ const HeroBgImage = () => {
         xs={12}
         sx={{
           position: "absolute",
-          top: "16rem",
+          top: "14rem",
           left: "0%",
           [theme.breakpoints.down("lg")]: {
             top: "15rem",
@@ -49,6 +49,10 @@ const HeroBgImage = () => {
             width: "60%",
 
             [theme.breakpoints.down("lg")]: {
+              width: "80%",
+              position: "absolute",
+            },
+            [theme.breakpoints.down("md")]: {
               width: "100%",
               position: "absolute",
             },
@@ -57,7 +61,7 @@ const HeroBgImage = () => {
           <Image
             style={{
               filter: "grayscale(100%)",
-              width: isMobileView ? "160%" : "120%",
+              width: isMobileView ? "160%" : "110%",
               height: "100%",
               borderRadius: "1000rem",
             }}
@@ -75,14 +79,15 @@ const HeroBgImage = () => {
         variant={"body2"}
         sx={{
           position: "absolute",
-          top: "29rem",
-          right: "18rem",
+          top: "26rem",
+          right: "19rem",
           width: "40%",
           color: "primary.main",
           fontWeight: 100,
           [theme.breakpoints.down("lg")]: {
-            left: "33rem",
-            width: "45%",
+            left: "31rem",
+            width: "50%",
+            top: "27.5rem",
           },
           [theme.breakpoints.down("md")]: {
             left: "0rem",
@@ -116,10 +121,10 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "8rem",
-          left: "18rem",
+          bottom: "12rem",
+          left: "16rem",
           [theme.breakpoints.down("lg")]: {
-            bottom: "7rem",
+            bottom: "9rem",
           },
           [theme.breakpoints.down("md")]: {
             top: "35rem",
@@ -142,8 +147,8 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "-7rem",
-          right: "-5rem",
+          top: "-2rem",
+          right: "10rem",
           [theme.breakpoints.down("md")]: {
             right: "-10rem",
           },
@@ -154,7 +159,7 @@ const BgDecorations = () => {
         }}
       >
         <DepthEllipse
-          size={{ lg: "756px", xs: "400px" }}
+          size={{ lg: "500px", xs: "400px" }}
           opacity={0.09}
           blur={120}
         />
@@ -163,16 +168,21 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "0rem",
-          right: "-7%",
+          top: "1rem",
+          right: "12%",
           zIndex: -1,
+          [theme.breakpoints.down("lg")]: {
+            right: "-6rem",
+            top: "1rem",
+          },
+
           [theme.breakpoints.down("md")]: {
             right: "-20%",
             top: "10%",
           },
         }}
       >
-        <BgRings size={{ md: 380, xs: 180 }} opacity={1} />
+        <BgRings size={{ md: 330, xs: 180 }} opacity={1} />
       </Box>
     </>
   );
@@ -182,12 +192,12 @@ const HeroFrontText = () => {
 
   return (
     <Typography
-      // variant="h1"
+      variant="h1"
       sx={{
         position: "absolute",
         top: "-1.2rem",
         left: "0rem",
-        fontSize: "7.2rem",
+        // fontSize: "7.2rem",
         width: "100%",
         fontWeight: 400,
 
@@ -223,6 +233,7 @@ const HeroFrontText = () => {
         component={"span"}
         sx={{
           ml: 25,
+          display: "block",
           [theme.breakpoints.down("md")]: {
             ml: 0,
           },
@@ -261,9 +272,12 @@ const HeroInstructionText = () => {
         display: "flex",
         position: "absolute",
         right: "1rem",
-        bottom: "13.5rem",
+        bottom: "17rem",
 
         alignItems: "center",
+        [theme.breakpoints.down("lg")]: {
+          bottom: "13.5rem",
+        },
         [theme.breakpoints.down("md")]: {
           display: "None",
         },
@@ -317,7 +331,7 @@ const HeroArea = () => {
             height: "50rem",
             display: "flex",
             position: "relative",
-            mt: 24,
+            mt: 22,
             zIndex: 2,
 
             [theme.breakpoints.down("md")]: {
