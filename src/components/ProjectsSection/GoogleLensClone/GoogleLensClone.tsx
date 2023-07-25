@@ -117,25 +117,19 @@ const GoogleLensClone = (props: {   }) => {
                 mt: 10,
               }}
             >
-              {`I was truly amazed the first time I used the Google Lens application.
+              {`The first time I used Google Lens, I was truly amazed. It felt like magic - simply snap a picture, and it would quickly search the internet for relevant information on the object I was pointing my camera at, regardless of how many other objects were in the frame.
 
-It seemed like magic - you take a picture and, regardless of how many other objects are in the frame, it quickly finds the object you're pointing your camera at and searches the entire internet for relevant information.
+Years later, I took on the challenge of building my own version of this incredible technology, starting from scratch.
 
-Years later, I decided to take on the challenge of building my own Google Lens from scratch.
+While it was a challenging journey, I dove deep into the world of machine learning and conducted extensive research to gain the necessary knowledge. Eventually, I succeeded in creating my own "Google Lens clone."
 
-It wasn't easy to figure out exactly how they had accomplished this, but I did a lot of research and studying, and eventually I had accumulated enough knowledge to build my own "Google Lens clone."
+This project was truly one of my greatest achievements in the world of full stack machine learning.
 
-This was one of my favourite "full stack machine learning" projects, in which I implemented multiple deep learning models within a full stack application and built the entire thing end-to-end with no help or assistance from anyone.
+I was able to implement multiple deep learning models within a full stack application and build the entire system end-to-end without any assistance.
+It's a project I'm incredibly proud of.
 
 
 
-- Point your camera at any object and snap a photo.
-
-- The application will take a picture send it to the backend and find similar images after extracting the most prominent object in the picture.
-
-- My version finds products which where scraped from the retailer GAME(https://www.game.co.za/) and returns the name of the product, price information, etc
-
-- the application allows you to also point using a bounding box which product in an image you want to search.
 
 
             `}
@@ -192,24 +186,18 @@ This was one of my favourite "full stack machine learning" projects, in which I 
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  mt: 10,
+                  mt: 5,
                 }}
               >
-                {`- When a picture is taken and sent to the backend, the first ml model(Yolov7) finds the most prominent objects in the image and selects one with the highest probability.
-
-- An image clip of this object is created and is then passed on to the Resnet model which extracts features from the clip and turns them into embeddings of 2048 dimensions.
-
-- The embeddings are then queried against a precomputed index using Spotify's annoy library which returns the index of the best matches.
-
-- The index is then used to query a database of product information and the rest api returns this information.
-
+                {`
+The application allows you to simply point your camera at any object and snap a photo.After taking the picture, it is sent to the backend where advanced machine learning models, Yolov7 and Resnet, extract the most prominent object in the image and search a database of product information scraped from the retailer GAME.
+The app returns relevant data such as the product name and price.Additionally, our application allows you to select which product in the image you want to search by using a bounding box.
 
 Tech Stack:
 
-- Devops: Docker, AWS EC2 Linux, GitHub version control
+- Devops: Docker, AWS EC2 Linux, Git/GitHub version control
 - Languages: Python, Dart(Flutter)
-- ML models: Pytorch, Yolov7, Resnet model
-
+- ML models/frameworks: Pytorch framework, Yolov7 and Resnet model
 
 `}
               </Typography>

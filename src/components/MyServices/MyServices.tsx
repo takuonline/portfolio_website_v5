@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 
 import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
 
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import BodyWrapper from "../Common/BodyWrapper";
@@ -172,6 +173,8 @@ const MyServices = () => {
             >
               <BgRings size={{ md: 450, xs: 250 }} />
             </Box>
+
+
           </Grid>
 
           <Grid item xs={12} md={8}>
@@ -193,6 +196,8 @@ const MyServices = () => {
               ))}
             </List>
           </Grid>
+
+
 
           <PrimaryBtn
             onClick={contactBtnOnClick}

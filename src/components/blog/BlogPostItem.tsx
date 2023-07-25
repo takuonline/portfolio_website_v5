@@ -52,7 +52,7 @@ const BlogPostItem = ({ blogPost }) => {
         mb={{ md: 10, xs: 6 }}
         sx={{
           display: "flex",
-          borderRadius: "4rem",
+          borderRadius: "2.5rem",
           pb: 6,
           border: (t) => `2px solid ${alpha(t.palette.background.paper, 0.2)}`,
           overflow: "clip",

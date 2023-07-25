@@ -170,7 +170,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                     alt={data.title}
                     // height={2812}
                     // width={5000}
-                    borderRadius={0}
+                    borderRadius={10}
                     size={{
                       lg: 10,
                     }}

@@ -11,7 +11,6 @@ const textColor = "#FFFFFF";
 const errorColor = "#FE2F46";
 const successColor = "#90ee90";
 
-
 // rgb
 // const bgColor = "#040D15";
 // const bgPaperColor = "#FFFFFF";
@@ -20,11 +19,6 @@ const successColor = "#90ee90";
 // const textColor = "#FFFFFF";
 // const errorColor = "#FE2F46";
 // const successColor = "#90ee90";
-
-
-
-
-
 
 // Create a theme instance.
 let theme = createTheme({
@@ -122,12 +116,14 @@ let theme = createTheme({
         },
 
         body2: {
-          lineHeight: "140%",
+          lineHeight: "28px",
 
           fontWeight: 400,
           fontSize: "16px",
           fontStyle: "normal",
           fontFamily: poppinsFont.style.fontFamily,
+
+          opacity: 0.9,
         },
       },
       defaultProps: {},

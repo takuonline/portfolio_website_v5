@@ -149,9 +149,10 @@ export default function Blog({ posts, processedCategories }: Props) {
               </Typography>
 
               <Typography variant={"body2"} sx={{}}>
-                {`Here l aim to document my thoughts, failures, and journey as I continue to grow and develop as a human being.`}
+                {`My goal with this blog is to record my personal growth journey, including both successes and setbacks,
+                in the hopes of inspiring and encouraging others to pursue their own paths of self-improvement.`}
                 <br />
-                {`Through my writing, I hope to share my experiences and insights with others, in the hopes of fostering personal growth and self-improvement.`}
+                {` By sharing my experiences and insights, I aspire to create a community where we can learn and grow together.`}
               </Typography>
 
               <BlogSearchBar

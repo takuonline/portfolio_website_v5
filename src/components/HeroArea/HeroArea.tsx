@@ -103,8 +103,13 @@ const HeroBgImage = () => {
           },
         }}
       >
-        {`A Data scientist and Software engineer bridging the Gap Between Data and Technology.
-           Using AI and Code to create innovative solutions that solve real world problems`}
+        {`
+
+I am a creative problem solver, leveraging the power of AI and coding to bridge the gap between data and technology.
+ My passion is finding innovative solutions that make a real-world impact.
+
+
+           `}
       </Typography>
     </>
   );

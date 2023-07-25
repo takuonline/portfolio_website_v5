@@ -132,7 +132,7 @@ const BgStyling = () => {
           },
         }}
       >
-        <DepthEllipse size={{lg:"656px",xs:"556px"}} opacity={0.09}/>
+        <DepthEllipse size={{ lg: "656px", xs: "556px" }} opacity={0.09} />
       </Box>
 
       <Box
@@ -161,7 +161,6 @@ const BgStyling = () => {
           position: "absolute",
           top: "7rem",
           right: "-20rem",
-
         }}
       >
         <BgRings size={{ md: 570, xs: 300 }} />
@@ -173,7 +172,7 @@ const BgStyling = () => {
           top: "33rem",
           right: "-10rem",
           transform: "rotate(80deg)",
-          zIndex:5,
+          zIndex: 5,
 
           [theme.breakpoints.down("md")]: {
             top: "9rem",
@@ -200,7 +199,7 @@ const PortfolioProjects = () => {
             justifyContent: "space-between",
             alignItems: "center",
             mt: 23,
-            mb: 15,
+            mb: 7,
             height: "100%",
             [theme.breakpoints.down("md")]: {
               mt: 12,
@@ -209,6 +208,29 @@ const PortfolioProjects = () => {
         >
           <Title />
         </Box>
+
+        <Grid container>
+          <Typography
+            variant={"body2"}
+            sx={{
+              fontWeight: 400,
+              lineHeight: "28px",
+              opacity: 0.8,
+              mb: 5,
+              width: "70%",
+              [theme.breakpoints.down("md")]: {
+                width: "100%",
+              },
+            }}
+          >
+            {`Welcome to my comprehensive portfolio website! As a versatile data scientist and skilled software developer,
+     I possess a unique blend of expertise in utilizing data to drive business decisions and creating
+      innovative technology solutions. With extensive experience in both front-end and back-end development,
+       I have designed and developed complex software solutions that have streamlined operations and
+        enhanced user experiences. Explore my portfolio to learn more about my data-driven approach
+        and the software solutions I’ve created for organizations across diverse industries.`}
+          </Typography>
+        </Grid>
       </BodyWrapper>
 
       <Box
@@ -219,12 +241,12 @@ const PortfolioProjects = () => {
       >
         <BgStyling />
 
-        <SavvyShopper  />
+        <SavvyShopper />
 
-        <GoogleLensClone  />
-        <MobileEcommerceApp  />
-        <BlackFridayPlotlyDashboard  />
-        <ReflectlyClone   />
+        <GoogleLensClone />
+        <MobileEcommerceApp />
+        <BlackFridayPlotlyDashboard />
+        <ReflectlyClone />
 
         {/* <BodyWrapper>
   <TextDivider

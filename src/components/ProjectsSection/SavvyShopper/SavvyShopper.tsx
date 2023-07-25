@@ -89,7 +89,6 @@ const SavvyShopper = (props: {}) => {
             height={2812}
             width={5000}
             maxHeight={"90vh"}
-
           />
         }
       >
@@ -109,9 +108,7 @@ const SavvyShopper = (props: {}) => {
                 src={"https://youtu.be/gdaONGEOrPc"}
                 alt={"Savvy shopper demo"}
                 size={AppVideoSize}
-                aspectRatio={
-                  168/360
-                }
+                aspectRatio={168 / 360}
                 // borderRadius={"1rem"}
                 sx={{
                   whiteSpace: "break-spaces",
@@ -140,18 +137,12 @@ const SavvyShopper = (props: {}) => {
                 mt: 10,
               }}
             >
-              {`Savvy Shopper is one of the largest projects that I have ever undertaken, requiring expertise in multiple programming languages, frameworks, and platforms.
+              {`Throughout my career, I have taken on many challenging projects, but perhaps none as complex as Savvy Shopper. As the sole developer, I was responsible for every aspect of the project from design to programming, utilizing a variety of programming languages, frameworks, and platforms.
 
-  As the sole developer on this project, I was responsible for its design, architecture, and programming.
+The project spanned several months and included a web scraper component using Scrapy and Scrapyd Server, cloud-based key-value store databases like MongoDB and DynamoDB, a REST API server built with Flask, and a mobile app built with Flutter that can be deployed to both iOS and Android platforms. Additionally, a Chrome extension was developed to further enhance the user experience.
 
-  The project took several months to complete and includes a web scraper component built using Scrapy and Scrapyd Server, cloud key-value store databases such as MongoDB and DynamoDB, a backend REST API server built with Flask, a frontend mobile app built with Flutter that can be deployed to iOS and Android, and a Chrome extension.
+Successfully completing this project played a pivotal role in my career, as it helped me land my first job as a data scientist at Shoprite ZA, despite my background in accounting. I am proud of the work I accomplished on Savvy Shopper and the impact it has had on my professional growth.
 
-  This project also played a crucial role in my ability to secure my first job at Shoprite ZA as a data scientist, despite having a degree in Accounting.
-
-
-  - After the success of the savvy shopper mobile app l went on further to develop a chrome extension based on the same data from the mobile application.
-
-- This was mostly meant for people who preferred to do their shopping on a computer.
                 `}
             </Typography>
           }
@@ -175,18 +166,14 @@ const SavvyShopper = (props: {}) => {
                 wordBreak: "normal",
               }}
             >
-              {`- The mobile application allowed uses to look at the prices of products from their favourite stores spanning over 3 different categories namely Clothing, Groceries and Electronic accessories and 12 different stores which
-where web scraped daily
+              {`The mobile application allowed users to view prices of products from their favorite stores across three different categories: clothing, groceries, and electronic accessories. The data was web scraped daily from 12 different stores.
 
-- For a chosen store the application would show you the products that were deemed to be "GOOD BUYS" or "BAD BUYS" based on an algorithm that looked at the historic prices of the products to determine if
-price of the products was cheaper/more expensive.
+For a selected store, the app would display the products that were considered "good buys" or "bad buys" based on an algorithm that analyzed the historical prices of products to determine if the current price was cheaper or more expensive.
 
-- You could also search for a product as well if it did not appear in the list of "GOOD BUYS" or "BAD BUYS" and see its historic prices.
+If a product was not included in the "good buys" or "bad buys" list, users could search for the product and view its historical prices. The app also provided information on competitor prices for the same or similar products.
 
-- The application would also show you competitor's prices for the same product or similar products.
-
-- It also feature a "Shopping list" feature for groceries where you could create a shopping list and could search through different stores and compare prices.
-          `}
+Additionally, the app featured a "shopping list" feature for groceries that allowed users to create a list and compare prices across different stores.
+`}
             </ProjectTextBox>
           }
           firstComponentScale={{
@@ -200,7 +187,6 @@ price of the products was cheaper/more expensive.
               width={860}
               height={1656}
               size={AppImageSize}
-
             />
           }
           secondComponentScale={{
@@ -243,7 +229,12 @@ price of the products was cheaper/more expensive.
                 return (
                   <ListItem
                     key={index}
-                    sx={{ display: "list-item", m: 0, my: 0.5, p: 0 }}
+                    sx={{
+                      display: "list-item",
+                      m: 0,
+                      my: 0.5,
+                      p: 0,
+                    }}
                   >
                     {value}
                   </ListItem>
@@ -329,9 +320,7 @@ price of the products was cheaper/more expensive.
                 }}
               >
                 {`
-- After the success of the savvy shopper mobile app l went on further to develop a chrome extension based on the same data from the mobile application.
-
-- This was mostly meant for people who preferred to do their shopping on a computer.
+Following the success of the Savvy Shopper mobile app, I developed a Chrome extension that provided users with access to the same data from the app.The extension was primarily aimed at users who preferred to shop on their computers.
 `}
               </ProjectTextBox>
             </motion.div>
