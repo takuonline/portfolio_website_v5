@@ -40,11 +40,11 @@ const ProjectSectionWrapper = (props: ProjectWrapperType) => {
           xs={12}
           {...props.firstComponentScale}
           component={motion.div}
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 70 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.5 * mobileAnimationFactor,
-            duration: 0.5 * mobileAnimationFactor,
+            delay: 0.2 * mobileAnimationFactor,
+            duration: 0.2 * mobileAnimationFactor,
           }}
           viewport={{ once: true }}
         >
@@ -60,8 +60,8 @@ const ProjectSectionWrapper = (props: ProjectWrapperType) => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.7 * mobileAnimationFactor,
-            duration: 0.5 * mobileAnimationFactor,
+            delay: 0.3 * mobileAnimationFactor,
+            duration: 0.3 * mobileAnimationFactor,
           }}
           viewport={{ once: true }}
         >

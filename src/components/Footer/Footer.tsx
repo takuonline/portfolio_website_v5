@@ -1,9 +1,8 @@
 import { useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Link from "next/link";
+
 import BodyWrapper from "../Common/BodyWrapper";
-import HighlightTypography from "../Common/HighlightTypography";
 
 const Footer = () => {
   const date = new Date().getFullYear();

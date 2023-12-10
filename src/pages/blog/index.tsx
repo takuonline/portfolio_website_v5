@@ -8,19 +8,13 @@ import Box from "@mui/material/Box";
 import CategoryTitleItem from "../../components/blog/CategoryTitleItem";
 import BlogPostItem from "../../components/blog/BlogPostItem";
 import BlogSearchBar from "../../components/blog/BlogSearchBar";
-import { useRouter } from "next/router";
 import { sanityClient } from "../../common/utils/sanity.server";
-import CustomNavbar from "../../components/NavBar/CustomNavbar";
 import React, {
   ChangeEvent,
-  ChangeEventHandler,
   useMemo,
   useState,
 } from "react";
 import * as postQueries from "../../common/utils/sanity-queries";
-import useNavBar from "../../common/custom-hooks/useNavbar";
-import NavbarMenu from "@/components/NavBar/NavbarMenu";
-import Container from "@mui/material/Container";
 
 type BlogPost = {
   title: string;

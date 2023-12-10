@@ -1,13 +1,4 @@
-import {
-  Grid,
-  Typography,
-  Box,
-  useMediaQuery,
-  useTheme,
-  alpha,
-} from "@mui/material";
-import ProjectTextBox from "../ProjectTextBox";
-import ProjectTitleHeader from "../ProjectTitleHeader";
+import { Typography, Box, useMediaQuery, useTheme } from "@mui/material";
 
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppVideo from "../../Common/AppVideo";
@@ -15,7 +6,7 @@ import { motion } from "framer-motion";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const GoogleLensClone = (props: {   }) => {
+const GoogleLensClone = (props: {}) => {
   const TextBoxSize = {
     xs: 12,
     lg: 9,
@@ -85,7 +76,7 @@ const GoogleLensClone = (props: {   }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 delay: 0.2 * mobileAnimationFactor,
-                duration: 0.5 * mobileAnimationFactor,
+                duration: 0.2 * mobileAnimationFactor,
               }}
               viewport={{ once: true }}
             >
@@ -118,19 +109,11 @@ const GoogleLensClone = (props: {   }) => {
                 mt: 10,
               }}
             >
-              {`The first time I used Google Lens, I was truly amazed. It felt like magic - simply snap a picture, and it would quickly search the internet for relevant information on the object I was pointing my camera at, regardless of how many other objects were in the frame.
+              {`The first time I used Google Lens, I was amazed. It felt like magic. All I had to do was snap a picture and it would quickly search the internet for relevant information on the object I was pointing my camera at, regardless of how many other objects were in the frame.
 
-Years later, I took on the challenge of building my own version of this incredible technology, starting from scratch.
+Years later, I decided to take on the challenge of building my own version of this incredible technology, starting from scratch. Although it was a challenging journey, I delved deep into the world of machine learning and conducted extensive research to gain the necessary knowledge. Eventually, I succeeded in creating my own "Google Lens clone."
 
-While it was a challenging journey, I dove deep into the world of machine learning and conducted extensive research to gain the necessary knowledge. Eventually, I succeeded in creating my own "Google Lens clone."
-
-This project was truly one of my greatest achievements in the world of full stack machine learning.
-
-I was able to implement multiple deep learning models within a full stack application and build the entire system end-to-end without any assistance.
-It's a project I'm incredibly proud of.
-
-
-
+This project was one of my greatest achievements in the world of full-stack machine learning. I was able to implement multiple deep learning models within a full-stack application and build the entire system end-to-end without any assistance. It's a project I'm incredibly proud of.
 
 
             `}
@@ -153,7 +136,10 @@ It's a project I'm incredibly proud of.
                 component={motion.div}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2 * mobileAnimationFactor }}
+                transition={{
+                  delay: 0.1 * mobileAnimationFactor,
+                  duration: 0.2 * mobileAnimationFactor,
+                }}
                 viewport={viewport}
                 mb={5}
               >
@@ -161,7 +147,7 @@ It's a project I'm incredibly proud of.
               </Typography>
               <iframe
                 style={{
-                  minHeight: isMobileView?"23rem": "40rem",
+                  minHeight: isMobileView ? "23rem" : "40rem",
                   height: "auto",
                   width: "100%",
                   borderRadius: 15,

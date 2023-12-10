@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import Image from "next/image";
 
-const BgLightStar  = (props: { color: string | undefined; size: number }) => {
+const BgLightStar = (props: { color: string | undefined; size: number }) => {
   const theme = useTheme();
   return (
     <div>
@@ -17,13 +17,12 @@ const BgLightStar  = (props: { color: string | undefined; size: number }) => {
   );
 };
 
-
 const BgLightStar2 = (props: { color: string | undefined; size: number }) => {
   const theme = useTheme();
   return (
     <div>
       <Image
-        alt={"Star button svg"}
+        alt={"Star button 2 svg"}
         priority
         src="/static/svg/light_star2.svg"
         height={props.size}
@@ -33,9 +32,6 @@ const BgLightStar2 = (props: { color: string | undefined; size: number }) => {
     </div>
   );
 };
-
-
-
 
 const DarkStar = (props: { color: string | undefined; size: number }) => {
   const theme = useTheme();
@@ -53,4 +49,4 @@ const DarkStar = (props: { color: string | undefined; size: number }) => {
   );
 };
 
-export {BgLightStar, BgLightStar2, DarkStar };
+export { BgLightStar, BgLightStar2, DarkStar };

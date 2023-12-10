@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import BodyWrapper from "../../components/Common/BodyWrapper";
 import ContactMe from "../../components/ContactMe/ContactMe";
-import CustomDivider from "../../components/Common/CustomDivider";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { sanityClient } from "../../common/utils/sanity.server";

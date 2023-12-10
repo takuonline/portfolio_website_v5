@@ -246,7 +246,7 @@ const WorkExperience = () => {
               },
             }}
           >
-            <DarkStar color={"black"} size={200} />
+            <DarkStar color={"red"} size={200} />
           </Box>
 
           <Grid

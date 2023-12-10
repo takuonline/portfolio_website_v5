@@ -1,10 +1,7 @@
-import ProjectTitleHeader from "../ProjectTitleHeader";
-import ProjectTextBox from "../ProjectTextBox";
+ import ProjectTextBox from "../ProjectTextBox";
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppImage from "../../Common/AppImage";
-import React from "react";
 
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
@@ -53,8 +50,8 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
         <ProjectComponent
           title={"Web Dashboards"}
           skills={[
-            "Backend development",
-            "Frontend development",
+            "Fullstack development",
+            // "Frontend development",
             "Data Visualization",
           ]}
           bgImage={
@@ -105,7 +102,7 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: 0.2 * mobileAnimationFactor,
-                  duration: 0.5 * mobileAnimationFactor,
+                  duration: 0.3 * mobileAnimationFactor,
                 }}
                 viewport={{ once: true }}
               >
@@ -139,7 +136,7 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
                   sx={{
                     display: "flex",
                     columnGap: 2,
-                    mb: { sm: 7, xs: 5 },
+                    mb: { sm: 4, xs: 5 },
                     mt: { sm: 2, xs: 3 },
                   }}
                 >
@@ -163,14 +160,13 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
                   title={"Project Description"}
                   size={TextBoxSize}
                 >
-                  {`- Have you ever wondered if the prices you see on black friday marked as 50% off or 70% off are really discounts?
+                  {`Have you ever wondered if the prices you see on black friday marked as 50% off or 70% off are really discounts?
 
-- Well, you are not the only one, l had the same thought too and l decided to find that out thought this project.
+Well, you are not the only one, l had the same thought too and l decided to find that out thought this project.
 
-- I decided to put the largest retailer in Africa to the test and scrape their products prices.
+I decided to put the largest retailer in Africa to the test and scrape their products prices.
 
-- The hypothesis was that some of the retailers would mark-up their prices just before black friday and then reduce them on blackfriday to make it seem
-like they have given customers a huge discounts  `}
+The hypothesis was that some of the retailers would mark-up their prices just before black friday and then reduce them on blackfriday to make it seem like they have given customers a huge discounts  `}
                 </ProjectTextBox>
               </>
             }
@@ -192,7 +188,7 @@ like they have given customers a huge discounts  `}
                 whileInView={{ opacity: 1 }}
                 transition={{
                   delay: 0.2 * mobileAnimationFactor,
-                  duration: 0.3 * mobileAnimationFactor,
+                  duration: 0.2 * mobileAnimationFactor,
                 }}
                 viewport={viewport}
                 sx={{
@@ -224,8 +220,9 @@ like they have given customers a huge discounts  `}
                     title={"Project Description"}
                     size={TextBoxSize}
                   >
-                    {`- This was build on the same stack and mind set as the blackfriday dashboard but l did a re-design and extended the scope to other stores.
-  - Here is a list of things you can do on the app:`}
+                    {`This was build on the same stack and mind set as the blackfriday dashboard but l did a re-design and extended the scope to other stores.
+
+  Here is a list of things you can do on the app:`}
                     {featuresPlotlyDashboard.map(
                       (value: string, index: number) => {
                         return (
@@ -240,7 +237,7 @@ like they have given customers a huge discounts  `}
                     )}
                   </ProjectTextBox>
 
-                  <ProjectTextBox title={"Tech Stack"} size={TextBoxSize}>
+                  {/* <ProjectTextBox title={"Tech Stack"} size={TextBoxSize}>
                     {techStackPlotlyDashboard.map(
                       (value: string, index: number) => {
                         return (
@@ -253,7 +250,7 @@ like they have given customers a huge discounts  `}
                         );
                       }
                     )}
-                  </ProjectTextBox>
+                  </ProjectTextBox> */}
                 </Box>
               </Box>
             }
@@ -272,8 +269,8 @@ like they have given customers a huge discounts  `}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.3 * mobileAnimationFactor,
-                  duration: 0.3 * mobileAnimationFactor,
+                  delay: 0.1 * mobileAnimationFactor,
+                  duration: 0.2 * mobileAnimationFactor,
                 }}
                 viewport={viewport}
               >
@@ -313,8 +310,8 @@ like they have given customers a huge discounts  `}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.3 * mobileAnimationFactor,
-                  duration: 0.3 * mobileAnimationFactor,
+                  delay: 0.1 * mobileAnimationFactor,
+                  duration: 0.2 * mobileAnimationFactor,
                 }}
                 viewport={viewport}
               >
@@ -341,8 +338,8 @@ like they have given customers a huge discounts  `}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{
-                  delay: 0.5 * mobileAnimationFactor,
-                  duration: 0.5 * mobileAnimationFactor,
+                  delay: 0.2 * mobileAnimationFactor,
+                  duration: 0.2 * mobileAnimationFactor,
                 }}
                 viewport={viewport}
               >
@@ -351,7 +348,7 @@ like they have given customers a huge discounts  `}
                   sx={{
                     display: "flex",
                     columnGap: 2,
-                    mb: { xs: 6 },
+                    mb: { xs: 6, md: 0 },
                     mt: { sm: 2, xs: 3 },
                   }}
                 >
@@ -367,35 +364,48 @@ like they have given customers a huge discounts  `}
                 <ProjectTextBox
                   title={"Project Description"}
                   size={TextBoxSize}
+                  sx={{
+                    mb:{
+                      xs:0,lg:25
+                    }
+                  }}
                 >
-                  {`- This dashboard shows my first attempt at the react.js library.
+                  {`This dashboard shows my first attempt at the react.js library.
 
-- After l had become comfortable with flutter l wanted to move on to something in the web, given the versatility of website.
+After l had become comfortable with flutter l wanted to move on to something in the web, given the versatility of website.
 
-- I chose the most popular frontend js library React. `}
+I chose the most popular frontend js library React. `}
                 </ProjectTextBox>
 
-                <ProjectTextBox title={"Tech Stack"} size={TextBoxSize}>
+                {/* <ProjectTextBox title={"Tech Stack"} size={TextBoxSize}>
                   {techStackReactDashboard.map(
                     (value: string, index: number) => {
                       return (
                         <ListItem
                           key={index}
-                          sx={{ display: "list-item", m: 0, p: 0 }}
+                          sx={{
+                            display: "list-item",
+                            m: 0,
+                            p: 0,
+                            mb: {
+                              xs: 0,
+                              md: 15,
+                            },
+                          }}
                         >
                           {value}
                         </ListItem>
                       );
                     }
                   )}
-                </ProjectTextBox>
+                </ProjectTextBox> */}
               </Box>
             }
             secondComponentScale={{
               // xs: 0,
               // sm: 0,
               // md: 0,
-              lg: 4,
+              lg: 5,
             }}
             showDivider={false}
           />

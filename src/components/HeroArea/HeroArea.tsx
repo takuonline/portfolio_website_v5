@@ -354,9 +354,8 @@ const HeroArea = () => {
         </Grid>
       </BodyWrapper>
 
-      <Box sx={{ position: "relative" }}>
-        <HeroAreaQuote iconSize={120} />
-      </Box>
+
+      <HeroAreaQuote iconSize={120} />
 
       <Box mb={{ lg: 15, xs: 25 }} />
       <CustomDivider
