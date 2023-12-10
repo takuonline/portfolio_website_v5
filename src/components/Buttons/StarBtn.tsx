@@ -1,8 +1,6 @@
 import { Box, Button, useTheme, Theme, SxProps, alpha } from "@mui/material";
 import Image from "next/image";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import LookAtMyServiceText from "@/common/svgComponents/LookAtMyServiceText";
-import PrimaryColorStar from "@/common/svgComponents/PrimaryColorStar";
 
 const StarSVGBackground = (props: {
   color: string | undefined;
@@ -75,7 +73,7 @@ const StarButton = (props: {
 
         }}
       >
-        {/* <LookAtMyServiceText   scaleFactor={2} viewBox="0 0 200 200"/> */}
+        {/* <SVGComponents.LookAtMyServiceText   scaleFactor={2} viewBox="0 0 200 200"/> */}
 
         <TextSVGBackground
           color={props.backgroundColor}
@@ -116,7 +114,7 @@ const StarButton = (props: {
               fontSize: "2rem",
             }}
           />
-          {/* {props.title.toLowerCase()} */}
+
         </Box>
       </Button>
     </Box>

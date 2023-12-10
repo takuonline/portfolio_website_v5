@@ -60,13 +60,14 @@ const GoogleLensClone = (props: {   }) => {
                 xs: 6,
                 sm: 4,
                 md: 3,
-                lg: 2,
+                lg: 1.8,
               }}
               sx={{
                 width: "100%",
                 position: "absolute",
                 right: "22rem",
-                top: "5rem",
+                top: "10rem",
+
                 [theme.breakpoints.down("md")]: {
                   right: "25%",
                   top: "8rem",

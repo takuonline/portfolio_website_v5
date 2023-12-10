@@ -49,7 +49,7 @@ const ReflectlyClone = (props: {}) => {
                 sx={{
                   position: "absolute",
                   right: "22rem",
-                  top: "6rem",
+                  top: "10rem",
 
                   [theme.breakpoints.down("md")]: {
                     right: "20%",

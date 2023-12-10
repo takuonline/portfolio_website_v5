@@ -10,13 +10,13 @@ import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
-import {useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { IoLink, IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const BlackFridayPlotlyDashboard = (props: {  }) => {
+const BlackFridayPlotlyDashboard = (props: {}) => {
   const TextBoxSize = {
     xs: 12,
     sm: 8,
@@ -63,7 +63,6 @@ const BlackFridayPlotlyDashboard = (props: {  }) => {
                 backgroundColor: "#6b0f1a77",
                 width: "100%",
                 height: "100%",
-                // borderRadius: 24,
               }}
             >
               <AppImage
@@ -76,34 +75,24 @@ const BlackFridayPlotlyDashboard = (props: {  }) => {
                 size={{
                   xs: 10,
                   sm: 8,
-                  // md: 3,
-                  lg: 5,
-
+                  lg: 4.7,
                 }}
                 sx={{
                   border: "5px solid white",
                   borderRadius: 1 * 3,
                   position: "absolute",
                   right: "22rem",
-                  top: "6rem",
-
-
+                  top: "10rem",
 
                   [theme.breakpoints.down("lg")]: {
                     right: "9rem",
                     top: "8rem",
                   },
 
-
                   [theme.breakpoints.down("md")]: {
                     right: "9%",
                     top: "15rem",
                   },
-
-
-
-
-
                 }}
               />
             </Box>
@@ -409,7 +398,6 @@ like they have given customers a huge discounts  `}
               lg: 4,
             }}
             showDivider={false}
-
           />
         </ProjectComponent>
       </BodyWrapper>

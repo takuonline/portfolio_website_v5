@@ -30,10 +30,7 @@ export default function Home(props: { isNavbarMenuOpen: boolean }) {
           overflowX: "hidden",
         }}
       >
-        {/* <CustomNavbar
-            isNavbarMenuOpen={isNavbarMenuOpen}
-            showNavbarMenu={showNavbarMenu}
-          /> */}
+
 
         {!props.isNavbarMenuOpen && (
           <>

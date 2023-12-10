@@ -12,13 +12,11 @@ import * as queries from "../../common/utils/sanity-queries";
 import { useEffect, useState } from "react";
 import { urlForImage } from "../../common/utils/sanity";
 import PostBody from "../../components/blog/PostBody";
-import CustomNavbar from "../../components/NavBar/CustomNavbar";
+
 import Button from "@mui/material/Button";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+
 import { IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin } from "react-icons/io5";
 import Box from "@mui/material/Box";
-import useNavBar from "@/common/custom-hooks/useNavbar";
-import Container from "@mui/material/Container";
 
 const ProjectBlogPage = ({ post: data }: Props) => {
   const [formattedDate, setFormattedDate] = useState<string>("");
@@ -26,7 +24,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
   try {
     useEffect(
       () => setFormattedDate(new Date(data?.created).toLocaleDateString()),
-      []
+      [data?.created]
     );
   } catch (error) {
     setFormattedDate("A good day");
@@ -56,7 +54,6 @@ const ProjectBlogPage = ({ post: data }: Props) => {
   const IconSize = "1.5rem";
   const btnStyle = {
     p: 0,
-
     ":active": {
       // color:"secondary.main",
       opacity: 0.7,
@@ -70,13 +67,12 @@ const ProjectBlogPage = ({ post: data }: Props) => {
     },
   };
 
-
   if (!router.isFallback && !data?.mainImage) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    < >
+    <>
       {router.isFallback && fallBackItem}
 
       {!router.isFallback && (
@@ -86,7 +82,6 @@ const ProjectBlogPage = ({ post: data }: Props) => {
             position: "relative",
           }}
         >
-
           <BodyWrapper>
             <article>
               <Grid
@@ -101,7 +96,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                 rowGap={{ md: 20 }}
               >
                 <Grid item md={4}>
-                  <Typography variant={"h3"} >{data.title}</Typography>
+                  <Typography variant={"h3"}>{data.title}</Typography>
 
                   <Typography
                     variant={"body2"}
@@ -200,7 +195,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
                     // textAlign: "right",
                   }}
                 >
-                  <Typography variant="body2" >{formattedDate}</Typography>
+                  <Typography variant="body2">{formattedDate}</Typography>
                 </Grid>
 
                 <Grid
