@@ -112,3 +112,7 @@ a {
 .logoV1:hover {
   fill: "#E7FA71";
 } */
+
+html {
+  scroll-behavior: smooth;
+}

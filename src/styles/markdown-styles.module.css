@@ -17,6 +17,6 @@
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
-.markdown p{
-  margin-top: 0
+.markdown p {
+  margin-top: 0;
 }

@@ -9,11 +9,7 @@ import CategoryTitleItem from "../../components/blog/CategoryTitleItem";
 import BlogPostItem from "../../components/blog/BlogPostItem";
 import BlogSearchBar from "../../components/blog/BlogSearchBar";
 import { sanityClient } from "../../common/utils/sanity.server";
-import React, {
-  ChangeEvent,
-  useMemo,
-  useState,
-} from "react";
+import React, { ChangeEvent, useMemo, useState } from "react";
 import * as postQueries from "../../common/utils/sanity-queries";
 
 type BlogPost = {
@@ -29,7 +25,7 @@ const filterData = (data: BlogPost[], keys: string[]) => {
   return data.filter((post) => {
     for (let key of keys) {
       let categories = post.namedCategories.map(
-        (v: { title: string }) => v.title
+        (v: { title: string }) => v.title,
       );
 
       for (let category of categories) {
@@ -64,7 +60,7 @@ export default function Blog({ posts, processedCategories }: Props) {
   };
 
   const handleSearch = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setSearchInput(event?.target?.value.toLowerCase());
   };
@@ -72,7 +68,7 @@ export default function Blog({ posts, processedCategories }: Props) {
   const blogPosts = useMemo(() => {
     // Filter on search input
     const searchResults = posts.filter((v: BlogPost) =>
-      v.title.toLowerCase().includes(searchInput.toLowerCase())
+      v.title.toLowerCase().includes(searchInput.toLowerCase()),
     );
 
     // only filter when a person selectes a column
@@ -122,11 +118,9 @@ export default function Blog({ posts, processedCategories }: Props) {
         }}
         pt={20}
       >
-
         <BodyWrapper>
           <Grid
             container
-
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -205,7 +199,7 @@ type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(postQueries.blogPostQuery);
   const rawCategories = await sanityClient.fetch(
-    postQueries.blogPostCategoryQuery
+    postQueries.blogPostCategoryQuery,
   );
   // const result: s.infer<typeof foo> = await client.fetch(`* [_type == "foo"][0]`);
 
@@ -213,7 +207,7 @@ export async function getStaticProps() {
     (v: { title: string }) => ({
       title: v.title,
       isSelected: false,
-    })
+    }),
   );
 
   return {

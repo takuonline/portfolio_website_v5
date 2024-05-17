@@ -1,5 +1,5 @@
-import { Box, Typography,  } from "@mui/material";
-import { useTheme } from '@mui/material/styles';
+import { Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const ProjectTitleHeader = (props: { title: string; index?: number }) => {
   const theme = useTheme();
@@ -8,7 +8,7 @@ const ProjectTitleHeader = (props: { title: string; index?: number }) => {
     <Box
       sx={{
         position: "relative",
-        mt:{xs:20,lg:30}
+        mt: { xs: 20, lg: 30 },
       }}
     >
       <Typography

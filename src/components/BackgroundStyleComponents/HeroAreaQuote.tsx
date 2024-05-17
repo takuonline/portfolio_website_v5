@@ -235,10 +235,7 @@ also the best things that ever happened to you.`}
         >
           <DepthEllipse size={{ lg: "856px", xs: "356px" }} opacity={0.08} />
         </Box>
-
       </Box>
-
-
     </>
   );
 };

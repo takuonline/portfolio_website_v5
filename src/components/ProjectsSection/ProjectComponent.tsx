@@ -131,7 +131,6 @@ const ProjectComponent = (props: ProjectComponentType) => {
 
           backgroundColor: "black",
 
-
           [theme.breakpoints.down("md")]: {
             borderRadius: borderRadiusMdDown,
             height: "40rem",

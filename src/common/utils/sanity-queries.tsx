@@ -17,7 +17,6 @@ export const postQuery = `
   }
 }`;
 
-
 export const postSlugsQuery = `
 *[_type == "post" && defined(slug.current)][].slug.current
 `;

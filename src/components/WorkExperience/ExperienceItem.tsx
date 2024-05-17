@@ -30,7 +30,7 @@ const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
 
   const startDateFormatted = new Date(item.startDate).toLocaleDateString(
     "en-US",
-    { month: "long", year: "numeric" }
+    { month: "long", year: "numeric" },
   );
   const endDateFormatted =
     item.endDate === undefined

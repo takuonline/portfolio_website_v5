@@ -8,7 +8,7 @@ const poppinsFont = Poppins({
 });
 const merriWeatherFont = Merriweather({
   weight: ["300", "400", "700"],
-  subsets: ["latin",],
+  subsets: ["latin"],
 });
 
 // Font files can be colocated inside of `pages`
@@ -20,4 +20,4 @@ const merriWeatherFont = Merriweather({
 //   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 // });
 
-export  {interFont,poppinsFont,merriWeatherFont};
+export { interFont, poppinsFont, merriWeatherFont };

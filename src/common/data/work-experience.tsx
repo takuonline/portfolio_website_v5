@@ -81,8 +81,7 @@ const workExperienceData: WorkExperienceSchema[] = [
       "Developed and implemented machine learning algorithms to analyse GIS data and identify optimal store locations based on factors such as foot traffic, competition, and demographics.",
       "Created visualizations and dashboards to communicate the results of the store location analysis to stakeholders, including maps, charts, and tables.",
     ],
-    skills: ["Data science",   "GIS"],
-
+    skills: ["Data science", "GIS"],
   },
 ];
 

@@ -19,7 +19,7 @@ export default function PostBody({ body }) {
         // from https://dribbble.com/resources/nina-geometrieva-product-designer-instagram?utm_campaign=2023-06-14&utm_medium=email&utm_source=insider-20230614
         fontWeight: 400,
         lineHeight: "28px",
-        opacity:.80
+        opacity: 0.8,
       }}
     >
       {<PortableText value={body} />}

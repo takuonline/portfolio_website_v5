@@ -27,7 +27,7 @@ const ContactMe = () => {
   const theme = useTheme();
 
   const [formResult, setFormResult] = useState<FormResult>(
-    FormResult.notSubmitted
+    FormResult.notSubmitted,
   );
 
   const [isSending, setIsSending] = useState<boolean>(false);
@@ -65,7 +65,7 @@ const ContactMe = () => {
         console.log(error.text);
         setIsSending(false);
         setFormResult(FormResult.Failed);
-      }
+      },
     );
   };
 
@@ -120,8 +120,6 @@ const ContactMe = () => {
                 href={SocialMediaInfo.twitter.url}
               />
               <ContactItem title={"Github"} href={SocialMediaInfo.github.url} />
-
-
             </Grid>
           </Grid>
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Button from "@mui/material/Button";
 import { alpha, SxProps, Theme, useTheme } from "@mui/material/styles";
@@ -45,6 +44,7 @@ const NavbarItem = (props: {
       const route =
         props.pageRoute ??
         "/#" + replaceAll(props.title.trim().toLowerCase(), " ", "-");
+
       router.push(route);
     }
   };
@@ -116,7 +116,6 @@ const MenuNavItem = (props: {
         zIndex: 2,
         width: "100%",
         mb: 1,
-
       }}
     >
       <CustomListItem

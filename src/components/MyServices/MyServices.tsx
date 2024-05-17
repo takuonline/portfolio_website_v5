@@ -173,8 +173,6 @@ const MyServices = () => {
             >
               <BgRings size={{ md: 450, xs: 250 }} />
             </Box>
-
-
           </Grid>
 
           <Grid item xs={12} md={8}>
@@ -196,8 +194,6 @@ const MyServices = () => {
               ))}
             </List>
           </Grid>
-
-
 
           <PrimaryBtn
             onClick={contactBtnOnClick}

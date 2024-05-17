@@ -142,7 +142,6 @@ export default function CustomNavbar(props: {
                 <Box
                   sx={{
                     display: "flex",
-                    // mx: "auto",
                     flex: "6 1 auto",
                   }}
                 />

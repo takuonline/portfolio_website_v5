@@ -3,7 +3,7 @@ enum FrameType {
   IphoneX,
   Iphone,
   Note8,
-  MacBook
+  MacBook,
 }
 
 export default FrameType;

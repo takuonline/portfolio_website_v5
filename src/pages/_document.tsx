@@ -3,12 +3,20 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme from "../common/themes/theme";
 import createEmotionCache from "../common/themes/createEmotionCache";
-import {interFont,poppinsFont,merriWeatherFont} from "../common/themes/fonts/font";
+import {
+  interFont,
+  poppinsFont,
+  merriWeatherFont,
+} from "../common/themes/fonts/font";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className={poppinsFont.className}>
+      <Html
+        lang="en"
+        style={{ scrollBehavior: "smooth" }}
+        className={poppinsFont.className}
+      >
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
@@ -17,7 +25,7 @@ export default class MyDocument extends Document {
           {(this.props as any).emotionStyleTags}
         </Head>
 
-        <body  >
+        <body>
           <Main />
           <NextScript />
         </body>

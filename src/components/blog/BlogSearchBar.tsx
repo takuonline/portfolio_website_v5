@@ -1,16 +1,13 @@
 import { useTheme } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 
-import {
-  ChangeEvent,
-
-} from "react";
+import { ChangeEvent } from "react";
 import TextField from "@mui/material/TextField";
 
 const BlogSearchBar = (props: {
   value: string;
   handleOnChange: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
 }) => {
   const theme = useTheme();

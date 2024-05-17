@@ -10,7 +10,7 @@ import ProjectComponent from "../ProjectComponent";
 
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 
-const MobileEcommerceApp = (props: {   }) => {
+const MobileEcommerceApp = (props: {}) => {
   const TextBoxSize = {
     xs: 12,
     sm: 10,

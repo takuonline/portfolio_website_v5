@@ -1,14 +1,13 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { SxProps, Theme, useTheme } from "@mui/material/styles";
-import CustomNavbar, { NavbarTitles, voidFunc } from "./CustomNavbar";
+import { SxProps, Theme } from "@mui/material/styles";
+import { NavbarTitles, voidFunc } from "./CustomNavbar";
 
-import { MenuNavItem, NavbarItem } from "./NavbarItem";
+import { MenuNavItem } from "./NavbarItem";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 import NoiseAnimation from "@/common/animations/NoiseAnimation";
 import { Box } from "@mui/material";
-import PrimaryBtn from "../Buttons/PrimaryBtn";
 
 type NavbarMenuItemsType = {
   title: string;
@@ -26,8 +25,6 @@ const NavbarMenu = (props: {
   showNavbarMenu: voidFunc;
   isNavbarMenuOpen: boolean;
 }) => {
-  const { showNavbarMenu, isNavbarMenuOpen } = props;
-
   const navbarMenuItems: NavbarMenuItemsType[] = [
     {
       showNavbarMenu: props.showNavbarMenu,
@@ -86,7 +83,7 @@ const NavbarMenu = (props: {
             top: 0,
             left: 0,
           }}
-        ></Box>
+        />
         <NoiseAnimation />
 
         <Grid container>

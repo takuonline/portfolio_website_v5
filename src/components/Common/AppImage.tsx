@@ -36,24 +36,24 @@ const AppImage = (props: {
         frameType={props.frameType}
         showFrame={props.showFrame}
       >
-      <i></i>
-      {/* <b></b> */}
-      <Image
-        style={{
-          width: "100%",
-          height: "auto",
-          maxHeight: props.maxHeight ?? "none",
-          borderRadius: props.borderRadius ?? 40,
-          ...props.style,
+        <i></i>
+        {/* <b></b> */}
+        <Image
+          style={{
+            width: "100%",
+            height: "auto",
+            maxHeight: props.maxHeight ?? "none",
+            borderRadius: props.borderRadius ?? 40,
+            ...props.style,
 
-          // margin:10,
-        }}
-        src={props.src}
-        alt={props.alt}
-        width={props.width ?? 500}
-        height={props.height ?? 800}
-        // {...imageProps}
-      />
+            // margin:10,
+          }}
+          src={props.src}
+          alt={props.alt}
+          width={props.width ?? 500}
+          height={props.height ?? 800}
+          // {...imageProps}
+        />
       </PhoneFrame>
     </Grid>
   );

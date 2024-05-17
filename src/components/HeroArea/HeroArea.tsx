@@ -2,7 +2,6 @@ import Image from "next/image";
 import { alpha, Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import HighlightTypography from "../Common/HighlightTypography";
 import { useTheme } from "@mui/material/styles";
-import React from "react";
 
 import BodyWrapper from "../Common/BodyWrapper";
 import { motion } from "framer-motion";
@@ -12,6 +11,7 @@ import BgRings from "../BackgroundStyleComponents/BgRings";
 import HeroAreaQuote from "../BackgroundStyleComponents/HeroAreaQuote";
 import CustomDivider from "../Common/CustomDivider";
 import { useRouter } from "next/navigation";
+import bgImg2 from "./../../../public/static/images/background_noise_image.png";
 
 // Only loads the YouTube player
 const HeroBgImage = () => {
@@ -61,12 +61,16 @@ const HeroBgImage = () => {
           <Image
             style={{
               filter: "grayscale(100%)",
-              width: isMobileView ? "160%" : "110%",
-              height: "100%",
+              width: isMobileView ? "160%" : "120%",
+              height: "90%",
               borderRadius: "1000rem",
+              objectFit: "cover",
+              backgroundImage: `url(${bgImg2.src})  `,
             }}
             src="/static/images/Taku2.3.png"
             alt="hero_image"
+            // quality={100}
+
             // fill
             width={892}
             height={523}
@@ -79,11 +83,14 @@ const HeroBgImage = () => {
         variant={"body2"}
         sx={{
           position: "absolute",
-          top: "26rem",
-          right: "19rem",
+          top: "25rem",
+          right: "15rem",
           width: "40%",
           color: "primary.main",
-          fontWeight: 100,
+          fontWeight: "normal",
+          fontSize: ".8rem",
+          lineHeight: "1.4rem",
+
           [theme.breakpoints.down("lg")]: {
             left: "31rem",
             width: "50%",
@@ -126,8 +133,8 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "12rem",
-          left: "16rem",
+          bottom: "13rem",
+          left: "21rem",
           [theme.breakpoints.down("lg")]: {
             bottom: "9rem",
           },
@@ -145,7 +152,7 @@ const BgDecorations = () => {
         <StarButton
           onClick={handleClick}
           backgroundColor={theme.palette.primary.main}
-          bgStarSize={150}
+          bgStarSize={130}
           sx={{}}
         />
       </Box>
@@ -153,7 +160,7 @@ const BgDecorations = () => {
         sx={{
           position: "absolute",
           top: "-2rem",
-          right: "10rem",
+          right: "3rem",
           [theme.breakpoints.down("md")]: {
             right: "-10rem",
           },
@@ -173,8 +180,8 @@ const BgDecorations = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "1rem",
-          right: "12%",
+          top: ".1rem",
+          right: "0%",
           zIndex: -1,
           [theme.breakpoints.down("lg")]: {
             right: "-6rem",
@@ -237,7 +244,7 @@ const HeroFrontText = () => {
       <Box
         component={"span"}
         sx={{
-          ml: 25,
+          ml: 32,
           display: "block",
           [theme.breakpoints.down("md")]: {
             ml: 0,
@@ -353,7 +360,6 @@ const HeroArea = () => {
           <HeroInstructionText />
         </Grid>
       </BodyWrapper>
-
 
       <HeroAreaQuote iconSize={120} />
 

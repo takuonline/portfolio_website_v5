@@ -4,9 +4,12 @@ import replaceAll from "../../common/utils/custom-replace-all";
 import HighlightTypography from "./HighlightTypography";
 import { motion } from "framer-motion";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Theme, SxProps, } from "@mui/material";
+import { Theme, SxProps } from "@mui/material";
 
-const SectionHeader = (props: { children: React.ReactNode | string,  sx?: SxProps<Theme>;id:string
+const SectionHeader = (props: {
+  children: React.ReactNode | string;
+  sx?: SxProps<Theme>;
+  id: string;
 }) => {
   const theme = useTheme();
 
@@ -21,27 +24,25 @@ const SectionHeader = (props: { children: React.ReactNode | string,  sx?: SxProp
       component={motion.div}
       id={replaceAll(_id, " ", "-")}
       variant="h1"
-      initial={{ opacity: 0, y:-40 *mobileAnimationFactor}}
-      whileInView={{ opacity: 0.8, y:0  }}
-      transition={{delay:.7*mobileAnimationFactor, duration: 0.2 }}
+      initial={{ opacity: 0, y: -40 * mobileAnimationFactor }}
+      whileInView={{ opacity: 0.8, y: 0 }}
+      transition={{ delay: 0.7 * mobileAnimationFactor, duration: 0.2 }}
       viewport={{ once: true }}
       sx={{
         ml: 0,
         pl: 0,
         textAlign: "left",
 
-
         opacity: 0.7,
 
         ...props.sx,
 
         [theme.breakpoints.down("md")]: {
-           typography:"h1"
+          typography: "h1",
         },
-
       }}
     >
-      {props.children }
+      {props.children}
     </Typography>
   );
 };

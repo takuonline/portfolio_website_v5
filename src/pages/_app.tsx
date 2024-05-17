@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
@@ -10,6 +9,7 @@ import NoiseAnimation from "../common/animations/NoiseAnimation";
 import Container from "@mui/material/Container";
 import CustomNavbar from "@/components/NavBar/CustomNavbar";
 import useNavBar from "@/common/custom-hooks/useNavbar";
+import ErrorBoundary from "@/components/Common/ErrorBoundary";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -33,10 +33,12 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
 
         <Container disableGutters maxWidth={false} sx={{ maxWidth: "100rem" }}>
-          <CustomNavbar
-            isNavbarMenuOpen={isNavbarMenuOpen}
-            showNavbarMenu={showNavbarMenu}
-          />
+          <ErrorBoundary>
+            <CustomNavbar
+              isNavbarMenuOpen={isNavbarMenuOpen}
+              showNavbarMenu={showNavbarMenu}
+            />
+          </ErrorBoundary>
 
           <Component {...pageProps} isNavbarMenuOpen={isNavbarMenuOpen} />
         </Container>

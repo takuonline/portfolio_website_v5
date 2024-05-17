@@ -1,7 +1,12 @@
 import { alpha, Box } from "@mui/material";
 
-const BgRings = (props: { size: number | string | {md?:number,xs?:number,lg?:number,sm?:number},opacity?: number  }) => {
-
+const BgRings = (props: {
+  size:
+    | number
+    | string
+    | { md?: number; xs?: number; lg?: number; sm?: number };
+  opacity?: number;
+}) => {
   const opacity = props.opacity ?? 0.2;
 
   return (
@@ -10,7 +15,7 @@ const BgRings = (props: { size: number | string | {md?:number,xs?:number,lg?:num
         width: props.size,
         height: props.size,
         position: "relative",
-        opacity:opacity,
+        opacity: opacity,
       }}
     >
       <Box

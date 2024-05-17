@@ -1,4 +1,4 @@
- import ProjectTextBox from "../ProjectTextBox";
+import ProjectTextBox from "../ProjectTextBox";
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppImage from "../../Common/AppImage";
 
@@ -233,7 +233,7 @@ The hypothesis was that some of the retailers would mark-up their prices just be
                             {value}
                           </ListItem>
                         );
-                      }
+                      },
                     )}
                   </ProjectTextBox>
 
@@ -365,9 +365,10 @@ The hypothesis was that some of the retailers would mark-up their prices just be
                   title={"Project Description"}
                   size={TextBoxSize}
                   sx={{
-                    mb:{
-                      xs:0,lg:25
-                    }
+                    mb: {
+                      xs: 0,
+                      lg: 25,
+                    },
                   }}
                 >
                   {`This dashboard shows my first attempt at the react.js library.

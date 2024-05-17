@@ -261,7 +261,7 @@ const WorkExperience = () => {
             }}
           >
             <SectionHeader
-            id="experience"
+              id="experience"
               sx={{
                 color: "black",
                 fontFamily: merriWeatherFont.style.fontFamily,
@@ -319,7 +319,7 @@ const WorkExperience = () => {
                   <motion.div key={index} variants={itemAnimation}>
                     <ExperienceItem key={value.id} item={value} />
                   </motion.div>
-                )
+                ),
               )}
             </Grid>
           </Grid>

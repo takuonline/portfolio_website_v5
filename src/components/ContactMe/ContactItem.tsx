@@ -8,83 +8,78 @@ const ContactItem = (props: { title: string; href: string }) => {
   const transition = `all ${theme.transitions.duration.standard} ease`;
 
   return (
-
-    <Box sx={{
-
-      [theme.breakpoints.down("lg")]: {
-        mr:10
-
-      },
-    }}>
-
-    <Button
-      variant="text"
-      href={props.href}
-      LinkComponent={Link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Box
       sx={{
-        borderRadius: "0",
-        p: 0,
-        textTransform: "none",
-        transition: transition,
-        posiiton: "relative",
-
-        span: {
-          display: "none",
-        },
-        pb: 1,
-        borderBottom: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
-
-        ":hover": {
-          transition: transition,
-          // backgroundColor: theme.palette.background.default,
-          color: "primary.main",
-          borderColor: theme.palette.secondary.main,
-          backgroundColor: "transparent",
-        },
-
         [theme.breakpoints.down("lg")]: {
-          // mr: 10,
+          mr: 10,
         },
       }}
     >
-      <Typography
-        variant="h3"
+      <Button
+        variant="text"
+        href={props.href}
+        LinkComponent={Link}
+        target="_blank"
+        rel="noopener noreferrer"
         sx={{
-          color: theme.palette.text.primary,
+          borderRadius: "0",
+          p: 0,
+          textTransform: "none",
+          transition: transition,
+          posiiton: "relative",
+
+          span: {
+            display: "none",
+          },
+          pb: 1,
+          borderBottom: `1px solid ${alpha(theme.palette.text.primary, 0.2)}`,
 
           ":hover": {
             transition: transition,
-            backgroundColor: "transparent",
+            // backgroundColor: theme.palette.background.default,
             color: "primary.main",
+            borderColor: theme.palette.secondary.main,
+            backgroundColor: "transparent",
           },
 
-          [theme.breakpoints.down("md")]: {
-            typography: "h2",
-
+          [theme.breakpoints.down("lg")]: {
+            // mr: 10,
           },
         }}
       >
-        <ArrowOutwardIcon
+        <Typography
+          variant="h3"
           sx={{
-            position: "absolute",
-            top: "0%",
-            right: "-20%",
-            color: "primary.main",
+            color: theme.palette.text.primary,
+
+            ":hover": {
+              transition: transition,
+              backgroundColor: "transparent",
+              color: "primary.main",
+            },
+
             [theme.breakpoints.down("md")]: {
-              right: "-26%",
-              // position: "relative",
-
-
+              typography: "h2",
             },
           }}
-        />
+        >
+          <ArrowOutwardIcon
+            sx={{
+              position: "absolute",
+              top: "0%",
+              right: "-20%",
+              color: "primary.main",
+              [theme.breakpoints.down("md")]: {
+                right: "-26%",
+                // position: "relative",
+              },
+            }}
+          />
 
-        {props.title}
-      </Typography>
+          {props.title}
+        </Typography>
 
-      {/* <ArrowOutwardIcon
+        {/* <ArrowOutwardIcon
         sx={{
           display: "none",
 
@@ -100,9 +95,8 @@ const ContactItem = (props: { title: string; href: string }) => {
           },
         }}
       /> */}
-    </Button>
+      </Button>
     </Box>
-
   );
 };
 export default ContactItem;

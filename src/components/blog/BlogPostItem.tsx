@@ -39,9 +39,7 @@ const BlogPostItem = ({ blogPost }) => {
 
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
-  },[useMediaQuery(theme.breakpoints.up("md"))]);
-
-
+  }, [useMediaQuery(theme.breakpoints.up("md"))]);
 
   return (
     <>
@@ -139,9 +137,7 @@ const BlogPostItem = ({ blogPost }) => {
             sx={{
               position: "relative",
             }}
-          >
-
-          </Grid>
+          ></Grid>
         </Grid>
       </Grid>
     </>

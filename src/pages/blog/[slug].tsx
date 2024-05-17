@@ -23,7 +23,7 @@ const ProjectBlogPage = ({ post: data }: Props) => {
   try {
     useEffect(
       () => setFormattedDate(new Date(data?.created).toLocaleDateString()),
-      [data?.created]
+      [data?.created],
     );
   } catch (error) {
     setFormattedDate("A good day");

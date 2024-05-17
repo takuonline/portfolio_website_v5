@@ -70,14 +70,11 @@ const StarButton = (props: {
           top: "50%",
           left: "50%",
           transform: "translate(-50%,-50%)",
-
         }}
       >
-        {/* <SVGComponents.LookAtMyServiceText   scaleFactor={2} viewBox="0 0 200 200"/> */}
-
         <TextSVGBackground
           color={props.backgroundColor}
-          size={props.bgStarSize * 0.77}
+          size={props.bgStarSize * 0.72}
         />
       </Box>
 
@@ -111,10 +108,9 @@ const StarButton = (props: {
         >
           <ArrowDownwardIcon
             sx={{
-              fontSize: "2rem",
+              fontSize: "1.1rem",
             }}
           />
-
         </Box>
       </Button>
     </Box>
