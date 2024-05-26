@@ -239,7 +239,6 @@ const HeroFrontText = () => {
       <HighlightTypography
         backgroundSize="auto 25%"
         backgroundPosition="10% 100%"
-        // component={"h1"}
       >
         {` innovative`}
       </HighlightTypography>
@@ -247,7 +246,11 @@ const HeroFrontText = () => {
       <Box
         // component={"h1"}
         sx={{
-          ml: 32,
+          ml: {
+
+            xs: 25,
+            lg: 32,
+          },
           display: "block",
           [theme.breakpoints.down("md")]: {
             ml: 0,
