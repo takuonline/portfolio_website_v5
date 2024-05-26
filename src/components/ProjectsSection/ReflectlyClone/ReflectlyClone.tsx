@@ -7,6 +7,8 @@ import AppVideo from "../../Common/AppVideo";
 import BodyWrapper from "../../Common/BodyWrapper";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
+import { NoiseAnimationWrapper } from "@/common/animations/NoiseAnimation";
+import DepthEllipse from "@/components/BackgroundStyleComponents/DepthEllipse";
 
 const ReflectlyClone = (props: {}) => {
   const TextBoxSize = {
@@ -28,21 +30,31 @@ const ReflectlyClone = (props: {}) => {
           bgImage={
             <Box
               sx={{
-                backgroundColor: " #0093E955",
+                // backgroundColor:"#FFFFFF10",
+                backgroundColor: "#0093E955",
                 // backgroundImage:
                 //   "linear-gradient(to bottom right,  #0093E9ff, #0093E977) ",
                 // boxShadow: "inset 0px 0px 0 2000px rgba(0,0,0,0.7)",
                 width: "100%",
                 height: "100%",
+                // opacity: 0.05,
+                // backgroundImage: undefined,
               }}
             >
+              {/* <DepthEllipse sx={{
+
+                opacity: 0.5,
+                position:"relative",
+                // zIndex:999
+
+              }} size={{ lg: "456px", xs: "556px" }} opacity={0.1}  /> */}
+
               <AppVideo
                 src={"https://youtu.be/0EfVCwQ4dFQ"}
                 alt={"Mobile Ecommerce App "}
                 size={{
                   xs: 7,
                   sm: 4,
-
                   lg: 2,
                 }}
                 borderRadius={6}
@@ -50,12 +62,10 @@ const ReflectlyClone = (props: {}) => {
                   position: "absolute",
                   right: "22rem",
                   top: "10rem",
-
                   [theme.breakpoints.down("md")]: {
                     right: "20%",
                     top: "9rem",
                   },
-                  // display:"flex"
                 }}
                 showFrame={false}
               />

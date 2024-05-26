@@ -1,6 +1,7 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React, { useState } from "react";
 import BodyWrapper from "../Common/BodyWrapper";
@@ -13,6 +14,8 @@ import PrimaryBtn from "../Buttons/PrimaryBtn";
 import replaceAll from "@/common/utils/custom-replace-all";
 import { NavbarItem } from "./NavbarItem";
 import SVGComponents from "@/common/svgComponents/SVGComponents";
+import ErrorBoundary from "@/components/Common/ErrorBoundary";
+import useNavBar from "@/common/custom-hooks/useNavbar";
 
 const NavbarTitles = {
   home: "home",
@@ -26,13 +29,13 @@ export { NavbarTitles };
 
 export type voidFunc = () => void;
 
-export default function CustomNavbar(props: {
-  showNavbarMenu: voidFunc;
-  isNavbarMenuOpen: boolean;
+export default function Navbar(props: {
+  showNavbarMenu?: voidFunc;
+  isNavbarMenuOpen?: boolean;
 }) {
-  // const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
+  const [isNavbarMenuOpen, showNavbarMenu] = useNavBar();
 
-  const { showNavbarMenu, isNavbarMenuOpen } = props;
+  // const { showNavbarMenu, isNavbarMenuOpen } = props;
 
   const theme = useTheme();
 
@@ -44,7 +47,7 @@ export default function CustomNavbar(props: {
 
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
-  }, [useMediaQuery(theme.breakpoints.up("md")), initValue]);
+  }, [ initValue]);
 
   const router = useRouter();
   const pathName = usePathname();
@@ -57,6 +60,7 @@ export default function CustomNavbar(props: {
   };
 
   return (
+    <ErrorBoundary>
     <nav>
       <BodyWrapper
         sx={{
@@ -174,5 +178,6 @@ export default function CustomNavbar(props: {
         }}
       />
     </nav>
+    </ErrorBoundary>
   );
 }

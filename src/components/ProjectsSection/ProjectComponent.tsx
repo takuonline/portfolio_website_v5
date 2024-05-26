@@ -7,6 +7,10 @@ import React from "react";
 import { alpha, useTheme } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import NoiseAnimation, {
+  NoiseAnimationWrapper,
+} from "@/common/animations/NoiseAnimation";
+import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
 const Title = (props: { title: string }) => {
   const theme = useTheme();
 
@@ -123,7 +127,10 @@ const ProjectComponent = (props: ProjectComponentType) => {
     >
       <Box
         sx={{
-          height: "46rem",
+          height: {
+            sx: "45rem",
+            lg: "43rem",
+          },
 
           width: "100%",
           overflow: "hidden",
@@ -145,7 +152,10 @@ const ProjectComponent = (props: ProjectComponentType) => {
       <Box
         sx={{
           position: "absolute",
-          top: "38rem",
+          top: {
+            lg: "36rem",
+          },
+
           left: "5rem",
           display: "flex",
           flexWrap: "wrap",
@@ -158,7 +168,6 @@ const ProjectComponent = (props: ProjectComponentType) => {
             left: "0rem",
             justifyContent: "center",
             top: "33rem",
-            // bottom: "5%",
           },
         }}
       >

@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import Button from "@mui/material/Button";
 import { alpha, SxProps, Theme, useTheme } from "@mui/material/styles";
-import { voidFunc } from "./CustomNavbar";
+import { voidFunc } from "./Navbar";
 import Typography from "@mui/material/Typography";
 import replaceAll from "../../common/utils/custom-replace-all";
 import { CustomListItem } from "../Common/CustomListItem";

@@ -1,7 +1,6 @@
 import Grid from "@mui/material/Grid";
 
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
 
 import PrimaryBtn from "../Buttons/PrimaryBtn";
 import BodyWrapper from "../Common/BodyWrapper";

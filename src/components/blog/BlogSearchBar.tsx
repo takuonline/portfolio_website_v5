@@ -32,8 +32,8 @@ const BlogSearchBar = (props: {
         sx={{
           input: {
             borderRadius: 100,
-            py: 3,
-            px: 5,
+            py: 2,
+            px: 4,
           },
           fieldset: { borderRadius: 1000, px: 10 },
         }}

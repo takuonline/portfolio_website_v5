@@ -1,3 +1,4 @@
+
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 import { alpha, Box, Button, Grid, IconButton, useTheme } from "@mui/material";
 import Divider from "@mui/material/Divider";
@@ -43,7 +44,7 @@ const QuoteSection = () => {
 
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
-  }, [useMediaQuery(theme.breakpoints.up("md"))]);
+  }, [initValue]);
 
   const bgImageFactor = isMdUpBreakpoint ? 1 : 0.6;
   const blobImageFactor = isMdUpBreakpoint ? 0.35 : 0.2;
@@ -130,7 +131,6 @@ in the world.`}
               sx={{
                 // width:"20rem",
                 // aspectRatio:2/4,
-                // bgColor: "red",
 
                 [theme.breakpoints.down("md")]: {
                   position: "absolute",
@@ -148,8 +148,8 @@ in the world.`}
                 // fill
                 style={{
                   position: "absolute",
-                  top: isMdUpBreakpoint ? -150 : -190,
-                  left: -320,
+                  top: isMdUpBreakpoint ? -180 : -140,
+                  left: isMdUpBreakpoint ? -320 : -400,
                 }}
               />
             </Grid>

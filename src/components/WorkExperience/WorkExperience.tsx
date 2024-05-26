@@ -1,3 +1,4 @@
+
 import Grid from "@mui/material/Grid";
 
 import React from "react";
@@ -8,17 +9,14 @@ import { alpha, useTheme } from "@mui/material/styles";
 import SectionHeader from "../Common/SectionHeader";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import CustomDivider from "../Common/CustomDivider";
 import ExperienceItem from "./ExperienceItem";
 import workExperienceData, {
   WorkExperienceSchema,
 } from "../../common/data/work-experience";
 import Paper from "@mui/material/Paper";
-import HighlightTypography from "../Common/HighlightTypography";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
-import Divider from "@mui/material/Divider";
 import { DarkStar } from "../BackgroundStyleComponents/BgStars";
 
 const InstructionText = (props: { title: string }) => {
@@ -218,7 +216,7 @@ const WorkExperience = () => {
           sx={{
             position: "absolute",
 
-            zIndex: 1,
+            // zIndex: 1,
             opacity: 0.3,
 
             [theme.breakpoints.down("md")]: {
@@ -232,6 +230,7 @@ const WorkExperience = () => {
             alt="Background image Clay meta ball"
             width={3840 * 0.5}
             height={2160 * 0.5}
+
           />
         </Box>
 

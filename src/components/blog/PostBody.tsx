@@ -1,9 +1,9 @@
-// @ts-nocheck
 import markdownStyles from "../../styles/markdown-styles.module.css";
 import { PortableText } from "@portabletext/react";
 import Typography from "@mui/material/Typography";
+import { SanityDocument } from "next-sanity";
 
-export default function PostBody({ body }) {
+export default function PostBody({ body }: { body: SanityDocument["body"] }) {
   return (
     <Typography
       variant="body2"

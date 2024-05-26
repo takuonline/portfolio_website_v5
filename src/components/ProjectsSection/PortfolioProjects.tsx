@@ -1,3 +1,5 @@
+"use client";
+
 import {
   alpha,
   Box,
@@ -6,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import BodyWrapper from "../Common/BodyWrapper";
+import BlogBodyWrapper from "../Common/BodyWrapper";
 import SectionHeader from "../Common/SectionHeader";
 import BlackFridayPlotlyDashboard from "./WebDashboard/WebDashboard";
 import GoogleLensClone from "./GoogleLensClone/GoogleLensClone";
@@ -149,7 +151,10 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "155rem",
+          top: {
+            xs: "155rem",
+            lg: "15rem",
+          },
           left: "-8rem",
         }}
       >
@@ -159,20 +164,27 @@ const BgStyling = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "7rem",
+          top: {
+            xs: "15rem",
+            lg:"155rem"
+          },
           right: "-20rem",
         }}
       >
-        <BgRings size={{ md: 570, xs: 300 }} />
+        <BgRings size={{ md: 470, xs: 300 }} opacity={.8}/>
       </Box>
 
       <Box
         sx={{
           position: "absolute",
-          top: "33rem",
+          top:{
+            xs: "33rem",
+            lg: "172rem",
+          },
           right: "-10rem",
           transform: "rotate(80deg)",
-          zIndex: 5,
+
+
 
           [theme.breakpoints.down("md")]: {
             top: "9rem",
@@ -180,7 +192,8 @@ const BgStyling = () => {
           },
         }}
       >
-        <BgRings size={250} />
+        <BgRings size={250} opacity={.8} />
+
       </Box>
     </>
   );
@@ -191,7 +204,7 @@ const PortfolioProjects = () => {
 
   return (
     <>
-      <BodyWrapper>
+      <BlogBodyWrapper>
         <Box
           sx={{
             position: "relative",
@@ -231,7 +244,7 @@ const PortfolioProjects = () => {
         and the software solutions I’ve created for organizations across diverse industries.`}
           </Typography>
         </Grid>
-      </BodyWrapper>
+      </BlogBodyWrapper>
 
       <Box
         sx={{

@@ -1,5 +1,6 @@
+
 import React from "react";
-import { voidFunc } from "../../components/NavBar/CustomNavbar";
+import { voidFunc } from "../../components/NavBar/Navbar";
 
 const useNavBar: () => [boolean, voidFunc] = () => {
   const [isNavbarMenuOpen, setIsNavbarMenuOpen] =

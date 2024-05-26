@@ -1,4 +1,5 @@
 import { alpha, Box } from "@mui/material";
+import {   SxProps, Theme } from "@mui/material";
 
 const DepthEllipse = (props: {
   size:
@@ -12,6 +13,7 @@ const DepthEllipse = (props: {
       };
   blur?: number;
   opacity?: number;
+  sx?: SxProps<Theme>;
 }) => {
   const blur = props.blur ?? 100;
   const opacity = props.opacity ?? 0.05;
@@ -24,6 +26,7 @@ const DepthEllipse = (props: {
 
         filter: `blur(${blur}px)`,
         backgroundColor: (t) => alpha(t.palette.text.primary, opacity),
+        ...props.sx,
       }}
     />
   );

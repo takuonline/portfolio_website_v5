@@ -1,4 +1,3 @@
-// @ts-nocheck
 
 import AppImage from "../Common/AppImage";
 import Grid from "@mui/material/Grid";
@@ -7,15 +6,15 @@ import { useRouter } from "next/navigation";
 import { urlForImage } from "../../common/utils/sanity";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { alpha } from "@mui/material";
 import React from "react";
-type BlogPost = {
-  title: string;
-  desc: string;
-  namedCategories: { title: string }[];
-};
+// type BlogPost = {
+//   title: string;
+//   desc: string;
+//   namedCategories: { title: string }[];
+// };
+import { SanityDocument } from "next-sanity";
 
-const BlogPostItem = ({ blogPost }) => {
+const BlogPostItem = ({ blogPost }:{blogPost:SanityDocument}) => {
   const shortDescription = blogPost.shortDescription[0].children[0].text;
 
   const router = useRouter();
@@ -39,7 +38,7 @@ const BlogPostItem = ({ blogPost }) => {
 
   React.useEffect(() => {
     setIsMdUpBreakpoint(initValue);
-  }, [useMediaQuery(theme.breakpoints.up("md"))]);
+  }, [initValue]);
 
   return (
     <>
@@ -50,9 +49,9 @@ const BlogPostItem = ({ blogPost }) => {
         mb={{ md: 10, xs: 6 }}
         sx={{
           display: "flex",
-          borderRadius: "2.5rem",
+          // borderRadius: "2.5rem",
           pb: 6,
-          border: (t) => `2px solid ${alpha(t.palette.background.paper, 0.2)}`,
+          // border: (t) => `2px solid ${alpha(t.palette.background.paper, 0.2)}`,
           overflow: "clip",
           [theme.breakpoints.down("md")]: {
             borderRadius: "2rem",

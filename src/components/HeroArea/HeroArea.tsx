@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { alpha, Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import HighlightTypography from "../Common/HighlightTypography";
@@ -237,12 +239,13 @@ const HeroFrontText = () => {
       <HighlightTypography
         backgroundSize="auto 25%"
         backgroundPosition="10% 100%"
+        // component={"h1"}
       >
         {` innovative`}
       </HighlightTypography>
 
       <Box
-        component={"span"}
+        // component={"h1"}
         sx={{
           ml: 32,
           display: "block",

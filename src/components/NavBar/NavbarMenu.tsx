@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { SxProps, Theme } from "@mui/material/styles";
-import { NavbarTitles, voidFunc } from "./CustomNavbar";
+import { NavbarTitles, voidFunc } from "./Navbar";
 
 import { MenuNavItem } from "./NavbarItem";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
@@ -63,12 +63,10 @@ const NavbarMenu = (props: {
           height: "100%",
           py: 15,
           m: 0,
-          // borderRadius: 20,
           position: "fixed",
           backgroundColor: "background.default",
           px: 3,
           overflowY: "scroll",
-
           zIndex: 99,
           ...props.sx,
         }}
@@ -76,7 +74,6 @@ const NavbarMenu = (props: {
         <Box
           sx={{
             zIndex: 100,
-            // backgroundColor:"red",
             position: "absolute",
             width: "100%",
 

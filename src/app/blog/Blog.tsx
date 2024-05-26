@@ -1,27 +1,34 @@
+"use client";
+
 import BodyWrapper from "../../components/Common/BodyWrapper";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-// import type * as Schema from "../../studio/schemas/post";
 import HighlightTypography from "../../components/Common/HighlightTypography";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CategoryTitleItem from "../../components/blog/CategoryTitleItem";
 import BlogPostItem from "../../components/blog/BlogPostItem";
 import BlogSearchBar from "../../components/blog/BlogSearchBar";
-import { sanityClient } from "../../common/utils/sanity.server";
 import React, { ChangeEvent, useMemo, useState } from "react";
-import * as postQueries from "../../common/utils/sanity-queries";
+import { SanityDocument } from "next-sanity";
 
-type BlogPost = {
-  title: string;
-  desc: string;
-  namedCategories: { title: string }[];
-};
+// type BlogPost = {
+//   title: string;
+//   desc: string;
+//   namedCategories: { title: string }[];
+// };
+
 type Category = {
   title: string;
   isSelected: boolean;
 };
-const filterData = (data: BlogPost[], keys: string[]) => {
+
+type BlogProps = {
+  posts: SanityDocument[];
+  processedCategories: Category[];
+};
+
+const filterData = (data: SanityDocument[], keys: string[]) => {
   return data.filter((post) => {
     for (let key of keys) {
       let categories = post.namedCategories.map(
@@ -39,17 +46,13 @@ const filterData = (data: BlogPost[], keys: string[]) => {
   });
 };
 
-export default function Blog({ posts, processedCategories }: Props) {
-  // const schema = useSchema()
-  // const postSchema = schema.get('post');
-
-  const [categories, setCategories] =
-    React.useState<Category[]>(processedCategories);
+export default function Blog({ posts, processedCategories }: BlogProps) {
+  const [categories, setCategories] = useState<Category[]>(processedCategories);
   const [searchInput, setSearchInput] = useState<string>("");
 
   const handleFilterCategories = (title: string) => {
     setCategories((oldState) => {
-      // change value of tthe category selected by either turning on or off
+      // change value of the category selected by either turning on or off
       const newState: Category[] = oldState.map((category) => ({
         title: category.title,
         isSelected:
@@ -67,18 +70,18 @@ export default function Blog({ posts, processedCategories }: Props) {
 
   const blogPosts = useMemo(() => {
     // Filter on search input
-    const searchResults = posts.filter((v: BlogPost) =>
+    const searchResults = posts.filter((v: SanityDocument) =>
       v.title.toLowerCase().includes(searchInput.toLowerCase()),
     );
 
-    // only filter when a person selectes a column
+    // only filter when a person selects a category
     let selectedCategories: string[];
 
     if (categories.filter((v: Category) => v.isSelected).length == 0) {
       // when no selection is made show all categories
       selectedCategories = categories.map((v: Category) => v.title);
     } else {
-      // has made atleast one selection
+      // has made at least one selection
       selectedCategories = categories
         .filter((v: Category) => v.isSelected)
         .map((v: Category) => v.title);
@@ -93,24 +96,6 @@ export default function Blog({ posts, processedCategories }: Props) {
   const theme = useTheme();
   return (
     <>
-      {/* {!isNavbarMenuOpen && (
-
-        )}
-      {isNavbarMenuOpen && (
-        <NavbarMenu
-          showNavbarMenu={showNavbarMenu}
-          isNavbarMenuOpen={isNavbarMenuOpen}
-          sx={{
-            transition: "visibility 0s, opacity 0.3s linear",
-            opacity: isNavbarMenuOpen ? "1" : "0",
-            visibility: isNavbarMenuOpen ? "visible" : "hidden",
-            height: isNavbarMenuOpen ? "100%" : "0rem",
-
-            backgroundColor: "background.default",
-            // position:"fixed",
-          }}
-        />
-      )} */}
       <Box
         sx={{
           zIndex: 2,
@@ -136,7 +121,7 @@ export default function Blog({ posts, processedCategories }: Props) {
                 </HighlightTypography>
               </Typography>
 
-              <Typography variant={"body2"} sx={{}}>
+              <Typography variant={"body2"}>
                 {`My goal with this blog is to record my personal growth journey, including both successes and setbacks,
                 in the hopes of inspiring and encouraging others to pursue their own paths of self-improvement.`}
                 <br />
@@ -191,29 +176,4 @@ export default function Blog({ posts, processedCategories }: Props) {
       </Box>
     </>
   );
-}
-
-type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
-type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
-
-export async function getStaticProps() {
-  const posts = await sanityClient.fetch(postQueries.blogPostQuery);
-  const rawCategories = await sanityClient.fetch(
-    postQueries.blogPostCategoryQuery,
-  );
-  // const result: s.infer<typeof foo> = await client.fetch(`* [_type == "foo"][0]`);
-
-  const processedCategories: Category[] = rawCategories.map(
-    (v: { title: string }) => ({
-      title: v.title,
-      isSelected: false,
-    }),
-  );
-
-  return {
-    props: {
-      posts,
-      processedCategories,
-    },
-  };
 }
