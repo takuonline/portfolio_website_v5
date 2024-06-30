@@ -1,6 +1,5 @@
 import "./global.css";
 import { Metadata } from "next";
-import theme from "../common/themes/theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import NoiseAnimation from "../common/animations/NoiseAnimation";
 import CssBaseline from "@mui/material/CssBaseline";

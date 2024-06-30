@@ -15,7 +15,7 @@ import CustomDivider from "../Common/CustomDivider";
 import { useRouter } from "next/navigation";
 import bgImg2 from "./../../../public/static/images/background_noise_image.png";
 
-// Only loads the YouTube player
+
 const HeroBgImage = () => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));

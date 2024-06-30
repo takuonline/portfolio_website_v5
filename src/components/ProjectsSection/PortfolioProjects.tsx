@@ -20,6 +20,7 @@ import { motion } from "framer-motion";
 import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
 import BgRings from "../BackgroundStyleComponents/BgRings";
 import { BgLightStar2 } from "../BackgroundStyleComponents/BgStars";
+import DataStudio from "./DataStudio/DataStudio";
 
 const InstructionText = (props: {
   title: string;
@@ -254,6 +255,7 @@ const PortfolioProjects = () => {
       >
         <BgStyling />
 
+        <DataStudio />
         <SavvyShopper />
 
         <GoogleLensClone />
