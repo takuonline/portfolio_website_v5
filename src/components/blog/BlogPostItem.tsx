@@ -1,4 +1,3 @@
-
 import AppImage from "../Common/AppImage";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -14,7 +13,7 @@ import React from "react";
 // };
 import { SanityDocument } from "next-sanity";
 
-const BlogPostItem = ({ blogPost }:{blogPost:SanityDocument}) => {
+const BlogPostItem = ({ blogPost }: { blogPost: SanityDocument }) => {
   const shortDescription = blogPost.shortDescription[0].children[0].text;
 
   const router = useRouter();

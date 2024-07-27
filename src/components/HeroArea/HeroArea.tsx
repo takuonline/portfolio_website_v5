@@ -15,7 +15,6 @@ import CustomDivider from "../Common/CustomDivider";
 import { useRouter } from "next/navigation";
 import bgImg2 from "./../../../public/static/images/background_noise_image.png";
 
-
 const HeroBgImage = () => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
@@ -247,7 +246,6 @@ const HeroFrontText = () => {
         // component={"h1"}
         sx={{
           ml: {
-
             xs: 25,
             lg: 32,
           },

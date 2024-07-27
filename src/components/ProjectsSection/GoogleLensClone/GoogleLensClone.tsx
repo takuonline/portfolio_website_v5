@@ -1,11 +1,12 @@
-
-import { Typography, Box, useMediaQuery, useTheme } from "@mui/material";
+import { Typography, Box, useMediaQuery, useTheme, Paper } from "@mui/material";
 
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
+import GoogleLensCloneProjectDescription from "./GoogleLensCloneProjectDescription";
+import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
 
 const GoogleLensClone = (props: {}) => {
   const TextBoxSize = {
@@ -31,7 +32,7 @@ const GoogleLensClone = (props: {}) => {
   return (
     <BodyWrapper>
       <ProjectComponent
-        title={"Google Lens Clone"}
+        title={"Google Lens Clone - AI powered Image Search"}
         skills={["Machine learning", "Backend development"]}
         bgImage={
           <Box
@@ -92,38 +93,38 @@ const GoogleLensClone = (props: {}) => {
             </motion.div>
           }
           firstComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             lg: 4,
           }}
           secondComponent={
-            <Typography
-              variant="body2"
-              component="div"
-              sx={{
-                whiteSpace: "break-spaces",
-                wordBreak: "normal",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mt: 10,
-              }}
-            >
-              {`The first time I used Google Lens, I was amazed. It felt like magic. All I had to do was snap a picture and it would quickly search the internet for relevant information on the object I was pointing my camera at, regardless of how many other objects were in the frame.
+            <>
+              <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
+                <ProjectDescriptionSubtitle>
+                  {"Project Overview"}
+                </ProjectDescriptionSubtitle>
+                <Typography variant="body2" paragraph>
+                  {`The first time I used Google Lens, I was amazed. It felt like magic. All I had to do was snap a picture and it would quickly search the internet for relevant information on the object I was pointing my camera at, regardless of how many other objects were in the frame.
+`}
+                </Typography>
+
+                <Typography variant="body2" paragraph>
+                  {`
 
 Years later, I decided to take on the challenge of building my own version of this incredible technology, starting from scratch. Although it was a challenging journey, I delved deep into the world of machine learning and conducted extensive research to gain the necessary knowledge. Eventually, I succeeded in creating my own "Google Lens clone."
 
+`}
+                </Typography>
+
+                <Typography variant="body2" paragraph>
+                  {`
+
+
 This project was one of my greatest achievements in the world of full-stack machine learning. I was able to implement multiple deep learning models within a full-stack application and build the entire system end-to-end without any assistance. It's a project I'm incredibly proud of.
-
-
-            `}
-            </Typography>
+`}
+                </Typography>
+              </Box>
+            </>
           }
           secondComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             lg: 6,
           }}
         />
@@ -133,19 +134,10 @@ This project was one of my greatest achievements in the world of full-stack mach
         <ProjectSectionWrapper
           firstComponent={
             <>
-              <Typography
-                component={motion.div}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{
-                  delay: 0.1 * mobileAnimationFactor,
-                  duration: 0.2 * mobileAnimationFactor,
-                }}
-                viewport={viewport}
-                mb={5}
-              >
+              <ProjectDescriptionSubtitle>
                 {"Project architecture visualisation"}
-              </Typography>
+              </ProjectDescriptionSubtitle>
+
               <iframe
                 style={{
                   minHeight: isMobileView ? "23rem" : "40rem",
@@ -158,39 +150,9 @@ This project was one of my greatest achievements in the world of full-stack mach
             </>
           }
           firstComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             lg: 10,
           }}
-          secondComponent={
-            <>
-              <Typography
-                variant="body2"
-                component="div"
-                sx={{
-                  whiteSpace: "break-spaces",
-                  wordBreak: "normal",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  mt: 5,
-                }}
-              >
-                {`
-The application allows you to simply point your camera at any object and snap a photo.After taking the picture, it is sent to the backend where advanced machine learning models, Yolov7 and Resnet, extract the most prominent object in the image and search a database of product information scraped from the retailer GAME.
-The app returns relevant data such as the product name and price.Additionally, our application allows you to select which product in the image you want to search by using a bounding box.
-
-Tech Stack:
-
-- Devops: Docker, AWS EC2 Linux, Git/GitHub version control
-- Languages: Python, Dart(Flutter)
-- ML models/frameworks: Pytorch framework, Yolov7 and Resnet model
-
-`}
-              </Typography>
-            </>
-          }
+          secondComponent={<GoogleLensCloneProjectDescription />}
           secondComponentScale={{
             // xs: 0,
             // sm: 0,

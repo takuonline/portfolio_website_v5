@@ -1,4 +1,3 @@
-
 import ProjectTextBox from "../ProjectTextBox";
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppImage from "../../Common/AppImage";
@@ -8,7 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { ListItemText, useMediaQuery, useTheme } from "@mui/material";
 import { IoLink, IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import ProjectComponent from "../ProjectComponent";
@@ -30,12 +29,12 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
   ];
 
   const featuresPlotlyDashboard: string[] = [
-    "decide which products are over priced",
-    "which products are doing well",
-    "which ones are not performing very well",
-    "which ones is it trying to get rid of",
-    "which products to buy and when to buy",
-    "buy low, sell high",
+    "Decide which products are over priced",
+    "Which products are doing well",
+    "Which ones are not performing very well",
+    "Which ones is it trying to get rid of",
+    "Which products to buy and when to buy",
+    "Buy low, sell high",
   ];
   const IconSize = "2rem";
 
@@ -50,11 +49,7 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
       <BodyWrapper>
         <ProjectComponent
           title={"Web Dashboards"}
-          skills={[
-            "Fullstack development",
-            // "Frontend development",
-            "Data Visualization",
-          ]}
+          skills={["Fullstack development", "Data Visualization"]}
           bgImage={
             <Box
               sx={{
@@ -223,15 +218,20 @@ The hypothesis was that some of the retailers would mark-up their prices just be
                   >
                     {`This was build on the same stack and mind set as the blackfriday dashboard but l did a re-design and extended the scope to other stores.
 
-  Here is a list of things you can do on the app:`}
+Here is a list of things you can do on the app:`}
                     {featuresPlotlyDashboard.map(
                       (value: string, index: number) => {
                         return (
-                          <ListItem
-                            key={index}
-                            sx={{ display: "list-item", m: 0, p: 0 }}
-                          >
-                            {value}
+                          <ListItem key={index} sx={{ my: 0, p: 0, ml: 3 }}>
+                            <ListItemText
+                              sx={{
+                                display: "list-item",
+                                fontSize: ".8rem",
+                              }}
+                              // primary={value}
+                              secondary={value}
+                              // secondary={feature.secondary}
+                            />
                           </ListItem>
                         );
                       },

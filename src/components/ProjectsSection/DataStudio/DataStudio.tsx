@@ -3,181 +3,21 @@ import ProjectTextBox from "../ProjectTextBox";
 import BodyWrapper from "../../Common/BodyWrapper";
 import AppImage from "../../Common/AppImage";
 
-import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
 import { useMediaQuery, useTheme } from "@mui/material";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
-import Link from "next/link";
-import { IoLink, IoLogoGithub } from "react-icons/io5";
 
 import React from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Chip,
-  List,
-  ListItem,
-  ListItemText,
-  Grid,
-  Paper,
-  Divider,
-} from "@mui/material";
-import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { Box, Typography } from "@mui/material";
+import DataStudioProjectDescription from "./DataStudioProjectDescription";
 
-const SavvyAnalyticsProjectDescription = () => {
-  const techStack = {
-    frontend: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Shadcn UI",
-    ],
-    backend: ["Django", "Django REST Framework", "LangChain"],
-    database: ["PostgreSQL"],
-    devops: ["Nginx", "Docker", "Kubernetes", "ArgoCD"],
-  };
-  const keyFeatures = [
-    {
-      primary: "Graph-like Structure",
-      secondary:
-        "Incorporates graph-like structures to facilitate complex reasoning paths, influenced by cutting-edge research like the 'Tree of Thought' paper.",
-    },
-    {
-      primary: "Customizable Workflow",
-      secondary:
-        "Tailored to support diverse prompting strategies and multi-step analyses.",
-    },
-    {
-      primary: "Intuitive Design",
-      secondary:
-        "While more advanced than ChatGPT, the interface maintains a clean, user-friendly design.",
-    },
-  ];
-  const theme = useTheme();
-
-  const subtitleStyle = {
-    color: "primary.main", // Royal blue for contrast
-    fontWeight: 700,
-    mb: 2,
-    textTransform: "uppercase",
-    borderBottom: `2px solid ${theme.palette.primary.main}`,
-    paddingBottom: "8px",
-    display: "inline-block",
-  };
-  return (
-    <Paper
-      sx={{
-        maxWidth: "100%",
-        margin: "auto",
-        py: 3,
-        backgroundColor: "transparent",
-      }}
-    >
-      <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
-        <ProjectDescriptionSubtitle>
-          Project Overview
-        </ProjectDescriptionSubtitle>
-        <Typography variant="body1" paragraph>
-          {
-            "Inspired by OpenAI's ChatGPT interface, I set out to create a more sophisticated user interface tailored for complex workflows involving large language models (LLMs). Savvy Analytics is the result—a powerful, intuitive platform designed to support intricate prompting and advanced reasoning processes."
-          }
-        </Typography>
-      </Box>
-
-      <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
-        <Typography variant="h5" sx={subtitleStyle} gutterBottom>
-          Key Features
-        </Typography>
-        <List>
-          {keyFeatures.map((feature, index) => (
-            <ListItem key={index} disableGutters>
-              <ListItemText
-                primary={feature.primary}
-                secondary={feature.secondary}
-                sx={{ color: "white" }}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-
-      <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
-        <ProjectDescriptionSubtitle>
-          Technical Implementation
-        </ProjectDescriptionSubtitle>
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            p: 3,
-          }}
-        >
-          {Object.entries(techStack).map(([category, technologies]) => (
-            <Grid item xs={12} sm={6} key={category}>
-              <Typography variant="h6" gutterBottom>
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {technologies.map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" />
-                ))}
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      <Box sx={{ p: 3, backgroundColor: "transparent" }}>
-        <ProjectDescriptionSubtitle>Reflections</ProjectDescriptionSubtitle>
-
-        <Box
-          sx={{
-            p: 3,
-          }}
-        >
-          <Typography variant="body1" paragraph>
-            This project not only allowed me to explore advanced LLM interfaces
-            but also provided an opportunity to work with a comprehensive tech
-            stack. While some components like Kubernetes might be considered
-            overkill for this application, they demonstrate my ability to work
-            with enterprise-level technologies and my commitment to continuous
-            learning.
-          </Typography>
-          <Typography variant="body1">
-            The Savvy Analytics interface opens up new possibilities for complex
-            LLM interactions, potentially revolutionizing how we approach
-            AI-assisted analysis and decision-making processes.
-          </Typography>
-        </Box>
-      </Box>
-    </Paper>
-  );
-};
-
-const DataStudio = (props: {}) => {
+const DataStudio = () => {
   const TextBoxSize = {
     xs: 12,
     md: 8,
     lg: 8,
   };
-
-  const AppImageSize = {
-    xs: 10,
-    md: 6,
-    lg: 8,
-  };
-
-  const AppVideoSize = {
-    xs: 12,
-    sm: 6,
-    lg: 10,
-  };
-
-  const IconSize = "2rem";
 
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
@@ -317,7 +157,7 @@ const DataStudio = (props: {}) => {
               </Box>
 
               <ProjectTextBox title={"Project Description"} size={TextBoxSize}>
-                <SavvyAnalyticsProjectDescription />
+                <DataStudioProjectDescription />
               </ProjectTextBox>
             </>
           }

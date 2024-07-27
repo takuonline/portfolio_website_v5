@@ -1,14 +1,23 @@
-import Box from "@mui/material/Box";
 import { alpha, useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import AppVideo from "../../Common/AppVideo";
 import BodyWrapper from "../../Common/BodyWrapper";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
-import { NoiseAnimationWrapper } from "@/common/animations/NoiseAnimation";
-import DepthEllipse from "@/components/BackgroundStyleComponents/DepthEllipse";
+
+import React from "react";
+import {
+  Box,
+  Typography,
+  Chip,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+} from "@mui/material";
+
+import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
 
 const ReflectlyClone = (props: {}) => {
   const TextBoxSize = {
@@ -51,7 +60,7 @@ const ReflectlyClone = (props: {}) => {
 
               <AppVideo
                 src={"https://youtu.be/0EfVCwQ4dFQ"}
-                alt={"Mobile Ecommerce App "}
+                alt={"Reflectly App "}
                 size={{
                   xs: 7,
                   sm: 4,
@@ -109,26 +118,56 @@ const ReflectlyClone = (props: {}) => {
               lg: 4,
             }}
             secondComponent={
-              <Typography
-                variant="body2"
-                component="div"
-                sx={{
-                  whiteSpace: "break-spaces",
-                  wordBreak: "normal",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                {`- One of the applications l build whilst developing my skills as a mobile developer
+              <>
+                <ProjectDescriptionSubtitle>
+                  {"Project Overview"}
+                </ProjectDescriptionSubtitle>
 
-- Reflectly is one of the most popular journaling apps in the world.
+                <List disablePadding>
+                  <ListItem disableGutters>
+                    <Typography variant="body2" sx={{ color: "white" }}>
+                      {
+                        "Reflectly is one of the most popular journaling apps in the world."
+                      }
+                    </Typography>
+                  </ListItem>
+                  <ListItem disableGutters>
+                    <Typography variant="body2" sx={{ color: "white" }}>
+                      {
+                        "This app helped me boost my confidence and reach out to some very cool developers."
+                      }
+                    </Typography>
+                  </ListItem>
+                  <ListItem disableGutters>
+                    <Typography variant="body2" sx={{ color: "white" }}>
+                      {
+                        " This is one of the toughest mobile apps out there because of its complex ui and l felt that if l could develop something like this l would be able to do just about everything else."
+                      }
+                    </Typography>
+                  </ListItem>
+                </List>
+              </>
 
-- This app helped me boost my confidence and reach out to some very cool developers.
+              //               <Typography
+              //                 variant="body2"
+              //                 component="div"
+              //                 sx={{
+              //                   whiteSpace: "break-spaces",
+              //                   wordBreak: "normal",
+              //                   display: "flex",
+              //                   justifyContent: "center",
+              //                   alignItems: "center",
+              //                 }}
+              //               >
+              //                 {`- One of the applications l build whilst developing my skills as a mobile developer
 
-- This is one of the toughest mobile apps out their because of its complex ui and l felt that if l could
-develop something like this l would be able to do just about everything else.`}
-              </Typography>
+              // - Reflectly is one of the most popular journaling apps in the world.
+
+              // - This app helped me boost my confidence and reach out to some very cool developers.
+
+              // - This is one of the toughest mobile apps out their because of its complex ui and l felt that if l could
+              // develop something like this l would be able to do just about everything else.`}
+              //               </Typography>
             }
             secondComponentScale={{
               // xs: 0,

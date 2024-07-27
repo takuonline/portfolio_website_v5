@@ -167,25 +167,23 @@ const BgStyling = () => {
           position: "absolute",
           top: {
             xs: "15rem",
-            lg:"155rem"
+            lg: "155rem",
           },
           right: "-20rem",
         }}
       >
-        <BgRings size={{ md: 470, xs: 300 }} opacity={.8}/>
+        <BgRings size={{ md: 470, xs: 300 }} opacity={0.8} />
       </Box>
 
       <Box
         sx={{
           position: "absolute",
-          top:{
+          top: {
             xs: "33rem",
             lg: "172rem",
           },
           right: "-10rem",
           transform: "rotate(80deg)",
-
-
 
           [theme.breakpoints.down("md")]: {
             top: "9rem",
@@ -193,8 +191,7 @@ const BgStyling = () => {
           },
         }}
       >
-        <BgRings size={250} opacity={.8} />
-
+        <BgRings size={250} opacity={0.8} />
       </Box>
     </>
   );

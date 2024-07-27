@@ -3,17 +3,13 @@ import bgImg2 from "./../../../public/static/images/background_noise_image.png";
 import { Theme } from "@emotion/react";
 import { SxProps } from "@mui/material";
 
-
-
-export const NoiseAnimationWrapper = (props:{
-  sx?:SxProps<Theme>
-  children?:React.ReactNode
+export const NoiseAnimationWrapper = (props: {
+  sx?: SxProps<Theme>;
+  children?: React.ReactNode;
 }) => {
   return (
     <Box
       sx={{
-
-
         transition: "opacity .4s ease",
         backgroundImage: `url(${bgImg2.src})  `,
         backgroundRepeat: "repeat",
@@ -71,8 +67,7 @@ export const NoiseAnimationWrapper = (props:{
           },
         },
 
-        ...props.sx
-
+        ...props.sx,
       }}
     >
       {props.children}
@@ -139,9 +134,7 @@ const NoiseAnimation = () => {
             transform: "translate(20%, -5%)",
           },
         },
-      }
-
-    }
+      }}
     />
   );
 };

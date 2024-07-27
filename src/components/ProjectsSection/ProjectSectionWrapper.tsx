@@ -31,7 +31,6 @@ const ProjectSectionWrapper = (props: ProjectWrapperType) => {
           my: { lg: 7, xs: 7 },
         }}
         columnGap={5}
-        // rowGap={20}
         rowGap={{ xs: 4 }}
         xs={12}
       >

@@ -1,4 +1,3 @@
-
 import Grid from "@mui/material/Grid";
 
 import React from "react";
@@ -230,7 +229,6 @@ const WorkExperience = () => {
             alt="Background image Clay meta ball"
             width={3840 * 0.5}
             height={2160 * 0.5}
-
           />
         </Box>
 

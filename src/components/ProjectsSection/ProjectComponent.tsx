@@ -193,8 +193,8 @@ const ProjectComponent = (props: ProjectComponentType) => {
               sx={{
                 borderColor: "text.primary",
                 m: { lg: 1, xs: 0.5 },
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
                 },
               }}
             />

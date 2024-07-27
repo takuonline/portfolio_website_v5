@@ -1,5 +1,5 @@
 import { alpha, Box } from "@mui/material";
-import {   SxProps, Theme } from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 
 const DepthEllipse = (props: {
   size:

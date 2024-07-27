@@ -11,7 +11,7 @@ import { Suspense } from "react";
 
 export async function generateStaticParams() {
   const posts = await sanityClient.fetch<SanityDocument[]>(
-    postQueries.blogPostQuery
+    postQueries.blogPostQuery,
   );
 
   return posts.map((post) => ({
@@ -29,7 +29,7 @@ export default async function BlogPage({
     queries.postQuery,
     {
       slug: params.slug,
-    }
+    },
   );
 
   let imageSrc = "";
@@ -52,7 +52,7 @@ export default async function BlogPage({
     <Box sx={{ zIndex: 2, position: "relative" }}>
       <BodyWrapper>
         {/* <Suspense fallback={<div>Loading...</div>}> */}
-         <AppBlogPage post={blog.post} imageSrc={imageSrc} />
+        <AppBlogPage post={blog.post} imageSrc={imageSrc} />
         {/* </Suspense> */}
       </BodyWrapper>
     </Box>

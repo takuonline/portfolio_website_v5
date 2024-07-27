@@ -55,6 +55,6 @@ export default function Image() {
         About Takudzwa
       </div>
     ),
-    imageResponseOptions
+    imageResponseOptions,
   );
 }

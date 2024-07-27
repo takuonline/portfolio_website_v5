@@ -1,4 +1,3 @@
-
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 import { alpha, Box, Button, Grid, IconButton, useTheme } from "@mui/material";
 import Divider from "@mui/material/Divider";
