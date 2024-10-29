@@ -9,22 +9,11 @@ import GoogleLensCloneProjectDescription from "./GoogleLensCloneProjectDescripti
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
 
 const GoogleLensClone = (props: {}) => {
-  const TextBoxSize = {
-    xs: 12,
-    lg: 9,
-  };
-
-  const AppImageSize = {
-    xs: 10,
-    md: 6,
-    lg: 8,
-  };
 
   const AppVideoSize = {
     xs: 12,
     lg: 9,
   };
-  const viewport = { once: true };
 
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));

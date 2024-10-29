@@ -21,6 +21,7 @@ import DepthEllipse from "../BackgroundStyleComponents/DepthEllipse";
 import BgRings from "../BackgroundStyleComponents/BgRings";
 import { BgLightStar2 } from "../BackgroundStyleComponents/BgStars";
 import DataStudio from "./DataStudio/DataStudio";
+import Clipbard from "./Clipbard/Clipbard";
 
 const InstructionText = (props: {
   title: string;
@@ -251,7 +252,7 @@ const PortfolioProjects = () => {
         }}
       >
         <BgStyling />
-
+        <Clipbard />
         <DataStudio />
         <SavvyShopper />
 

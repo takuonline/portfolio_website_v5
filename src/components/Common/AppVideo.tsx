@@ -7,7 +7,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import ReactPlayer from "react-player";
+import ReactPlayer, { ReactPlayerProps } from "react-player";
 import FrameType from "../../common/enums/phone-frame";
 import styles from "./../../styles/youtube-video.module.css";
 import PhoneFrame from "./PhoneFrame";
@@ -25,6 +25,7 @@ type AppVideoType = {
   frameType?: FrameType;
   height?: number | string;
   frameHeight?: number | string;
+  videoProps?: ReactPlayerProps;
 };
 const defaultProps = {
   frameType: FrameType.IphoneXLocal,
@@ -108,6 +109,7 @@ const AppVideo = (props: AppVideoType) => {
               height="auto"
               width="auto"
               url={props.src}
+              {...props.videoProps}
             />
           )}
         </Box>

@@ -7,15 +7,15 @@ import Box from "@mui/material/Box";
 import BodyWrapper from "../../../components/Common/BodyWrapper";
 import { SanityDocument } from "next-sanity";
 import * as postQueries from "@/common/utils/sanity-queries";
-import { Suspense } from "react";
 
-export async function generateStaticParams() {
+export async function generateMetadata() {
   const posts = await sanityClient.fetch<SanityDocument[]>(
     postQueries.blogPostQuery,
   );
 
   return posts.map((post) => ({
     slug: String(post.slug.current),
+    title: post.title,
   }));
 }
 
@@ -44,9 +44,6 @@ export default async function BlogPage({
     console.error(error);
   }
 
-  // if (!data?.mainImage) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
 
   return (
     <Box sx={{ zIndex: 2, position: "relative" }}>
