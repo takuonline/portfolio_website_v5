@@ -22,6 +22,7 @@ import BgRings from "../BackgroundStyleComponents/BgRings";
 import { BgLightStar2 } from "../BackgroundStyleComponents/BgStars";
 import DataStudio from "./DataStudio/DataStudio";
 import Clipbard from "./Clipbard/Clipbard";
+import AdhocInsights from "./AdhocInsights/AdhocInsights";
 
 const InstructionText = (props: {
   title: string;
@@ -252,6 +253,7 @@ const PortfolioProjects = () => {
         }}
       >
         <BgStyling />
+        <AdhocInsights />
         <Clipbard />
         <DataStudio />
         <SavvyShopper />

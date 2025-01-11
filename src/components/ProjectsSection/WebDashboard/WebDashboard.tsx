@@ -38,7 +38,7 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
   ];
   const IconSize = "2rem";
 
-  const techStackReactDashboard: string[] = [`React`];
+  // const techStackReactDashboard: string[] = [`React`];
   const theme = useTheme();
   const viewport = { once: true };
 
