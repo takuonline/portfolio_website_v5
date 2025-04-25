@@ -13,45 +13,44 @@ import { FaBolt, FaWater, FaPaintRoller, FaHammer } from "react-icons/fa";
 import { ServiceLink } from "@/components/ServiceLinks";
 import { MdLandscape } from "react-icons/md";
 
-const LandingPages = (props: {}) => {
+const services = [
+  {
+    href: "/plumbing",
+    label: "Plumbing Services",
+    icon: <FaWater size={18} />,
+  },
+  {
+    href: "/painting",
+    label: "Painting Services",
+    icon: <FaPaintRoller size={18} />,
+  },
+  {
+    href: "/construction",
+    label: "Construction Services",
+    icon: <FaHammer size={18} />,
+  },
+
+  {
+    href: "/electrical",
+    label: "Electrical Services",
+    icon: <FaBolt size={18} />,
+  },
+];
+const LandingPages = () => {
   const TextBoxSize = {
     xs: 12,
     sm: 8,
     lg: 12,
   };
 
-  const IconSize = "2rem";
 
-  // const techStackReactDashboard: string[] = [`React`];
+
   const theme = useTheme();
   const viewport = { once: true };
 
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
 
-  const services = [
-    {
-      href: "/plumbing",
-      label: "Plumbing Services",
-      icon: <FaWater size={18} />,
-    },
-    {
-      href: "/painting",
-      label: "Painting Services",
-      icon: <FaPaintRoller size={18} />,
-    },
-    {
-      href: "/construction",
-      label: "Construction Services",
-      icon: <FaHammer size={18} />,
-    },
-
-    {
-      href: "/electrical",
-      label: "Electrical Services",
-      icon: <FaBolt size={18} />,
-    },
-  ];
   return (
     <>
       <BodyWrapper>

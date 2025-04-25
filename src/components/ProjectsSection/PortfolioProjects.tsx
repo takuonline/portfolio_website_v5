@@ -33,6 +33,7 @@ const InstructionText = (props: {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const delayFactor = isMobileView ? 0.3 : 1;
+  const lineWidth = isMobileView ? "100%" : "180px";
 
   return (
     <Box
@@ -46,17 +47,12 @@ const InstructionText = (props: {
         component={motion.div}
         initial={{ opacity: 0, width: 0 }}
         transition={{ delay: 1 * delayFactor, duration: 0.2 }}
-        whileInView={{
-          opacity: 1,
-
-          width: 180,
-          border: `1px solid ${alpha(props.color, 0.2)}`,
-
-          [theme.breakpoints.down("md")]: {
-            width: "100%",
-          },
-        }}
+        whileInView={{ opacity: 1, width: "auto" }}
         viewport={{ once: true }}
+        sx={{
+          width: lineWidth,
+          border: `1px solid ${alpha(props.color, 0.2)}`,
+        }}
       />
 
       <Typography
@@ -81,7 +77,6 @@ const InstructionText = (props: {
     </Box>
   );
 };
-
 const Title = () => {
   const theme = useTheme();
 
@@ -266,28 +261,7 @@ const PortfolioProjects = () => {
         <BlackFridayPlotlyDashboard />
         <ReflectlyClone />
 
-        {/* <BodyWrapper>
-  <TextDivider
-    text={
-      "l am passionate about solving hard problems to drive positive change in the world."
-    }
-  >
-    {`Building innovative solutions can be a challenging and
-rewarding process. It requires creativity, critical thinking,
-and a willingness to take risks and learn from failures.`}
-    <br />
-    {`
-By following a `}
 
-    <HighlightTypography>{`structured process,`}</HighlightTypography>
-
-    {` such as the design
-thinking process, and gathering feedback from potential
-users or customers, `}
-    {`l am able can increase the chances of
-developing a successful and impactful solution`}
-  </TextDivider>
-</BodyWrapper> */}
       </Box>
 
       <Box my={30} />
@@ -296,3 +270,5 @@ developing a successful and impactful solution`}
 };
 
 export default PortfolioProjects;
+
+

@@ -22,13 +22,13 @@ export async function generateMetadata() {
 export default async function BlogPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   //  const preview = query.preview === 'true';
   const blog: { post: SanityDocument } = await sanityClient.fetch(
     queries.postQuery,
     {
-      slug: params.slug,
+      slug: (await params).slug,
     },
   );
 
