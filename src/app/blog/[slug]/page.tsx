@@ -44,7 +44,6 @@ export default async function BlogPage({
     console.error(error);
   }
 
-
   return (
     <Box sx={{ zIndex: 2, position: "relative" }}>
       <BodyWrapper>

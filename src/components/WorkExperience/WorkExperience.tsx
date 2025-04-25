@@ -355,14 +355,14 @@ const WorkExperience = () => {
   const handlePrev = () => {
     setDirection(-1);
     setActiveIndex((prevIndex: number) =>
-      prevIndex === 0 ? workExperienceData.length - 1 : prevIndex - 1
+      prevIndex === 0 ? workExperienceData.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNext = () => {
     setDirection(1);
     setActiveIndex((prevIndex: number) =>
-      prevIndex === workExperienceData.length - 1 ? 0 : prevIndex + 1
+      prevIndex === workExperienceData.length - 1 ? 0 : prevIndex + 1,
     );
   };
 

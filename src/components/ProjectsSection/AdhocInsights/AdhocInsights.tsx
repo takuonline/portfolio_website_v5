@@ -27,15 +27,15 @@ const AdhocInsights = () => {
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
 
-
-
   return (
     <BodyWrapper>
       <ProjectComponent
-        title={
-          "Adhoc insights"
-        }
-        skills={["Frontend development", "Backend development", "Machine learning"]}
+        title={"Adhoc insights"}
+        skills={[
+          "Frontend development",
+          "Backend development",
+          "Machine learning",
+        ]}
         bgImage={
           <Box
             sx={{

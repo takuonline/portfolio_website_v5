@@ -9,7 +9,6 @@ import GoogleLensCloneProjectDescription from "./GoogleLensCloneProjectDescripti
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
 
 const GoogleLensClone = (props: {}) => {
-
   const AppVideoSize = {
     xs: 12,
     lg: 9,

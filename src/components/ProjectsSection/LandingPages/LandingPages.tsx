@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { motion } from "framer-motion";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { IoLink } from "react-icons/io5";
-import Link from "next/link";
+
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 import { FaBolt, FaWater, FaPaintRoller, FaHammer } from "react-icons/fa";
@@ -134,7 +133,6 @@ const LandingPages = (props: {}) => {
               </motion.div>
             }
             firstComponentScale={{
-
               lg: 5,
             }}
             secondComponent={
@@ -147,22 +145,6 @@ const LandingPages = (props: {}) => {
                 >
                   {"Millennium Services"}
                 </Typography>
-                {/* <Box
-                  sx={{
-                    display: "flex",
-                    columnGap: 2,
-                    mb: { sm: 4, xs: 5 },
-                    mt: { sm: 2, xs: 3 },
-                  }}
-                >
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://millenniumservices.com/"
-                  >
-                    <IoLink size={IconSize} />{" "}
-                  </Link>
-                </Box> */}
 
                 <ProjectTextBox
                   title={"Project Description"}
@@ -177,9 +159,6 @@ The entire project is deployed through Vercel's platform, ensuring excellent per
               </>
             }
             secondComponentScale={{
-              // xs: 0,
-              // sm: 0,
-              // md: 0,
               lg: 5,
             }}
           />
@@ -309,7 +288,6 @@ The implementation leverages Next.js's server-side rendering capabilities to ens
                     flexDirection: { xs: "column", sm: "column" },
                     flexWrap: "wrap",
                     justifyContent: "center",
-                    // alignItems: "center",
                     gap: { xs: 2, sm: 2 },
                   }}
                 >

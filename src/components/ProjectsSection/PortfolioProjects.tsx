@@ -258,7 +258,7 @@ const PortfolioProjects = () => {
         <Clipbard />
         <DataStudio />
 
-        <LandingPages/>
+        <LandingPages />
         <SavvyShopper />
 
         <GoogleLensClone />

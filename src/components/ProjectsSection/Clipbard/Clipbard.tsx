@@ -30,10 +30,8 @@ const Clipbard = () => {
   return (
     <BodyWrapper>
       <ProjectComponent
-        title={
-          "Clipbard: AI-Powered Imagination"
-        }
-        skills={["UI/UX Design","Frontend development", "Backend development"]}
+        title={"Clipbard: AI-Powered Imagination"}
+        skills={["UI/UX Design", "Frontend development", "Backend development"]}
         bgImage={
           <Box
             sx={{

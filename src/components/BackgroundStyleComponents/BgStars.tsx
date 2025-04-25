@@ -33,7 +33,7 @@ const BgLightStar2 = (props: { color: string | undefined; size: number }) => {
   );
 };
 
-const DarkStar = (props: { color?: string ; size: number }) => {
+const DarkStar = (props: { color?: string; size: number }) => {
   const theme = useTheme();
   return (
     <div>

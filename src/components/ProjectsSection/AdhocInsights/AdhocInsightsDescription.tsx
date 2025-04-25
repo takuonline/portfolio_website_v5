@@ -23,26 +23,30 @@ const AdhocInsightsProjectDescription = () => {
     backend: ["Django", "Django REST Framework", "Django Channels"],
     database: ["PostgreSQL"],
     devops: ["Nginx", "Docker"],
-    misc: ["Hetzner Cloud", ],
+    misc: ["Hetzner Cloud"],
   };
   const keyFeatures = [
     {
       primary: "Conversational Data Analysis",
-      secondary: "Ask questions about your data in plain English and get instant insights through natural dialogue - no technical knowledge required.",
+      secondary:
+        "Ask questions about your data in plain English and get instant insights through natural dialogue - no technical knowledge required.",
     },
     {
       primary: "Visual Insights",
-      secondary: "Automatically generates clear line and bar charts to help you understand trends and patterns in your data at a glance.",
+      secondary:
+        "Automatically generates clear line and bar charts to help you understand trends and patterns in your data at a glance.",
     },
     {
       primary: "Interactive Data Tables",
-      secondary: "View detailed data in easy-to-read tables that you can sort, filter and export to spreadsheets for further analysis.",
+      secondary:
+        "View detailed data in easy-to-read tables that you can sort, filter and export to spreadsheets for further analysis.",
     },
     {
       primary: "Multi-Dataset Support",
-      secondary: "Explore and analyze different types of data, from financial metrics to recipe collections, all through simple conversation.",
-    }
- ];
+      secondary:
+        "Explore and analyze different types of data, from financial metrics to recipe collections, all through simple conversation.",
+    },
+  ];
   return (
     <>
       <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
@@ -54,7 +58,6 @@ const AdhocInsightsProjectDescription = () => {
             "Adhoc Insights transforms complex data analysis into simple conversations, making data exploration accessible to everyone, regardless of their technical background. Using advanced AI technology powered by Claude 3.5 Sonnet, the platform enables users to gain valuable insights from their data through natural dialogue."
           }
         </Typography>
-
       </Box>
       <Box sx={{ p: 3, mb: 3, backgroundColor: "transparent" }}>
         <ProjectDescriptionSubtitle>Key Features</ProjectDescriptionSubtitle>
