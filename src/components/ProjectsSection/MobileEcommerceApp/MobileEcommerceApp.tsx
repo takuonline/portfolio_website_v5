@@ -24,7 +24,7 @@ const MobileEcommerceApp = () => {
       <BodyWrapper>
         <ProjectComponent
           title={"Mobile Ecommerce App"}
-          skills={["Mobile development"]}
+          skills={["UI/UX Design", "Mobile development"]}
           bgImage={
             <Box
               sx={{

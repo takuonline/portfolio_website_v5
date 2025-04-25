@@ -18,19 +18,10 @@ import Chip from "@mui/material/Chip";
 const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
   const item = props.item;
   const theme = useTheme();
-  const isMdUpBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
-
-  const [onHover, setOnHover] = React.useState<boolean>(false);
-
-  const onMouseEnter: React.MouseEventHandler<HTMLDivElement> = () =>
-    setOnHover(true);
-  const onMouseLeave: React.MouseEventHandler<HTMLDivElement> = () =>
-    setOnHover(false);
-  // const expanded = isMdUpBreakpoint && onHover;
 
   const startDateFormatted = new Date(item.startDate).toLocaleDateString(
     "en-US",
-    { month: "long", year: "numeric" },
+    { month: "long", year: "numeric" }
   );
   const endDateFormatted =
     item.endDate === undefined
@@ -97,7 +88,9 @@ const ExperienceItem = (props: { item: WorkExperienceSchema }) => {
           <Box
             sx={{
               display: "flex",
+              flexWrap: "wrap",
               mt: 2,
+              gap: 1,
             }}
           >
             {item.skills.map((v, idx) => (

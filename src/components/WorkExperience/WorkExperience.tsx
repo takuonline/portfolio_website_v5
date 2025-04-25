@@ -1,22 +1,24 @@
 import Grid from "@mui/material/Grid";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BodyWrapper from "../Common/BodyWrapper";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { alpha, useTheme } from "@mui/material/styles";
 
 import SectionHeader from "../Common/SectionHeader";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ExperienceItem from "./ExperienceItem";
-import workExperienceData, {
-  WorkExperienceSchema,
-} from "../../common/data/work-experience";
+import workExperienceData from "../../common/data/work-experience";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { merriWeatherFont } from "@/common/themes/fonts/font";
 import { DarkStar } from "../BackgroundStyleComponents/BgStars";
+
+// Import MUI components for your project
+import { IconButton } from "@mui/material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 const InstructionText = (props: { title: string }) => {
   const theme = useTheme();
@@ -75,6 +77,48 @@ const InstructionText = (props: { title: string }) => {
       >
         {props.title}
       </Typography>
+    </Box>
+  );
+};
+
+const CarouselIndicators = ({
+  activeIndex,
+  selectSlide,
+}: {
+  activeIndex: number;
+  selectSlide: (index: number) => void;
+}) => {
+  const theme = useTheme();
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: 1,
+
+        width: "100%",
+      }}
+    >
+      {workExperienceData.map((_, index) => (
+        <Box
+          key={index}
+          component={motion.div}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => selectSlide(index)}
+          sx={{
+            width: 8,
+            height: 8,
+            borderRadius: "50%",
+            backgroundColor:
+              index === activeIndex
+                ? alpha(theme.palette.common.black, 0.7)
+                : alpha(theme.palette.common.black, 0.2),
+            cursor: "pointer",
+            transition: "all 0.2s ease-in-out",
+          }}
+        />
+      ))}
     </Box>
   );
 };
@@ -172,9 +216,83 @@ const TimeLine = () => {
   );
 };
 
-const WorkExperience = () => {
+const CarouselBtns = ({
+  handlePrev,
+  handleNext,
+}: {
+  handlePrev: () => void;
+  handleNext: () => void;
+}) => {
   const theme = useTheme();
 
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        gap: 2,
+        width: "100%",
+        mt: { xs: 4, md: 6 },
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <IconButton
+          onClick={handlePrev}
+          aria-label="Previous experience"
+          sx={{
+            border: `1px solid ${alpha(theme.palette.common.black, 0.2)}`,
+            borderRadius: "50%",
+            width: { xs: 40, md: 48 },
+            height: { xs: 40, md: 48 },
+            color: alpha(theme.palette.common.black, 0.7),
+            backdropFilter: "blur(4px)",
+            backgroundColor: alpha(theme.palette.background.paper, 0.6),
+            transition: "all 0.2s ease-in-out",
+            "&:hover": {
+              backgroundColor: alpha(theme.palette.background.paper, 0.8),
+              borderColor: alpha(theme.palette.common.black, 0.3),
+              color: theme.palette.common.black,
+            },
+          }}
+        >
+          <ChevronLeft />
+        </IconButton>
+      </motion.div>
+
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <IconButton
+          onClick={handleNext}
+          aria-label="Next experience"
+          sx={{
+            border: `1px solid ${alpha(theme.palette.common.black, 0.2)}`,
+            borderRadius: "50%",
+            width: { xs: 40, md: 48 },
+            height: { xs: 40, md: 48 },
+            color: alpha(theme.palette.common.black, 0.7),
+            backdropFilter: "blur(4px)",
+            backgroundColor: alpha(theme.palette.background.paper, 0.6),
+            transition: "all 0.2s ease-in-out",
+            "&:hover": {
+              backgroundColor: alpha(theme.palette.background.paper, 0.8),
+              borderColor: alpha(theme.palette.common.black, 0.3),
+              color: theme.palette.common.black,
+            },
+          }}
+        >
+          <ChevronRight />
+        </IconButton>
+      </motion.div>
+    </Box>
+  );
+};
+
+const WorkExperience = () => {
+  const theme = useTheme();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const delayFactor = isMobileView ? 0.5 : 1;
 
@@ -198,7 +316,62 @@ const WorkExperience = () => {
     },
   };
 
-  const viewport = { once: true };
+  // Animation variants for the carousel
+  const cardVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+    }),
+  };
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "Present";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  };
+
+  // Handle responsive layout
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setActiveIndex((prevIndex: number) =>
+      prevIndex === 0 ? workExperienceData.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setDirection(1);
+    setActiveIndex((prevIndex: number) =>
+      prevIndex === workExperienceData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const selectSlide = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
+  };
+
+  const currentYear = new Date().getFullYear().toString();
 
   return (
     <>
@@ -215,7 +388,6 @@ const WorkExperience = () => {
           sx={{
             position: "absolute",
 
-            // zIndex: 1,
             opacity: 0.3,
 
             [theme.breakpoints.down("md")]: {
@@ -236,14 +408,14 @@ const WorkExperience = () => {
           <Box
             sx={{
               position: "absolute",
-              top: "-3%",
+              top: "-6%",
               left: "50%",
               [theme.breakpoints.down("md")]: {
                 top: "-1.5%",
               },
             }}
           >
-            <DarkStar color={"red"} size={200} />
+            <DarkStar size={200} />
           </Box>
 
           <Grid
@@ -268,7 +440,9 @@ const WorkExperience = () => {
               {"My Experience"}
             </SectionHeader>
 
-            <InstructionText title={`3 years of active work`} />
+            <InstructionText
+              title={`${+currentYear - 2020} years of active work`}
+            />
             <TimeLine />
           </Grid>
 
@@ -285,40 +459,40 @@ const WorkExperience = () => {
             }}
             container
           >
-            <Grid item lg={3} xs={0}></Grid>
-
-            <Grid
-              item
-              xs={12}
-              variants={containerAnimation}
-              component={motion.div}
-
-              // initial="hidden"
-              // whileInView="visible"
-              // transition={{ duration: 3 }}
-              // viewport={{ once: true }}
+            <Box
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+                minHeight: { xs: 400, sm: 450, md: 500 }, // Adjust these values to fit your content
+                width: "100%",
+              }}
             >
-              {/* <motion.hr
-                initial={{ opacity: 0, y: 0 }}
-                whileInView={{ opacity: 0.7, y: 0 }}
-                transition={{ duration: 0.2 }}
-                viewport={{ once: true }}
-                style={{
-                  width: "100%",
-                  height: "1px",
-                  marginTop: 35,
-                  backgroundColor: theme.palette.text.primary,
-                }}
-              /> */}
-
-              {workExperienceData.map(
-                (value: WorkExperienceSchema, index: number) => (
-                  <motion.div key={index} variants={itemAnimation}>
-                    <ExperienceItem key={value.id} item={value} />
+              <AnimatePresence initial={false} custom={direction} mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  custom={direction}
+                  variants={cardVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                >
+                  <motion.div variants={itemAnimation}>
+                    <ExperienceItem item={workExperienceData[activeIndex]} />
                   </motion.div>
-                ),
-              )}
-            </Grid>
+                </motion.div>
+              </AnimatePresence>
+            </Box>
+
+            <CarouselIndicators
+              activeIndex={activeIndex}
+              selectSlide={selectSlide}
+            />
+
+            <CarouselBtns handlePrev={handlePrev} handleNext={handleNext} />
           </Grid>
         </BodyWrapper>
       </Paper>

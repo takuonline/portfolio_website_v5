@@ -59,7 +59,7 @@ const AdhocInsights = () => {
                 size={{
                   xs: 10,
                   sm: 8,
-                  lg: 5.5,
+                  lg: 4.8,
                 }}
                 sx={{
                   border: "5px solid white",

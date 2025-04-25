@@ -4,13 +4,20 @@ import Box from "@mui/material/Box";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 
-const BodyWrapper = (props: {
+// Define props type including children and sx
+interface BodyWrapperProps {
   children: React.ReactNode;
   sx?: SxProps<Theme>;
-}) => {
+}
+
+// Use React.forwardRef to allow passing refs
+const BodyWrapper = React.forwardRef<HTMLDivElement, BodyWrapperProps>(
+  (props, ref) => {
   const theme = useTheme();
   return (
     <Box
+        // Pass the ref to the underlying Box component
+        ref={ref}
       sx={{
         mx: 9,
         [theme.breakpoints.down("lg")]: {
@@ -25,6 +32,10 @@ const BodyWrapper = (props: {
       {props.children}
     </Box>
   );
-};
+  }
+);
+
+// Add display name for better debugging
+BodyWrapper.displayName = "BodyWrapper";
 
 export default BodyWrapper;

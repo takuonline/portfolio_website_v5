@@ -23,6 +23,7 @@ import { BgLightStar2 } from "../BackgroundStyleComponents/BgStars";
 import DataStudio from "./DataStudio/DataStudio";
 import Clipbard from "./Clipbard/Clipbard";
 import AdhocInsights from "./AdhocInsights/AdhocInsights";
+import LandingPages from "./LandingPages/LandingPages";
 
 const InstructionText = (props: {
   title: string;
@@ -256,6 +257,8 @@ const PortfolioProjects = () => {
         <AdhocInsights />
         <Clipbard />
         <DataStudio />
+
+        <LandingPages/>
         <SavvyShopper />
 
         <GoogleLensClone />

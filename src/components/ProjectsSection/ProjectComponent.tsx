@@ -174,7 +174,9 @@ const ProjectComponent = (props: ProjectComponentType) => {
         <Box
           sx={{
             mr: "auto",
-            width: "40%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
 
             [theme.breakpoints.down("md")]: {
               width: "100%",
@@ -185,23 +187,33 @@ const ProjectComponent = (props: ProjectComponentType) => {
             },
           }}
         >
-          {props.skills.map((v, idx) => (
-            <Chip
-              key={idx}
-              variant={"outlined"}
-              label={v}
-              sx={{
-                borderColor: "text.primary",
-                m: { lg: 1, xs: 0.5 },
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                },
-              }}
-            />
-          ))}
-        </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
 
-        {btn}
+              width: "40%",
+              gap: 1.5,
+            }}
+          >
+            {props.skills.map((v, idx) => (
+              <Chip
+                key={idx}
+                variant={"outlined"}
+                label={v}
+                sx={{
+                  borderColor: "text.primary",
+
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  },
+                }}
+              />
+            ))}
+          </Box>
+
+          <Box>{btn}</Box>
+        </Box>
       </Box>
 
       {isExpanded && props.children}

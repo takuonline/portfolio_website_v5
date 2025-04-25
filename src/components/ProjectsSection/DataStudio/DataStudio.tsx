@@ -28,6 +28,7 @@ const DataStudio = () => {
       <ProjectComponent
         title={"Savvy Analytics: Reimagining the LLM Interface"}
         skills={[
+          "UI/UX Design",
           "Frontend development",
           "Backend development",
           "Machine learning",

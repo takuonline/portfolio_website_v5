@@ -49,7 +49,7 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
       <BodyWrapper>
         <ProjectComponent
           title={"Web Dashboards"}
-          skills={["Fullstack development", "Data Visualization"]}
+          skills={["UI/UX Design", "Fullstack development", "Data Visualization"]}
           bgImage={
             <Box
               sx={{

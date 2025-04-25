@@ -33,7 +33,7 @@ const Clipbard = () => {
         title={
           "Clipbard: AI-Powered Imagination"
         }
-        skills={["Frontend development", "Backend development"]}
+        skills={["UI/UX Design","Frontend development", "Backend development"]}
         bgImage={
           <Box
             sx={{

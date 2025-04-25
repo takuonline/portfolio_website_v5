@@ -125,7 +125,7 @@ const SavvyShopper = (props: {}) => {
     <BodyWrapper>
       <ProjectComponent
         title={"Savvy Shopper - A Shopping App"}
-        skills={["Design", "Mobile development", "Backend development"]}
+        skills={["UI/UX Design", "Mobile development", "Backend development"]}
         bgImage={
           <AppImage
             showFrame={false}
