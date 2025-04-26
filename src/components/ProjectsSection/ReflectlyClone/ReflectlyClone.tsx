@@ -1,4 +1,4 @@
-import { alpha, useTheme } from "@mui/material/styles";
+import {  useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { motion } from "framer-motion";
 import AppVideo from "../../Common/AppVideo";
@@ -18,13 +18,18 @@ import {
 } from "@mui/material";
 
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import TechStack from "@/components/Common/TechStack";
+import { TechType } from "@/types/techStackTypes";
 
 const ReflectlyClone = (props: {}) => {
-  const TextBoxSize = {
-    xs: 12,
-    sm: 10,
-    md: 8,
-    lg: 12,
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [{ type: TechType.FLUTTER }, { type: TechType.DART }],
+      },
+
+    ],
   };
   const theme = useTheme();
   const viewport = { once: true };
@@ -146,6 +151,19 @@ const ReflectlyClone = (props: {}) => {
                     </Typography>
                   </ListItem>
                 </List>
+
+
+                <Paper
+        elevation={0}
+        sx={{ py: 3, mb: 3, backgroundColor: "transparent" }}
+      >
+        <ProjectDescriptionSubtitle>
+          {"Technologies Used"}
+        </ProjectDescriptionSubtitle>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+          <TechStack sections={techStackData.sections} />
+        </Box>
+      </Paper>
               </>
 
               //               <Typography

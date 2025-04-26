@@ -10,9 +10,19 @@ import {
 } from "@mui/material";
 
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const MobileAppProjectDescription = () => {
-  const techStack = ["Flutter", "Provider", "Firebase", "Square"];
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [{ type: TechType.FLUTTER }, { type: TechType.DART }],
+      },
+
+    ],
+  };
 
   const keyFeatures = [
     {
@@ -102,18 +112,7 @@ const MobileAppProjectDescription = () => {
           {"Technologies Used"}
         </ProjectDescriptionSubtitle>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-          {techStack.map((tech) => (
-            <Chip
-              key={tech}
-              label={tech}
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: "white",
-                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-              }}
-            />
-          ))}
+          <TechStack sections={techStackData.sections} />
         </Box>
       </Paper>
     </>

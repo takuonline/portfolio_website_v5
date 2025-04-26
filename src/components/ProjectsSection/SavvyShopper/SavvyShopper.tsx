@@ -19,8 +19,70 @@ import {
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const SavvyShopper = (props: {}) => {
+  const techStackData = {
+    sections: [
+      {
+        section: "Web Crawler",
+        items: [
+          { type: TechType.PYTHON },
+          { type: TechType.SCRAPY_FRAMEWORK },
+          { type: TechType.SCRAPYD },
+          { type: TechType.HEROKU, description: "Hosting the crawlers" },
+          {
+            type: TechType.AWS_LAMBDA,
+            description: "Scheduling and triggering the crawlers",
+          },
+        ],
+      },
+      {
+        section: "Backend",
+        items: [
+          { type: TechType.PYTHON },
+          { type: TechType.FLASK },
+          { type: TechType.FLASK_RESTFUL },
+          { type: TechType.NUMPY },
+          { type: TechType.PANDAS },
+          {
+            type: TechType.AWS_LAMBDA,
+            description: "Scheduling and triggering the crawlers",
+          },
+          // Example of using a custom icon
+          // {
+          //   type: "Custom Tech",
+          //   customIcon: "custom-tech-1",
+          //   description: "Example of custom icon",
+          // } as ExtendedTechItemType,
+        ],
+      },
+      {
+        section: "Database",
+        items: [{ type: TechType.DYNAMODB }, { type: TechType.MONGODB }],
+      },
+      {
+        section: "Mobile App",
+        items: [
+          {
+            type: TechType.FLUTTER,
+            description:
+              "Includes UI, rest api connection to backend, state management",
+          },
+        ],
+      },
+      {
+        section: "Chrome Extension",
+        items: [
+          { type: TechType.JAVASCRIPT },
+          { type: TechType.CSS },
+          { type: TechType.HTML },
+        ],
+      },
+    ],
+  };
+
   const TextBoxSize = {
     xs: 12,
     md: 8,
@@ -76,22 +138,6 @@ const SavvyShopper = (props: {}) => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
-
-  // const techStack: string[] = [
-  //   `Web crawler: Python, Scrapy framework, Scrapyd, Heroku(Hosting the crawlers), AWS Lambda(scheduling and triggering the crawlers)  `,
-  //   `Backend: Python, Flask,Flask restful, data science libraries like numpy and pandas`,
-  //   `Database: Dynamodb, Mongodb`,
-  //   `Mobile app: Flutter - includes ui, rest api connection to backend, state management`,
-  //   `Chrome extension: Javascript, CSS, HTML`,
-  // ];
-
-  const techStack = {
-    webCrawler: ["Python", "Scrapy", "Scrapyd", "Heroku", "AWS Lambda"],
-    backend: ["Python", "Flask", "Flask RESTful", "NumPy", "Pandas"],
-    database: ["DynamoDB", "MongoDB"],
-    mobileApp: ["Flutter"],
-    chromeExtension: ["JavaScript", "CSS", "HTML"],
-  };
 
   const keyFeatures = [
     {
@@ -433,7 +479,9 @@ Following the success of the Savvy Shopper mobile app, I developed a Chrome exte
                     pl: 0,
                   }}
                 >
-                  {Object.entries(techStack).map(([category, technologies]) => (
+                  <TechStack sections={techStackData.sections} />
+
+                  {/* {Object.entries(techStack).map(([category, technologies]) => (
                     <Grid item xs={12} sm={6} key={category}>
                       <Typography variant="h6" gutterBottom>
                         {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -444,7 +492,7 @@ Following the success of the Savvy Shopper mobile app, I developed a Chrome exte
                         ))}
                       </Box>
                     </Grid>
-                  ))}
+                  ))} */}
                 </Grid>
               </Box>
             </motion.div>

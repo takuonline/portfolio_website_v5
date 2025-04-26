@@ -10,7 +10,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
 import { FaBolt, FaWater, FaPaintRoller, FaHammer } from "react-icons/fa";
-import { ServiceLink } from "@/components/ServiceLinks";
+import { ServiceLink } from "@/components/Common/ServiceLinks";
 import { MdLandscape } from "react-icons/md";
 
 const services = [
@@ -42,8 +42,6 @@ const LandingPages = () => {
     sm: 8,
     lg: 12,
   };
-
-
 
   const theme = useTheme();
   const viewport = { once: true };

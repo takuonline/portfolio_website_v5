@@ -10,20 +10,46 @@ import {
   Paper,
 } from "@mui/material";
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const DataStudioProjectDescription = () => {
-  const techStack = {
-    frontend: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Shadcn UI",
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [
+          { type: TechType.NEXTJS },
+          { type: TechType.TYPESCRIPT },
+          { type: TechType.TAILWIND_CSS },
+          { type: TechType.REDUX_TOOLKIT },
+          { type: TechType.SHADCN_UI },
+        ],
+      },
+      {
+        section: "Backend",
+        items: [
+          { type: TechType.DJANGO },
+          { type: TechType.DJANGO_REST_FRAMEWORK },
+          { type: TechType.LANGCHAIN },
+        ],
+      },
+      {
+        section: "Database",
+        items: [{ type: TechType.POSTGRESQL }],
+      },
+      {
+        section: "DevOps",
+        items: [
+          { type: TechType.NGINX },
+          { type: TechType.DOCKER },
+          { type: TechType.KUBERNETES },
+          { type: TechType.ARGOCD },
+        ],
+      },
     ],
-    backend: ["Django", "Django REST Framework", "LangChain"],
-    database: ["PostgreSQL"],
-    devops: ["Nginx", "Docker", "Kubernetes", "ArgoCD"],
   };
+
   const keyFeatures = [
     {
       primary: "Graph-like Structure",
@@ -82,18 +108,7 @@ const DataStudioProjectDescription = () => {
             pl: 0,
           }}
         >
-          {Object.entries(techStack).map(([category, technologies]) => (
-            <Grid item xs={12} sm={6} key={category}>
-              <Typography variant="h6" gutterBottom>
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {technologies.map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" />
-                ))}
-              </Box>
-            </Grid>
-          ))}
+          <TechStack sections={techStackData.sections} />
         </Grid>
       </Box>
 

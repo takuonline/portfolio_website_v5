@@ -10,9 +10,61 @@ import {
 } from "@mui/material";
 
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const SavvyShopperProjectDescription = () => {
-  const techStack = ["Flutter", "Provider", "Firebase", "Square"];
+  const techStackData = {
+    sections: [
+      {
+        section: "Web Crawler",
+        items: [
+          { type: TechType.PYTHON },
+          { type: TechType.SCRAPY_FRAMEWORK },
+          { type: TechType.SCRAPYD },
+          { type: TechType.HEROKU, description: "Hosting the crawlers" },
+          {
+            type: TechType.AWS_LAMBDA,
+            description: "Scheduling and triggering the crawlers",
+          },
+        ],
+      },
+      {
+        section: "Backend",
+        items: [
+          { type: TechType.PYTHON },
+          { type: TechType.FLASK },
+          { type: TechType.FLASK_RESTFUL },
+          { type: TechType.NUMPY },
+          { type: TechType.PANDAS },
+        ],
+      },
+      {
+        section: "Database",
+        items: [{ type: TechType.DYNAMODB }, { type: TechType.MONGODB }],
+      },
+      {
+        section: "Mobile App",
+        items: [
+          {
+            type: TechType.FLUTTER,
+            description:
+              "Includes UI, rest api connection to backend, state management",
+          },
+        ],
+      },
+      {
+        section: "Chrome Extension",
+        items: [
+          { type: TechType.JAVASCRIPT },
+
+          { type: TechType.CSS },
+          { type: TechType.HTML },
+        ],
+      },
+    ],
+  };
+
 
   const keyFeatures = [
     {
@@ -101,20 +153,8 @@ const SavvyShopperProjectDescription = () => {
         <ProjectDescriptionSubtitle>
           {"Technologies Used"}
         </ProjectDescriptionSubtitle>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-          {techStack.map((tech) => (
-            <Chip
-              key={tech}
-              label={tech}
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: "white",
-                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-              }}
-            />
-          ))}
-        </Box>
+
+        <TechStack sections={techStackData.sections} />
       </Paper>
     </Paper>
   );

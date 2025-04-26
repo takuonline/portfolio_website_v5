@@ -7,11 +7,14 @@ import ListItem from "@mui/material/ListItem";
 import Box from "@mui/material/Box";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
-import { ListItemText, useMediaQuery, useTheme } from "@mui/material";
+import { ListItemText, Paper, useMediaQuery, useTheme } from "@mui/material";
 import { IoLink, IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import ProjectComponent from "../ProjectComponent";
 import ProjectSectionWrapper from "../ProjectSectionWrapper";
+import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const BlackFridayPlotlyDashboard = (props: {}) => {
   const TextBoxSize = {
@@ -20,13 +23,41 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
     lg: 12,
   };
 
-  const techStackPlotlyDashboard: string[] = [
-    "CSS",
-    "Python",
-    "Flask",
-    "Pandas",
-    "Plotly/Dash",
-  ];
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [
+          { type: TechType.PLOTLY, description: "Used Plotly and Dash to create the dashboards"},
+          { type: TechType.REACT, description: "Used React to create the frontend"},
+          { type: TechType.JAVASCRIPT },
+          { type: TechType.MATERIAL_UI },
+        ],
+      },
+      {
+        section: "Backend",
+        items: [
+          { type: TechType.PYTHON },
+          { type: TechType.PLOTLY },
+
+        ],
+      },
+      {
+        section: "Database",
+        items: [{ type: TechType.FIREBASE }, { type: TechType.DYNAMODB }],
+      },
+
+      {
+        section: "Chrome Extension",
+        items: [
+          { type: TechType.JAVASCRIPT },
+
+          { type: TechType.CSS },
+          { type: TechType.HTML },
+        ],
+      },
+    ],
+  };
 
   const featuresPlotlyDashboard: string[] = [
     "Decide which products are over priced",
@@ -238,7 +269,7 @@ Here is a list of things you can do on the app:`}
                             />
                           </ListItem>
                         );
-                      },
+                      }
                     )}
                   </ProjectTextBox>
 
@@ -372,7 +403,7 @@ Here is a list of things you can do on the app:`}
                   sx={{
                     mb: {
                       xs: 0,
-                      lg: 25,
+                      lg: 10,
                     },
                   }}
                 >
@@ -412,6 +443,28 @@ I chose the most popular frontend js library React. `}
               // sm: 0,
               // md: 0,
               lg: 5,
+            }}
+            showDivider={true}
+          />
+
+          {/*********************************************  ROW   4  *************************************************** */}
+
+          <ProjectSectionWrapper
+            firstComponent={
+              <>
+                <ProjectDescriptionSubtitle>
+                  {"Technologies Used"}
+                </ProjectDescriptionSubtitle>
+
+                <TechStack sections={techStackData.sections} />
+              </>
+            }
+            firstComponentScale={{
+              lg: 10,
+            }}
+            secondComponent={<></>}
+            secondComponentScale={{
+              lg: 0,
             }}
             showDivider={false}
           />

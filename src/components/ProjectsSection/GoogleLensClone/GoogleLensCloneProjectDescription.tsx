@@ -10,14 +10,39 @@ import {
 } from "@mui/material";
 
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import TechStack from "@/components/Common/TechStack";
+import { TechType } from "@/types/techStackTypes";
 
 const GoogleLensCloneProjectDescription = () => {
-  const techStack = {
-    frontend: ["Flutter", "Dart"],
-    backend: ["Python"],
-    ML: ["PyTorch", "YOLOv7", "ResNet"],
-    database: ["Product information database (webscraped)"],
-    devops: ["Docker", "AWS EC2 Linux", "Git", "GitHub"],
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [{ type: TechType.FLUTTER }, { type: TechType.DART }],
+      },
+      {
+        section: "Backend",
+        items: [{ type: TechType.PYTHON }],
+      },
+      {
+        section: "ML",
+        items: [
+          { type: TechType.PYTORCH },
+          { type: TechType.YOLOV7 },
+          { type: TechType.RESNET },
+        ],
+      },
+
+      {
+        section: "DevOps",
+        items: [
+          { type: TechType.DOCKER },
+          { type: TechType.AWS_EC2 },
+          { type: TechType.GIT },
+          { type: TechType.GITHUB },
+        ],
+      },
+    ],
   };
 
   const keyFeatures = [
@@ -72,18 +97,7 @@ const GoogleLensCloneProjectDescription = () => {
             pl: 0,
           }}
         >
-          {Object.entries(techStack).map(([category, technologies]) => (
-            <Grid item xs={12} sm={6} key={category}>
-              <Typography variant="h6" gutterBottom>
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {technologies.map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" />
-                ))}
-              </Box>
-            </Grid>
-          ))}
+          <TechStack sections={techStackData.sections} />
         </Grid>
       </Box>
     </>

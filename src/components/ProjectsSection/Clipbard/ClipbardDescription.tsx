@@ -2,28 +2,52 @@ import React from "react";
 import {
   Box,
   Typography,
-  Chip,
   List,
   ListItem,
   ListItemText,
   Grid,
-  Paper,
 } from "@mui/material";
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";
+import { TechType } from "@/types/techStackTypes";
+import TechStack from "@/components/Common/TechStack";
 
 const ClipbardProjectDescription = () => {
-  const techStack = {
-    frontend: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Shadcn UI",
+  const techStackData = {
+    sections: [
+      {
+        section: "Frontend",
+        items: [
+          { type: TechType.NEXTJS },
+          { type: TechType.TYPESCRIPT },
+          { type: TechType.TAILWIND_CSS },
+          { type: TechType.REDUX_TOOLKIT },
+          { type: TechType.SHADCN_UI },
+        ],
+      },
+      {
+        section: "Backend",
+        items: [
+          { type: TechType.DJANGO },
+          { type: TechType.DJANGO_REST_FRAMEWORK },
+        ],
+      },
+      {
+        section: "Database",
+        items: [{ type: TechType.POSTGRESQL }],
+      },
+      {
+        section: "DevOps",
+        items: [{ type: TechType.NGINX }, { type: TechType.DOCKER }],
+      },
+      {
+        section: "Cloud & Misc",
+        items: [
+          { type: TechType.HETZNER_CLOUD },
+          { type: TechType.CLOUDFLARE_R2 },
+          { type: TechType.BREVO },
+        ],
+      },
     ],
-    backend: ["Django", "Django REST Framework"],
-    database: ["PostgreSQL"],
-    devops: ["Nginx", "Docker"],
-    misc: ["Hetzner Cloud", "Cloudflare R2", "Brevo(Sendinblue)"],
   };
   const keyFeatures = [
     {
@@ -106,18 +130,7 @@ const ClipbardProjectDescription = () => {
             pl: 0,
           }}
         >
-          {Object.entries(techStack).map(([category, technologies]) => (
-            <Grid item xs={12} sm={6} key={category}>
-              <Typography variant="h6" gutterBottom>
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                {technologies.map((tech) => (
-                  <Chip key={tech} label={tech} variant="outlined" />
-                ))}
-              </Box>
-            </Grid>
-          ))}
+          <TechStack sections={techStackData.sections} />
         </Grid>
       </Box>
 

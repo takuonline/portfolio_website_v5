@@ -27,6 +27,8 @@ const AdhocInsights = () => {
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
 
+
+
   return (
     <BodyWrapper>
       <ProjectComponent
