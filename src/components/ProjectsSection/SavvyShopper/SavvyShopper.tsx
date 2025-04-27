@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
 import {
-  Chip,
+
   Grid,
   List,
   ListItemText,
@@ -101,40 +101,6 @@ const SavvyShopper = (props: {}) => {
     lg: 10,
   };
 
-  // const [playing, setPlaying] = useState(false);
-  // const videoRef = useRef(null);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", debounce(handleScroll, 200));
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const startVideo = () => {
-  //   videoRef.current.pause();
-  //   setPlaying(false);
-  // };
-
-  // const pauseVideo = () => {
-  //   videoRef.current.play();
-  //   setPlaying(true);
-  // };
-
-  // const handleScroll = (e) => {
-  //   if (playing) {
-  //     pauseVideo();
-  //   }
-  // };
-
-  // const handleVideoPress = () => {
-  //   if (playing) {
-  //     startVideo();
-  //   } else {
-  //     pauseVideo();
-  //   }
-
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm"));
   const mobileAnimationFactor = isMobileView ? 0.5 : 1;
@@ -180,6 +146,18 @@ const SavvyShopper = (props: {}) => {
             height={2812}
             width={5000}
             maxHeight={"90vh"}
+
+            sx={{
+              // background:
+              //   "linear-gradient(to bottom right, #841C1C99 50%, #00315555 50%)",
+              // position: "relative",
+
+  // background:
+  //               "linear-gradient(to bottom right, #FFFFFF 50%, #E6E9ED 50%)",
+  //             position: "relative",
+
+              backgroundColor: "#6D1A36   ",
+            }}
           />
         }
       >
@@ -200,7 +178,6 @@ const SavvyShopper = (props: {}) => {
                 alt={"Savvy shopper demo"}
                 size={AppVideoSize}
                 aspectRatio={168 / 360}
-                // borderRadius={"1rem"}
                 sx={{
                   whiteSpace: "break-spaces",
                   wordBreak: "normal",
@@ -252,9 +229,6 @@ Successfully completing this project played a pivotal role in my career, as it h
             </>
           }
           secondComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             lg: 6,
           }}
         />
@@ -264,24 +238,6 @@ Successfully completing this project played a pivotal role in my career, as it h
         <ProjectSectionWrapper
           firstComponent={
             <>
-              {/* <ProjectTextBox
-              title={"Mobile application features"}
-              size={TextBoxSize}
-              sx={{
-                whiteSpace: "break-spaces",
-                wordBreak: "normal",
-              }}
-            >
-              {`The mobile application allowed users to view prices of products from their favorite stores across three different categories: clothing, groceries, and electronic accessories. The data was web scraped daily from 12 different stores.
-
-For a selected store, the app would display the products that were considered "good buys" or "bad buys" based on an algorithm that analyzed the historical prices of products to determine if the current price was cheaper or more expensive.
-
-If a product was not included in the "good buys" or "bad buys" list, users could search for the product and view its historical prices. The app also provided information on competitor prices for the same or similar products.
-
-Additionally, the app featured a "shopping list" feature for groceries that allowed users to create a list and compare prices across different stores.
-`}
-            </ProjectTextBox> */}
-
               <Typography paragraph variant="body2">
                 {
                   "The mobile application allowed users to view prices of products from their favorite stores across three different categories: clothing, groceries, and electronic accessories. The data was web scraped daily from 12 different stores."
@@ -314,8 +270,7 @@ Additionally, the app featured a "shopping list" feature for groceries that allo
           }
           secondComponentScale={{
             xs: 12,
-            // sm: 0,
-            // md: 0,
+
             lg: 5,
           }}
         />
@@ -367,28 +322,9 @@ Additionally, the app featured a "shopping list" feature for groceries that allo
                   ))}
                 </List>
               </Paper>
-
-              {/* {techStack.map((value: string, index: number) => {
-                return (
-                  <ListItem
-                    key={index}
-                    sx={{
-                      display: "list-item",
-                      m: 0,
-                      my: 0.5,
-                      p: 0,
-                    }}
-                  >
-                    {value}
-                  </ListItem>
-                );
-              })} */}
             </ProjectTextBox>
           }
           secondComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             xs: 12,
             lg: 7,
           }}
@@ -426,7 +362,6 @@ Additionally, the app featured a "shopping list" feature for groceries that allo
               >
                 <AppVideo
                   showFrame={false}
-                  // frameType={FrameType.MacBook}
                   src={"https://youtu.be/rMTp4SYL2Ow"}
                   alt={"Savvy shopper chrome extension "}
                   aspectRatio={1280 / 720}
@@ -480,27 +415,11 @@ Following the success of the Savvy Shopper mobile app, I developed a Chrome exte
                   }}
                 >
                   <TechStack sections={techStackData.sections} />
-
-                  {/* {Object.entries(techStack).map(([category, technologies]) => (
-                    <Grid item xs={12} sm={6} key={category}>
-                      <Typography variant="h6" gutterBottom>
-                        {category.charAt(0).toUpperCase() + category.slice(1)}
-                      </Typography>
-                      <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                        {technologies.map((tech) => (
-                          <Chip key={tech} label={tech} variant="outlined" />
-                        ))}
-                      </Box>
-                    </Grid>
-                  ))} */}
                 </Grid>
               </Box>
             </motion.div>
           }
           secondComponentScale={{
-            // xs: 0,
-            // sm: 0,
-            // md: 0,
             lg: 12,
           }}
           showDivider={false}

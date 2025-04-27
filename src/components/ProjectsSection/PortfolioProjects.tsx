@@ -12,8 +12,6 @@ import BlogBodyWrapper from "../Common/BodyWrapper";
 import SectionHeader from "../Common/SectionHeader";
 import BlackFridayPlotlyDashboard from "./WebDashboard/WebDashboard";
 import GoogleLensClone from "./GoogleLensClone/GoogleLensClone";
-import MobileEcommerceApp from "./MobileEcommerceApp/MobileEcommerceApp";
-import ReflectlyClone from "./ReflectlyClone/ReflectlyClone";
 import SavvyShopper from "./SavvyShopper/SavvyShopper";
 import HighlightTypography from "../Common/HighlightTypography";
 import { motion } from "framer-motion";
@@ -24,6 +22,7 @@ import DataStudio from "./DataStudio/DataStudio";
 import Clipbard from "./Clipbard/Clipbard";
 import AdhocInsights from "./AdhocInsights/AdhocInsights";
 import LandingPages from "./LandingPages/LandingPages";
+import MobileApps from "./MobileApps/MobileApps";
 
 const InstructionText = (props: {
   title: string;
@@ -257,11 +256,9 @@ const PortfolioProjects = () => {
         <SavvyShopper />
 
         <GoogleLensClone />
-        <MobileEcommerceApp />
+
         <BlackFridayPlotlyDashboard />
-        <ReflectlyClone />
-
-
+        <MobileApps />
       </Box>
 
       <Box my={30} />
@@ -270,5 +267,3 @@ const PortfolioProjects = () => {
 };
 
 export default PortfolioProjects;
-
-
