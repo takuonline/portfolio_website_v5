@@ -1,12 +1,11 @@
 import React from "react";
 import {
   Box,
-  Typography,
-  Chip,
-  List,
+
   ListItem,
   ListItemText,
   Grid,
+  List,
 } from "@mui/material";
 
 import ProjectDescriptionSubtitle from "@/components/Common/ProjectDescriptionSubtitle";

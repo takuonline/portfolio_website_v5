@@ -38,8 +38,23 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head className={poppinsFont.className}></head>
-      <body>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-48x48.png"
+          sizes="48x48"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body className={`${poppinsFont.className} antialiased`}>
         <AppRouterCacheProvider>
           <StyledRoot>
             <CssBaseline />

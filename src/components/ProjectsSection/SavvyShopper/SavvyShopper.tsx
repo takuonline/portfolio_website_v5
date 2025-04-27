@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import AppVideo from "../../Common/AppVideo";
 import { motion } from "framer-motion";
 import {
-
   Grid,
   List,
   ListItemText,
@@ -136,7 +135,7 @@ const SavvyShopper = (props: {}) => {
   return (
     <BodyWrapper>
       <ProjectComponent
-        title={"Savvy Shopper - A Shopping App"}
+        title={"Savvy Shopper: A Shopping App"}
         skills={["UI/UX Design", "Mobile development", "Backend development"]}
         bgImage={
           <AppImage
@@ -145,19 +144,10 @@ const SavvyShopper = (props: {}) => {
             alt="savvy shopper mockup image "
             height={2812}
             width={5000}
-            maxHeight={"90vh"}
-
             sx={{
-              // background:
-              //   "linear-gradient(to bottom right, #841C1C99 50%, #00315555 50%)",
-              // position: "relative",
-
-  // background:
-  //               "linear-gradient(to bottom right, #FFFFFF 50%, #E6E9ED 50%)",
-  //             position: "relative",
-
-              backgroundColor: "#6D1A36   ",
+              backgroundColor: "#6D1A36",
             }}
+            style={{}}
           />
         }
       >

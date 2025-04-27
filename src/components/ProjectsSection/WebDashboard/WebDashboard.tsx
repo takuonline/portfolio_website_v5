@@ -28,19 +28,21 @@ const BlackFridayPlotlyDashboard = (props: {}) => {
       {
         section: "Frontend",
         items: [
-          { type: TechType.PLOTLY, description: "Used Plotly and Dash to create the dashboards"},
-          { type: TechType.REACT, description: "Used React to create the frontend"},
+          {
+            type: TechType.PLOTLY,
+            description: "Used Plotly and Dash to create the dashboards",
+          },
+          {
+            type: TechType.REACT,
+            description: "Used React to create the frontend",
+          },
           { type: TechType.JAVASCRIPT },
           { type: TechType.MATERIAL_UI },
         ],
       },
       {
         section: "Backend",
-        items: [
-          { type: TechType.PYTHON },
-          { type: TechType.PLOTLY },
-
-        ],
+        items: [{ type: TechType.PYTHON }, { type: TechType.PLOTLY }],
       },
       {
         section: "Database",
@@ -269,7 +271,7 @@ Here is a list of things you can do on the app:`}
                             />
                           </ListItem>
                         );
-                      }
+                      },
                     )}
                   </ProjectTextBox>
 

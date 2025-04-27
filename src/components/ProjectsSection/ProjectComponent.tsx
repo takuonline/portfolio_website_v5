@@ -61,7 +61,7 @@ type ProjectComponentType = {
   title: string;
   skills: string[];
   bgImage: React.ReactNode | string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const ProjectComponent = (props: ProjectComponentType) => {

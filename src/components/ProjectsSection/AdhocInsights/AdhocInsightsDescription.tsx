@@ -14,8 +14,6 @@ import TechStack from "@/components/Common/TechStack";
 import { TechType } from "@/types/techStackTypes";
 
 const AdhocInsightsProjectDescription = () => {
-
-
   const techStackData = {
     sections: [
       {
@@ -113,13 +111,9 @@ const AdhocInsightsProjectDescription = () => {
             pl: 0,
           }}
         >
-
-
           <TechStack sections={techStackData.sections} />
         </Grid>
       </Box>
-
-
     </>
   );
 };

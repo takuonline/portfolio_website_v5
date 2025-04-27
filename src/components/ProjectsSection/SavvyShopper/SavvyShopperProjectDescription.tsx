@@ -65,7 +65,6 @@ const SavvyShopperProjectDescription = () => {
     ],
   };
 
-
   const keyFeatures = [
     {
       primary: "Various animations",

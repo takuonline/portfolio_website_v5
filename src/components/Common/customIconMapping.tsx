@@ -55,7 +55,6 @@ const DynamoDBIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-
 // This is where you would define all your custom icons
 export const customIcons: Record<string, React.FC<SvgIconProps>> = {
   flutter: FlutterIcon,
@@ -65,7 +64,7 @@ export const customIcons: Record<string, React.FC<SvgIconProps>> = {
 // Get a custom icon by name
 export const getCustomIcon = (
   name: string,
-  props: SvgIconProps = {}
+  props: SvgIconProps = {},
 ): React.ReactNode => {
   const CustomIcon = customIcons[name];
 

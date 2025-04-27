@@ -46,7 +46,7 @@ import {
   SiMaterialdesign,
   SiMui,
 } from "react-icons/si";
-import {  FlutterIcon } from "./customIconMapping";
+import { FlutterIcon } from "./customIconMapping";
 
 interface IconProps {
   size?: number;
@@ -55,7 +55,7 @@ interface IconProps {
 
 export const getTechIcon = (
   techType: TechType,
-  props: IconProps = { size: 24 }
+  props: IconProps = { size: 24 },
 ): React.ReactNode => {
   const { size, color } = props;
 
@@ -158,13 +158,11 @@ export const getTechIcon = (
     case TechType.LANGCHAIN:
       return <SiLangchain size={size} color={color} />;
 
-
     case TechType.ARGOCD:
       return <SiArgo size={size} color={color} />;
 
     case TechType.AWS_LAMBDA:
-      return <SiAwslambda  size={size} color={color} />;
-
+      return <SiAwslambda size={size} color={color} />;
 
     case TechType.PYTORCH:
       return <SiPytorch size={size} color={color} />;
@@ -175,13 +173,11 @@ export const getTechIcon = (
     case TechType.FIREBASE:
       return <SiFirebase size={size} color={color} />;
 
-      case TechType.PLOTLY:
-        return <SiPlotly size={size} color={color} />;
+    case TechType.PLOTLY:
+      return <SiPlotly size={size} color={color} />;
 
     case TechType.MATERIAL_UI:
       return <SiMui size={size} color={color} />;
-
-
 
     default:
       return <CodeIcon sx={{ fontSize: size, color }} />;

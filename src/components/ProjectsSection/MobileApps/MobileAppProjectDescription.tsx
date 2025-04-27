@@ -20,7 +20,6 @@ const MobileAppProjectDescription = () => {
         section: "Frontend",
         items: [{ type: TechType.FLUTTER }, { type: TechType.DART }],
       },
-
     ],
   };
 

@@ -11,7 +11,6 @@ import {
 import BlogBodyWrapper from "../Common/BodyWrapper";
 import SectionHeader from "../Common/SectionHeader";
 import BlackFridayPlotlyDashboard from "./WebDashboard/WebDashboard";
-import GoogleLensClone from "./GoogleLensClone/GoogleLensClone";
 import SavvyShopper from "./SavvyShopper/SavvyShopper";
 import HighlightTypography from "../Common/HighlightTypography";
 import { motion } from "framer-motion";
@@ -254,8 +253,6 @@ const PortfolioProjects = () => {
 
         <LandingPages />
         <SavvyShopper />
-
-        <GoogleLensClone />
 
         <BlackFridayPlotlyDashboard />
         <MobileApps />
